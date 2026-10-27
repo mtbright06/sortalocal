@@ -1,3 +1,5 @@
+import importedHvacData from './overtureHvacListings.json'
+
 export type BusinessCategory = 'hvac' | 'dental' | 'veterinary' | 'automotive'
 export type OwnershipClassification = 'pe-backed' | 'independent' | 'corporate' | 'unknown'
 
@@ -20,7 +22,7 @@ interface VerifiedOwnershipRecord {
     evidence: OwnershipEvidence[]
 }
 
-interface UnknownOwnershipRecord {
+export interface UnknownOwnershipRecord {
     classification: 'unknown'
     status: 'unknown'
     verifiedAt: null
@@ -34,14 +36,31 @@ export interface Business {
     id: string
     name: string
     category: BusinessCategory
-    address: string
-    neighborhood: string
+    address: string | null
+    neighborhood?: string
     city: string
     latitude: number
     longitude: number
-    phone: string
-    description: string
+    phone?: string | null
+    description?: string
+    website?: string | null
+    dataSource?: 'demo' | 'overture'
+    sourceId?: string | null
+    sourceDataset?: string | null
+    sourceRecordId?: string | null
+    sourceRelease?: string
+    incompleteFields?: string[]
     ownership: OwnershipRecord
+}
+
+export interface OvertureBusiness extends Omit<Business, 'category' | 'dataSource' | 'ownership'> {
+    category: 'hvac'
+    dataSource: 'overture'
+    sourceId: string
+    sourceRelease: string
+    overtureTaxonomyPrimary: string
+    overtureMatchReason: string
+    ownership: UnknownOwnershipRecord
 }
 
 export const categoryLabels: Record<BusinessCategory, string> = {
@@ -85,25 +104,7 @@ const unknownOwnership: UnknownOwnershipRecord = {
     evidence: [],
 }
 
-export const businesses: Business[] = [
-    {
-        id: 'tidewater-comfort-co', name: 'Tidewater Comfort Co.', category: 'hvac',
-        address: '418 Colley Avenue', neighborhood: 'Ghent', city: 'Norfolk', latitude: 36.8608, longitude: -76.2926,
-        phone: '757-555-0101', description: 'Heating and cooling tune-ups, repairs, and replacements from a neighborhood crew.',
-        ownership: verifiedOwnership('independent', 'Mara Ellison', 'Founder-owned', '2026-09-12', 'TIDE-001'),
-    },
-    {
-        id: 'harborlight-heating', name: 'Harborlight Heating & Air', category: 'hvac',
-        address: '2317 Hampton Highway', neighborhood: 'Phoebus', city: 'Hampton', latitude: 37.0181, longitude: -76.3164,
-        phone: '757-555-0102', description: 'Residential HVAC service with an emphasis on efficient seasonal maintenance.',
-        ownership: verifiedOwnership('pe-backed', 'Common Current Home Services', 'Platform subsidiary', '2026-08-28', 'HARBOR-014'),
-    },
-    {
-        id: 'blue-heron-mechanical', name: 'Blue Heron Mechanical', category: 'hvac',
-        address: '1208 Battlefield Boulevard N', neighborhood: 'Great Bridge', city: 'Chesapeake', latitude: 36.7421, longitude: -76.2387,
-        phone: '757-555-0103', description: 'Local technicians for home comfort, ductwork, and indoor air quality.',
-        ownership: unknownOwnership,
-    },
+const demoBusinesses: Business[] = [
     {
         id: 'shoreline-smiles', name: 'Shoreline Family Dentistry', category: 'dental',
         address: '730 W 21st Street', neighborhood: 'Park Place', city: 'Norfolk', latitude: 36.8714, longitude: -76.2922,
@@ -165,12 +166,6 @@ export const businesses: Business[] = [
         ownership: unknownOwnership,
     },
     {
-        id: 'willow-oak-heating', name: 'Willow Oak Heating & Cooling', category: 'hvac',
-        address: '2208 Princess Anne Road', neighborhood: 'Kempsville', city: 'Virginia Beach', latitude: 36.8158, longitude: -76.1042,
-        phone: '757-555-0114', description: 'Heating and cooling service for homes across the south side.',
-        ownership: verifiedOwnership('pe-backed', 'Common Current Home Services', 'Platform subsidiary', '2026-08-28', 'WILLOW-019'),
-    },
-    {
         id: 'anchor-point-dental', name: 'Anchor Point Dental', category: 'dental',
         address: '525 Independence Parkway', neighborhood: 'Greenbrier', city: 'Chesapeake', latitude: 36.7792, longitude: -76.2386,
         phone: '757-555-0115', description: 'Preventive, cosmetic, and family dental care in a relaxed setting.',
@@ -183,3 +178,7 @@ export const businesses: Business[] = [
         ownership: verifiedOwnership('independent', 'Dr. Avery Chen', 'Veterinarian-owned clinic', '2026-09-30', 'CEDAR-012'),
     },
 ]
+
+export const importedHvacBusinesses = importedHvacData.businesses as unknown as OvertureBusiness[]
+export const importSummary = importedHvacData.summary
+export const businesses: Business[] = [...importedHvacBusinesses, ...demoBusinesses]

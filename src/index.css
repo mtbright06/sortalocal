@@ -970,6 +970,119 @@ input:focus-visible {
     color: #7d9d86;
 }
 
+.import-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 12px;
+    padding: 10px 0 3px;
+    border-top: 1px solid var(--line);
+    color: #748178;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.import-summary strong {
+    color: #3d6453;
+    font-variant-numeric: tabular-nums;
+}
+
+.exclusion-notes {
+    flex-basis: 100%;
+    color: #718078;
+}
+
+.exclusion-notes summary {
+    width: fit-content;
+    color: #52715f;
+    cursor: pointer;
+}
+
+.exclusion-notes ul {
+    display: grid;
+    gap: 5px;
+    margin: 8px 0 2px;
+    padding-left: 17px;
+}
+
+.record-source {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .45px;
+    vertical-align: 1px;
+}
+
+.record-source--overture {
+    background: #e7f0eb;
+    color: #39765e;
+}
+
+.record-source--demo {
+    background: #f3efe5;
+    color: #987b4d;
+}
+
+.incomplete-flag {
+    display: inline-block;
+    margin-left: 5px;
+    color: #986f35;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .35px;
+    vertical-align: 1px;
+}
+
+.detail-source-tag {
+    color: #39765e;
+}
+
+.source-record {
+    display: grid;
+    gap: 6px;
+    margin-top: 12px;
+    padding: 12px;
+    border: 1px solid #e6eae3;
+    border-radius: 4px;
+    background: #f7f9f5;
+    color: #6f7d73;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.source-record-heading {
+    color: #88958b;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .8px;
+}
+
+.source-record a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    width: fit-content;
+    color: #34735d;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.source-record a:hover {
+    text-decoration: underline;
+}
+
+.incomplete-notice {
+    color: #956f34;
+}
+
+@media (max-width: 700px) {
+    .import-summary {
+        font-size: 11px;
+    }
+}
+
 @media (min-width: 1200px) {
     .explorer {
         padding-right: 27px;

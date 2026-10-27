@@ -17,6 +17,7 @@ import {
 import {
     businesses,
     categoryLabels,
+    importSummary,
     ownershipLabels,
     type Business,
     type BusinessCategory,
@@ -50,7 +51,7 @@ function App() {
     const visibleBusinesses = businesses.filter((business) => {
         const matchesCategory = business.category === activeCategory
         const matchesOwnership = activeOwnership.includes(business.ownership.classification)
-        const searchText = `${business.name} ${business.city} ${business.neighborhood}`.toLowerCase()
+        const searchText = `${business.name} ${business.city} ${business.neighborhood ?? ''}`.toLowerCase()
         return matchesCategory && matchesOwnership && searchText.includes(search.trim().toLowerCase())
     }).sort((left, right) => {
         if (sortMode === 'ownership') {
@@ -140,7 +141,7 @@ function App() {
                     <span>sorta<span className="brand-light">local</span></span>
                 </a>
                 <div className="topbar-place"><span className="place-dot" /> HAMPTON ROADS, VA</div>
-                <div className="demo-label"><span /> DEMO DIRECTORY</div>
+                <div className="demo-label"><span /> OVERTURE + DEMO DATA</div>
             </header>
 
             <main className="workspace" id="home">
@@ -233,7 +234,24 @@ function App() {
                             {visibleBusinesses.length === 0 && <p className="empty-results">No matches. Try widening your filters.</p>}
                         </div>
                     </section>
-                    <div className="sidebar-footnote"><CircleHelp size={13} /> All names and ownership records are fictional demo data.</div>
+                    {activeCategory === 'hvac' && (
+                        <div className="import-summary" aria-label="Overture import summary">
+                            <span><strong>{importSummary.importedRecords}</strong> imported</span>
+                            <span><strong>{importSummary.excludedOutsideTargetCities}</strong> outside cities</span>
+                            <span><strong>{importSummary.excludedKnownFalsePositives.length}</strong> excluded</span>
+                            <span><strong>{importSummary.incompleteRecords}</strong> incomplete</span>
+                            <details className="exclusion-notes">
+                                <summary>Exclusion notes</summary>
+                                <ul>
+                                    <li>{importSummary.excludedOutsideTargetCities} HVAC taxonomy records were outside the four target city boundaries.</li>
+                                    {importSummary.excludedKnownFalsePositives.map((record: { sourceId: string; reason: string }) => (
+                                        <li key={record.sourceId}>{record.reason}</li>
+                                    ))}
+                                </ul>
+                            </details>
+                        </div>
+                    )}
+                    <div className="sidebar-footnote"><CircleHelp size={13} /> Dental, veterinary, and auto listings are fictional demo data.</div>
                 </aside>
 
                 <section className="map-stage" aria-label="Hampton Roads business map">
@@ -253,7 +271,7 @@ function App() {
                     </button>
                     {mapUnavailable && <div className="map-message">The interactive map is unavailable: {mapUnavailable}</div>}
                     {selectedBusiness && <BusinessDetail business={selectedBusiness} onClose={() => setSelectedBusiness(null)} />}
-                    <div className="map-demo-stamp">FICTIONAL DEMO DATA</div>
+                    <div className="map-demo-stamp">OVERTURE + DEMO DATA</div>
                 </section>
             </main>
         </div>
@@ -262,13 +280,20 @@ function App() {
 
 function BusinessRow({ business, selected, onSelect, rowRef }: { business: Business; selected: boolean; onSelect: () => void; rowRef: (element: HTMLButtonElement | null) => void }) {
     const verified = business.ownership.status === 'verified'
+    const isOverture = business.dataSource === 'overture'
 
     return (
         <button ref={rowRef} type="button" className={`business-row${selected ? ' is-selected' : ''}`} aria-pressed={selected} onClick={onSelect}>
             <span className={`business-symbol business-symbol--${business.category}`}><MapPin size={15} /></span>
             <span className="business-row-copy">
                 <span className="business-row-name">{business.name}</span>
-                <span className="business-row-meta">{business.neighborhood} <span>·</span> {categoryLabels[business.category]}</span>
+                <span className="business-row-meta">
+                    {business.neighborhood ? `${business.neighborhood} · ` : ''}{business.city} · {categoryLabels[business.category]}
+                    <span className={`record-source record-source--${isOverture ? 'overture' : 'demo'}`}>{isOverture ? 'OVERTURE' : 'DEMO'}</span>
+                    {isOverture && business.incompleteFields && business.incompleteFields.length > 0 && (
+                        <span className="incomplete-flag" title={`Missing ${business.incompleteFields.join(', ')}`}>INCOMPLETE</span>
+                    )}
+                </span>
             </span>
             <span className={`row-verification${verified ? ' is-verified' : ''}`} aria-label={verified ? 'Ownership verified in demo record' : 'Ownership unknown'}>
                 {verified ? <BadgeCheck size={15} /> : <CircleHelp size={15} />}
@@ -280,22 +305,26 @@ function BusinessRow({ business, selected, onSelect, rowRef }: { business: Busin
 function BusinessDetail({ business, onClose }: { business: Business; onClose: () => void }) {
     const ownership = business.ownership
     const isVerified = ownership.status === 'verified'
+    const isOverture = business.dataSource === 'overture'
 
     return (
         <article className="detail-panel" aria-labelledby="detail-title">
             <div className="detail-topline">
-                <span className="detail-demo-tag"><span /> FICTIONAL DEMO</span>
+                <span className={`detail-demo-tag${isOverture ? ' detail-source-tag' : ''}`}><span /> {isOverture ? 'OVERTURE LISTING' : 'FICTIONAL DEMO'}</span>
                 <button type="button" className="icon-button close-detail" onClick={onClose} aria-label="Close business details"><X size={18} /></button>
             </div>
             <div className="detail-heading">
                 <span className={`detail-symbol detail-symbol--${business.category}`}><MapPin size={19} /></span>
                 <div>
-                    <p className="detail-category">{categoryLabels[business.category]} <span>·</span> {business.neighborhood}</p>
+                    <p className="detail-category">{categoryLabels[business.category]} <span>·</span> {business.neighborhood ?? business.city}</p>
                     <h2 id="detail-title">{business.name}</h2>
                 </div>
             </div>
-            <p className="detail-description">{business.description}</p>
-            <div className="detail-location"><span>{business.address}</span><span>{business.city}, VA</span></div>
+            <p className="detail-description">{business.description ?? (isOverture ? 'HVAC service listing from Overture Maps.' : '')}</p>
+            <div className="detail-location">
+                <span>{business.address || (isOverture ? 'Address not available in this listing' : '')}</span>
+                <span>{business.city}, VA</span>
+            </div>
 
             <section className="ownership-card" aria-labelledby="ownership-record-title">
                 <div className="ownership-card-title">
@@ -331,10 +360,29 @@ function BusinessDetail({ business, onClose }: { business: Business; onClose: ()
                     <p className="unknown-note">We don’t have enough verified information to classify this business. Unknown is not an ownership type.</p>
                 )}
             </section>
-            <a className="detail-link" href={`tel:${business.phone.replaceAll('-', '')}`}>
-                Call {business.phone} <ArrowUpRight size={15} />
-            </a>
-            <div className="detail-disclaimer"><ShieldCheck size={13} /> Demonstration record. Not a real business or ownership claim.</div>
+            {isOverture && (
+                <section className="source-record" aria-label="Overture source information">
+                    <div className="source-record-heading">SOURCE RECORD</div>
+                    <a href="https://overturemaps.org/" target="_blank" rel="noreferrer">Overture Maps</a>
+                    <span>Place ID: {business.sourceId}</span>
+                    {business.sourceDataset && <span>Provider dataset: {business.sourceDataset}{business.sourceRecordId ? ` / ${business.sourceRecordId}` : ''}</span>}
+                    <span>Release {business.sourceRelease}</span>
+                    {business.incompleteFields && business.incompleteFields.length > 0 && (
+                        <span className="incomplete-notice">Incomplete listing: missing {business.incompleteFields.join(', ')}</span>
+                    )}
+                    {business.website && <a href={business.website} target="_blank" rel="noreferrer">Visit listed website <ArrowUpRight size={13} /></a>}
+                </section>
+            )}
+            {business.phone ? (
+                <a className="detail-link" href={`tel:${business.phone.replaceAll('-', '')}`}>
+                    Call {business.phone} <ArrowUpRight size={15} />
+                </a>
+            ) : (
+                <p className="unknown-note">Phone number not available in this listing.</p>
+            )}
+            <div className="detail-disclaimer"><ShieldCheck size={13} />
+                {isOverture ? 'Overture listing. Ownership has not been researched or verified.' : 'Fictional demonstration record. Not a real business or ownership claim.'}
+            </div>
         </article>
     )
 }
