@@ -10,4 +10,4 @@ npm run dev
 npm run build
 ```
 
-The map uses MapLibre demo tiles and needs an internet connection. Every business, ownership relationship, and evidence reference in `src/businesses.ts` is fictional demonstration data. Unknown ownership remains unclassified and carries no evidence.
+The map uses OpenFreeMap's Liberty style with OpenStreetMap data and needs an internet connection. Attribution is shown on the map. Every business, ownership relationship, and evidence reference in `src/businesses.ts` is fictional demonstration data. Unknown ownership remains unclassified and carries no evidence.

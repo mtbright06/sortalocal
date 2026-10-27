@@ -22,29 +22,42 @@ import {
     type BusinessCategory,
     type OwnershipClassification,
 } from './businesses'
-import { localRoads, localWater } from './hamptonRoadsMap'
 import 'maplibre-gl/dist/maplibre-gl.css'
 
 const categories = Object.keys(categoryLabels) as BusinessCategory[]
 const ownershipTypes = Object.keys(ownershipLabels) as OwnershipClassification[]
+const ownershipSortOrder: Record<OwnershipClassification, number> = {
+    'pe-backed': 0,
+    independent: 1,
+    corporate: 2,
+    unknown: 3,
+}
 maplibregl.setWorkerUrl(maplibreWorkerUrl)
 
 function App() {
     const mapContainer = useRef<HTMLDivElement>(null)
     const map = useRef<maplibregl.Map | null>(null)
     const markers = useRef<Marker[]>([])
-    const contextMarkers = useRef<Marker[]>([])
-    const [activeCategories, setActiveCategories] = useState<BusinessCategory[]>(categories)
+    const businessRows = useRef(new Map<string, HTMLButtonElement>())
+    const [activeCategory, setActiveCategory] = useState<BusinessCategory>('hvac')
     const [activeOwnership, setActiveOwnership] = useState<OwnershipClassification[]>(ownershipTypes)
+    const [sortMode, setSortMode] = useState<'alphabetical' | 'ownership'>('alphabetical')
     const [search, setSearch] = useState('')
     const [selectedBusiness, setSelectedBusiness] = useState<Business | null>(null)
     const [mapUnavailable, setMapUnavailable] = useState<string | null>(null)
+    const [mapInitialized, setMapInitialized] = useState(false)
 
     const visibleBusinesses = businesses.filter((business) => {
-        const matchesCategory = activeCategories.includes(business.category)
+        const matchesCategory = business.category === activeCategory
         const matchesOwnership = activeOwnership.includes(business.ownership.classification)
         const searchText = `${business.name} ${business.city} ${business.neighborhood}`.toLowerCase()
         return matchesCategory && matchesOwnership && searchText.includes(search.trim().toLowerCase())
+    }).sort((left, right) => {
+        if (sortMode === 'ownership') {
+            const ownershipDifference = ownershipSortOrder[left.ownership.classification] - ownershipSortOrder[right.ownership.classification]
+            if (ownershipDifference !== 0) return ownershipDifference
+        }
+        return left.name.localeCompare(right.name)
     })
 
     useEffect(() => {
@@ -52,11 +65,7 @@ function App() {
 
         const instance = new maplibregl.Map({
             container: mapContainer.current,
-            style: {
-                version: 8,
-                sources: {},
-                layers: [{ id: 'land', type: 'background', paint: { 'background-color': '#f1efe4' } }],
-            },
+            style: 'https://tiles.openfreemap.org/styles/liberty',
             center: [-76.36, 36.91],
             zoom: 9.05,
             minZoom: 7.5,
@@ -65,60 +74,27 @@ function App() {
         })
 
         instance.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')
-        instance.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-left')
+        instance.addControl(new maplibregl.AttributionControl({
+            compact: true,
+            customAttribution: '<a href="https://openfreemap.org/">OpenFreeMap</a> | © <a href="https://www.openmaptiles.org/">OpenMapTiles</a> | © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+        }), 'bottom-left')
         instance.on('load', () => {
-            instance.addSource('local-water', { type: 'geojson', data: localWater })
-            instance.addLayer({
-                id: 'water-fill',
-                type: 'fill',
-                source: 'local-water',
-                paint: { 'fill-color': '#d7e6e2', 'fill-opacity': 1 },
-            })
-            instance.addSource('local-roads', { type: 'geojson', data: localRoads })
-            instance.addLayer({
-                id: 'road-casing',
-                type: 'line',
-                source: 'local-roads',
-                paint: { 'line-color': '#dedbcf', 'line-width': ['interpolate', ['linear'], ['zoom'], 7, 2, 12, 6] },
-            })
-            instance.addLayer({
-                id: 'road-lines',
-                type: 'line',
-                source: 'local-roads',
-                paint: { 'line-color': '#fffdf7', 'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1, 12, 3.5] },
-            })
             setMapUnavailable(null)
         })
         instance.on('error', (event) => setMapUnavailable(event.error.message))
         map.current = instance
-        contextMarkers.current = [
-            { label: 'HAMPTON', lng: -76.35, lat: 37.03 },
-            { label: 'NEWPORT NEWS', lng: -76.43, lat: 37.06 },
-            { label: 'NORFOLK', lng: -76.27, lat: 36.9 },
-            { label: 'PORTSMOUTH', lng: -76.31, lat: 36.82 },
-            { label: 'CHESAPEAKE', lng: -76.31, lat: 36.74 },
-            { label: 'VIRGINIA BEACH', lng: -76.08, lat: 36.89 },
-            { label: 'CHESAPEAKE BAY', lng: -76.49, lat: 37.01, water: true },
-            { label: 'ATLANTIC OCEAN', lng: -75.99, lat: 36.99, water: true },
-        ].map(({ label, lng, lat, water }) => {
-            const element = document.createElement('div')
-            element.className = water ? 'map-water-label' : 'map-place-label'
-            element.textContent = label
-            return new maplibregl.Marker({ element, anchor: 'center' }).setLngLat([lng, lat]).addTo(instance)
-        })
+        setMapInitialized(true)
 
         return () => {
             markers.current.forEach((marker) => marker.remove())
-            contextMarkers.current.forEach((marker) => marker.remove())
             markers.current = []
-            contextMarkers.current = []
             instance.remove()
             map.current = null
         }
     }, [])
 
     useEffect(() => {
-        if (!map.current) return
+        if (!map.current || !mapInitialized) return
 
         markers.current.forEach((marker) => marker.remove())
         markers.current = visibleBusinesses.map((business) => {
@@ -136,18 +112,19 @@ function App() {
                 .setLngLat([business.longitude, business.latitude])
                 .addTo(map.current!)
         })
-    }, [visibleBusinesses, selectedBusiness])
+    }, [visibleBusinesses, selectedBusiness, mapInitialized])
 
-    const toggleCategory = (category: BusinessCategory) => {
-        setActiveCategories((current) => current.includes(category)
-            ? current.filter((value) => value !== category)
-            : [...current, category])
-    }
+    useEffect(() => {
+        if (selectedBusiness) {
+            businessRows.current.get(selectedBusiness.id)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+        }
+    }, [selectedBusiness])
 
     const toggleOwnership = (classification: OwnershipClassification) => {
         setActiveOwnership((current) => current.includes(classification)
             ? current.filter((value) => value !== classification)
             : [...current, classification])
+        setSelectedBusiness((current) => current?.ownership.classification === classification ? null : current)
     }
 
     const chooseBusiness = (business: Business) => {
@@ -179,7 +156,10 @@ function App() {
                         <input
                             type="search"
                             value={search}
-                            onChange={(event) => setSearch(event.target.value)}
+                            onChange={(event) => {
+                                setSearch(event.target.value)
+                                setSelectedBusiness(null)
+                            }}
                             placeholder="Search a business or city"
                             aria-label="Search businesses or cities"
                         />
@@ -188,14 +168,19 @@ function App() {
 
                     <section className="filter-section" aria-labelledby="category-heading">
                         <div className="section-label"><SlidersHorizontal size={14} /><h2 id="category-heading">What do you need?</h2></div>
-                        <div className="category-filters">
+                        <div className="category-filters" role="radiogroup" aria-labelledby="category-heading">
                             {categories.map((category) => (
                                 <button
                                     type="button"
+                                    role="radio"
                                     key={category}
-                                    className={`category-filter${activeCategories.includes(category) ? ' is-active' : ''}`}
-                                    aria-pressed={activeCategories.includes(category)}
-                                    onClick={() => toggleCategory(category)}
+                                    className={`category-filter${activeCategory === category ? ' is-active' : ''}`}
+                                    aria-checked={activeCategory === category}
+                                    tabIndex={activeCategory === category ? 0 : -1}
+                                    onClick={() => {
+                                        setActiveCategory(category)
+                                        setSelectedBusiness(null)
+                                    }}
                                 >
                                     {categoryLabels[category]}
                                 </button>
@@ -223,8 +208,14 @@ function App() {
 
                     <section className="results-section" aria-labelledby="results-heading">
                         <div className="results-heading">
-                            <h2 id="results-heading">Around here <span>{visibleBusinesses.length}</span></h2>
-                            <span className="results-caption">DEMO BUSINESSES</span>
+                            <h2 id="results-heading">Businesses <span>{visibleBusinesses.length}</span></h2>
+                            <label className="sort-control">
+                                <span>Sort</span>
+                                <select value={sortMode} onChange={(event) => setSortMode(event.target.value as typeof sortMode)} aria-label="Sort businesses">
+                                    <option value="alphabetical">A-Z</option>
+                                    <option value="ownership">Ownership</option>
+                                </select>
+                            </label>
                         </div>
                         <div className="business-list">
                             {visibleBusinesses.map((business) => (
@@ -233,6 +224,10 @@ function App() {
                                     key={business.id}
                                     selected={selectedBusiness?.id === business.id}
                                     onSelect={() => chooseBusiness(business)}
+                                    rowRef={(element) => {
+                                        if (element) businessRows.current.set(business.id, element)
+                                        else businessRows.current.delete(business.id)
+                                    }}
                                 />
                             ))}
                             {visibleBusinesses.length === 0 && <p className="empty-results">No matches. Try widening your filters.</p>}
@@ -265,11 +260,11 @@ function App() {
     )
 }
 
-function BusinessRow({ business, selected, onSelect }: { business: Business; selected: boolean; onSelect: () => void }) {
+function BusinessRow({ business, selected, onSelect, rowRef }: { business: Business; selected: boolean; onSelect: () => void; rowRef: (element: HTMLButtonElement | null) => void }) {
     const verified = business.ownership.status === 'verified'
 
     return (
-        <button type="button" className={`business-row${selected ? ' is-selected' : ''}`} onClick={onSelect}>
+        <button ref={rowRef} type="button" className={`business-row${selected ? ' is-selected' : ''}`} aria-pressed={selected} onClick={onSelect}>
             <span className={`business-symbol business-symbol--${business.category}`}><MapPin size={15} /></span>
             <span className="business-row-copy">
                 <span className="business-row-name">{business.name}</span>

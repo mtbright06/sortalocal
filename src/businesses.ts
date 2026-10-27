@@ -48,7 +48,7 @@ export const categoryLabels: Record<BusinessCategory, string> = {
     hvac: 'HVAC',
     dental: 'Dental',
     veterinary: 'Veterinary',
-    automotive: 'Auto repair',
+    automotive: 'Auto Repair',
 }
 
 export const ownershipLabels: Record<OwnershipClassification, string> = {
