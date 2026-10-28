@@ -20,8 +20,8 @@
           ]
         }
       ],
-      "reviewStatus": "pending",
-      "ownershipAssigned": false
+      "reviewStatus": "approved",
+      "ownershipAssigned": true
     },
     {
       "businessId": "overture-7b4285da-a044-49a3-931d-536e6a91fd7a",
@@ -40,8 +40,8 @@
           ]
         }
       ],
-      "reviewStatus": "pending",
-      "ownershipAssigned": false
+      "reviewStatus": "approved",
+      "ownershipAssigned": true
     },
     {
       "businessId": "overture-af436b19-7ee9-48e7-ab77-b60f9a1d5dc5",
@@ -60,8 +60,8 @@
           ]
         }
       ],
-      "reviewStatus": "pending",
-      "ownershipAssigned": false
+      "reviewStatus": "approved",
+      "ownershipAssigned": true
     }
   ],
   "registryPath": "C:\\sortalocal\\data\\realOwnershipRegistry.json",

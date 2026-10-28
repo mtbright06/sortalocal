@@ -7,6 +7,7 @@ import {
     BadgeCheck,
     Building2,
     CircleHelp,
+    ChevronDown,
     LocateFixed,
     MapPin,
     Search,
@@ -160,7 +161,8 @@ function App() {
         markers.current = visibleBusinesses.map((business) => {
             const markerElement = document.createElement('button')
             markerElement.type = 'button'
-            markerElement.className = `map-marker map-marker--${business.category}${selectedBusiness?.id === business.id ? ' is-selected' : ''}`
+            const verifiedPe = business.dataSource === 'overture' && business.ownership.classification === 'pe-backed'
+            markerElement.className = `map-marker map-marker--${business.category}${verifiedPe ? ' map-marker--verified-pe' : ''}${selectedBusiness?.id === business.id ? ' is-selected' : ''}`
             markerElement.setAttribute('aria-label', `Open ${business.name}`)
             markerElement.title = business.name
             markerElement.addEventListener('click', () => {
@@ -383,6 +385,12 @@ function App() {
                         <span className="map-kicker">THE 757, LOCALLY</span>
                         <span className="map-count">{visibleBusinesses.length} places on the map</span>
                     </div>
+                    {visibleBusinesses.some((business) => business.dataSource === 'overture' && business.ownership.classification === 'pe-backed') && (
+                        <div className="map-legend" aria-label="Map marker legend">
+                            <span className="map-legend-marker" />
+                            <span>Verified PE-backed</span>
+                        </div>
+                    )}
                     <button
                         type="button"
                         className="locate-button"
@@ -418,7 +426,7 @@ function BusinessRow({ business, selected, onSelect, rowRef, distance }: { busin
                     )}
                 </span>
             </span>
-            <span className={`row-verification${verified ? ' is-verified' : ''}`} aria-label={verified ? 'Ownership verified in demo record' : 'Ownership unknown'}>
+            <span className={`row-verification${verified ? ' is-verified' : ''}`} aria-label={verified ? (isOverture ? 'Ownership verified from approved sources' : 'Fictional demo ownership record') : 'Ownership unknown'}>
                 {verified ? <BadgeCheck size={15} /> : <CircleHelp size={15} />}
             </span>
         </button>
@@ -449,18 +457,42 @@ function BusinessDetail({ business, onClose }: { business: Business; onClose: ()
                 <span>{business.city}, VA</span>
             </div>
 
-            <section className="ownership-card" aria-labelledby="ownership-record-title">
-                <div className="ownership-card-title">
-                    <Building2 size={16} />
-                    <h3 id="ownership-record-title">Ownership record</h3>
-                </div>
+            <section className="ownership-card">
+                <details className="ownership-details">
+                    <summary className="ownership-card-title">
+                        <Building2 size={16} />
+                        <h3>Who owns this business?</h3>
+                        <ChevronDown className="ownership-chevron" size={15} />
+                    </summary>
                 <div className={`classification-pill classification-pill--${ownership.classification}`}>
                     {isVerified ? <BadgeCheck size={15} /> : <CircleHelp size={15} />}
                     <span>{ownershipLabels[ownership.classification]}</span>
-                    <span>{isVerified ? 'DEMO VERIFIED' : 'NOT VERIFIED'}</span>
+                    <span>{isVerified ? (isOverture ? 'APPROVED' : 'DEMO VERIFIED') : 'NOT VERIFIED'}</span>
                 </div>
                 {isVerified ? (
                     <>
+                        {isOverture && ownership.approvalStatus === 'approved' && (
+                            <div className="match-confidence">
+                                <span className="match-confidence-label">Business identity match</span>
+                                <strong>{Math.round((ownership.matchConfidence ?? 0) * 100)}% match score</strong>
+                                <p>Based on listing name, domain, and location. This score measures identity matching; ownership verification comes from the sources below.</p>
+                            </div>
+                        )}
+                        {ownership.ownershipChain?.map((step, index) => (
+                            <div className="relationship" key={`${step.fromEntity}-${step.toEntity}-${index}`}>
+                                <span className="relationship-label">{ownershipRelationshipLabel(step.relationship)}</span>
+                                <span className="relationship-entity">{step.fromEntity} → {step.toEntity}</span>
+                                <span className="relationship-date">{ownershipRelationshipDate(step)}</span>
+                                {step.evidence.map((evidence) => (
+                                    <a className="ownership-source-link" href={evidence.url} target="_blank" rel="noreferrer" key={evidence.url}>
+                                        {evidence.description} <ArrowUpRight size={12} />
+                                    </a>
+                                ))}
+                            </div>
+                        ))}
+                        {isOverture && ownership.ownershipChain && ownership.ownershipChain.length > 0 && (
+                            <p className="ownership-caveat">Transaction dates follow the linked source statements. Current investor relationships were checked on the verification date shown below.</p>
+                        )}
                         {ownership.relationships.map((relationship) => (
                             <div className="relationship" key={`${relationship.entity}-${relationship.relationship}`}>
                                 <span className="relationship-label">{relationship.relationship}</span>
@@ -468,7 +500,7 @@ function BusinessDetail({ business, onClose }: { business: Business; onClose: ()
                                 <span className="relationship-date">Verified {formatDate(relationship.verifiedAt)}</span>
                             </div>
                         ))}
-                        <div className="evidence-block">
+                        {!isOverture && <div className="evidence-block">
                             <span className="evidence-heading">SUPPORTING DEMO EVIDENCE</span>
                             {ownership.evidence.map((evidence) => (
                                 <div className="evidence-row" key={evidence.reference}>
@@ -476,12 +508,13 @@ function BusinessDetail({ business, onClose }: { business: Business; onClose: ()
                                     <span>{evidence.reference}</span>
                                 </div>
                             ))}
-                            <span className="record-date">Record checked {formatDate(ownership.verifiedAt)}</span>
-                        </div>
+                        </div>}
                     </>
                 ) : (
                     <p className="unknown-note">We don’t have enough verified information to classify this business. Unknown is not an ownership type.</p>
                 )}
+                {isOverture && isVerified && <span className="record-date">Ownership verified {formatDate(ownership.verifiedAt)}</span>}
+                </details>
             </section>
             {isOverture && (
                 <section className="source-record" aria-label="Overture source information">
@@ -504,7 +537,7 @@ function BusinessDetail({ business, onClose }: { business: Business; onClose: ()
                 <p className="unknown-note">Phone number not available in this listing.</p>
             )}
             <div className="detail-disclaimer"><ShieldCheck size={13} />
-                {isOverture ? 'Overture listing. Ownership has not been researched or verified.' : 'Fictional demonstration record. Not a real business or ownership claim.'}
+                {isOverture ? (isVerified ? 'Ownership is approved from linked sources. Listing match confidence is separate and is not ownership evidence.' : 'Overture listing. Ownership remains unknown until evidence is reviewed and approved.') : 'Fictional demonstration record. Not a real business or ownership claim.'}
             </div>
         </article>
     )
@@ -513,6 +546,20 @@ function BusinessDetail({ business, onClose }: { business: Business; onClose: ()
 function formatDate(date: string | null) {
     if (!date) return 'Not verified'
     return new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`))
+}
+
+function ownershipRelationshipLabel(relationship: string) {
+    if (relationship === 'acquired_by') return 'Acquisition'
+    if (relationship === 'majority_investment_by') return 'Majority investment'
+    if (relationship === 'portfolio_company_of') return 'Portfolio relationship'
+    return relationship.replaceAll('_', ' ')
+}
+
+function ownershipRelationshipDate(step: { announcedAt: string | null; effectiveAt: string | null; effectiveYear?: number }) {
+    if (step.effectiveAt) return `Completed ${formatDate(step.effectiveAt)}`
+    if (step.announcedAt) return `Announced ${formatDate(step.announcedAt)} · close date not disclosed`
+    if (step.effectiveYear) return `Reported in ${step.effectiveYear} · exact date not disclosed`
+    return 'Effective date not disclosed'
 }
 
 export default App

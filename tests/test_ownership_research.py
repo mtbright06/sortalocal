@@ -32,7 +32,7 @@ class MatchingTests(unittest.TestCase):
 
 class ApprovalSafeguardTests(unittest.TestCase):
     def test_public_dataset_rejects_unknown_and_fictional_evidence(self):
-        base = {"schemaVersion": 1, "records": [{"businessId": "b", "classification": "unknown",
+        base = {"schemaVersion": 1, "records": [{"businessId": "b", "classification": "unknown", "approvalStatus": "approved",
                 "verifiedAt": "2026-01-01", "approvedAt": "2026-01-01", "approvedBy": "reviewer",
                 "evidence": [{"url": "https://example.com"}]}]}
         with self.assertRaises(ValueError):
@@ -41,6 +41,10 @@ class ApprovalSafeguardTests(unittest.TestCase):
         base["records"][0]["evidence"][0]["fictional"] = True
         with self.assertRaises(ValueError):
             research.validate_public(base)
+        base["records"][0]["evidence"][0].pop("fictional")
+        base["records"][0]["approvalStatus"] = "pending"
+        with self.assertRaisesRegex(ValueError, "explicitly approved"):
+            research.validate_public(base)
 
     def test_real_records_are_untouched_and_fictional_demo_names_do_not_match(self):
         listings = json.loads(research.LISTINGS.read_text(encoding="utf-8"))
@@ -48,7 +52,9 @@ class ApprovalSafeguardTests(unittest.TestCase):
         queue = research.generate_queue(listings, registry)
         self.assertEqual(queue["entries"], [])
         self.assertTrue(all(b["ownership"]["classification"] == "unknown" for b in listings["businesses"]))
-        self.assertEqual(json.loads(research.PUBLIC.read_text(encoding="utf-8"))["records"], [])
+        public_records = json.loads(research.PUBLIC.read_text(encoding="utf-8"))["records"]
+        self.assertEqual(len(public_records), 3)
+        self.assertTrue(all(record["approvalStatus"] == "approved" for record in public_records))
 
     def test_default_registry_is_real_and_empty_demo_queue_cannot_be_approved(self):
         registry = research.load_registry(research.DEFAULT_REGISTRY)
@@ -89,7 +95,7 @@ class ApprovalSafeguardTests(unittest.TestCase):
             self.assertEqual(results[business_id]["reviewStatus"], "pending")
             self.assertFalse(results[business_id]["ownershipAssigned"])
 
-    def test_registry_preserves_unknown_effective_dates_and_public_file(self):
+    def test_registry_preserves_unknown_effective_dates_and_public_approvals(self):
         registry = research.load_registry(research.DEFAULT_REGISTRY)
         relationships = {r["id"]: r for r in registry["relationships"]}
         self.assertIsNone(relationships["rel-sila-goldman-investment"]["effectiveAt"])
@@ -97,7 +103,12 @@ class ApprovalSafeguardTests(unittest.TestCase):
         self.assertIsNone(relationships["rel-norfolk-air-sila-acquisition"]["effectiveAt"])
         self.assertEqual(relationships["rel-comfort-solutions-paramount-acquisition"]["effectiveAt"], "2025-05-01")
         self.assertEqual(relationships["rel-paramount-stonebridge-investment"]["effectiveAt"], "2021-03-11")
-        self.assertEqual(json.loads(research.PUBLIC.read_text(encoding="utf-8")), {"schemaVersion": 1, "records": []})
+        records = json.loads(research.PUBLIC.read_text(encoding="utf-8"))["records"]
+        self.assertEqual({record["businessId"] for record in records}, {
+            "overture-af436b19-7ee9-48e7-ab77-b60f9a1d5dc5",
+            "overture-7b4285da-a044-49a3-931d-536e6a91fd7a",
+            "overture-1d558b21-e9e5-46f4-8a32-b90fd4a12415",
+        })
 
 
 if __name__ == "__main__":

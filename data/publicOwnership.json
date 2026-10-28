@@ -1,4 +1,71 @@
 {
   "schemaVersion": 1,
-  "records": []
+  "records": [
+    {
+      "businessId": "overture-af436b19-7ee9-48e7-ab77-b60f9a1d5dc5",
+      "entityId": "company-norfolk-air",
+      "classification": "private_equity_backed",
+      "approvalStatus": "approved",
+      "verifiedAt": "2026-10-27",
+      "approvedAt": "2026-10-27",
+      "approvedBy": "User-authorized manual review",
+      "matchConfidence": 0.95,
+      "matchReasons": [
+        "exact_normalized_name",
+        "website_domain",
+        "address",
+        "city"
+      ],
+      "evidence": [
+        {
+          "url": "https://silaservices.com/sila-services-expands-footprint-in-virginia-with-acquisitions-of-norfolk-air-heating-cooling-plumbing-electrical-and-guy-smith-heating-cooling/",
+          "description": "Sila announced the Norfolk Air acquisition; current Sila and Goldman sources support the PE-backed ownership chain."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-7b4285da-a044-49a3-931d-536e6a91fd7a",
+      "entityId": "company-guy-smith",
+      "classification": "private_equity_backed",
+      "approvalStatus": "approved",
+      "verifiedAt": "2026-10-27",
+      "approvedAt": "2026-10-27",
+      "approvedBy": "User-authorized manual review",
+      "matchConfidence": 0.95,
+      "matchReasons": [
+        "exact_normalized_name",
+        "website_domain",
+        "address",
+        "city"
+      ],
+      "evidence": [
+        {
+          "url": "https://silaservices.com/sila-services-expands-footprint-in-virginia-with-acquisitions-of-norfolk-air-heating-cooling-plumbing-electrical-and-guy-smith-heating-cooling/",
+          "description": "Sila announced the Guy Smith acquisition; current Sila and Goldman sources support the PE-backed ownership chain."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-1d558b21-e9e5-46f4-8a32-b90fd4a12415",
+      "entityId": "company-comfort-solutions-tidewater",
+      "classification": "private_equity_backed",
+      "approvalStatus": "approved",
+      "verifiedAt": "2026-10-27",
+      "approvedAt": "2026-10-27",
+      "approvedBy": "User-authorized manual review",
+      "matchConfidence": 0.95,
+      "matchReasons": [
+        "exact_normalized_name",
+        "website_domain",
+        "address",
+        "city"
+      ],
+      "evidence": [
+        {
+          "url": "https://stonebridgepartners.com/stonebridge-partners-announces-the-acquisition-of-comfort-solutions-by-paramount-mechanical-corporation/",
+          "description": "Stonebridge states Paramount acquired Comfort Solutions and was its portfolio company; current Stonebridge portfolio page confirms Paramount remains listed."
+        }
+      ]
+    }
+  ]
 }

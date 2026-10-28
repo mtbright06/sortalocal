@@ -106,6 +106,8 @@ def validate_public(data: dict) -> None:
         raise ValueError("Invalid public ownership dataset schema")
     seen = set()
     for rec in data["records"]:
+        if rec.get("approvalStatus") != "approved":
+            raise ValueError("Public ownership records must be explicitly approved")
         if rec.get("classification") not in CLASSES - {"unknown"}:
             raise ValueError("Public records require an explicitly approved non-unknown classification")
         if not rec.get("businessId") or rec["businessId"] in seen:
@@ -151,8 +153,9 @@ def cmd_approve(args):
         raise ValueError("Verification date cannot be in the future")
     public = load(PUBLIC)
     rec = {"businessId": args.business_id, "entityId": args.entity_id,
-           "classification": args.classification, "verifiedAt": args.verified_at,
+           "classification": args.classification, "approvalStatus": "approved", "verifiedAt": args.verified_at,
            "approvedAt": date.today().isoformat(), "approvedBy": args.approved_by,
+           "matchConfidence": candidate["confidence"], "matchReasons": candidate["matchReasons"],
            "evidence": [{"url": args.evidence_url, "description": args.evidence_note}]}
     existing = next((i for i, r in enumerate(public["records"]) if r["businessId"] == args.business_id), None)
     if existing is None:

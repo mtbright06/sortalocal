@@ -1,4 +1,6 @@
 import importedHvacData from './overtureHvacListings.json'
+import publicOwnershipData from '../data/publicOwnership.json'
+import ownershipRegistryData from '../data/realOwnershipRegistry.json'
 
 export type BusinessCategory = 'hvac' | 'dental' | 'veterinary' | 'automotive'
 export type OwnershipClassification = 'pe-backed' | 'independent' | 'corporate' | 'unknown'
@@ -6,6 +8,8 @@ export type OwnershipClassification = 'pe-backed' | 'independent' | 'corporate' 
 export interface OwnershipEvidence {
     source: string
     reference: string
+    url?: string
+    description?: string
 }
 
 export interface OwnershipRelationship {
@@ -14,12 +18,29 @@ export interface OwnershipRelationship {
     verifiedAt: string
 }
 
+export interface OwnershipChainStep {
+    fromEntity: string
+    toEntity: string
+    relationship: string
+    announcedAt: string | null
+    effectiveAt: string | null
+    effectiveYear?: number
+    verifiedAt: string
+    evidence: Array<{ url: string; description: string; verifiedAt: string }>
+}
+
 interface VerifiedOwnershipRecord {
     classification: Exclude<OwnershipClassification, 'unknown'>
     status: 'verified'
     verifiedAt: string
     relationships: OwnershipRelationship[]
     evidence: OwnershipEvidence[]
+    approvalStatus?: 'approved'
+    approvedAt?: string
+    approvedBy?: string
+    matchConfidence?: number
+    matchReasons?: string[]
+    ownershipChain?: OwnershipChainStep[]
 }
 
 export interface UnknownOwnershipRecord {
@@ -179,6 +200,92 @@ const demoBusinesses: Business[] = [
     },
 ]
 
-export const importedHvacBusinesses = importedHvacData.businesses as unknown as OvertureBusiness[]
+interface PublicOwnershipRecord {
+    businessId: string
+    entityId: string
+    classification: string
+    approvalStatus: string
+    verifiedAt: string
+    approvedAt: string
+    approvedBy: string
+    matchConfidence?: number
+    matchReasons?: string[]
+    evidence: Array<{ url: string; description: string }>
+}
+
+interface RegistryEntity { id: string; name: string }
+interface RegistryRelationship {
+    fromEntityId: string
+    toEntityId: string
+    type: string
+    announcedAt?: string | null
+    effectiveAt?: string | null
+    effectiveYear?: number
+    verifiedAt: string
+    evidence: Array<{ url: string; description: string; verifiedAt: string }>
+}
+
+const publicRecords = (publicOwnershipData as unknown as { records: PublicOwnershipRecord[] }).records
+const approvedPublicRecords = new Map(publicRecords
+    .filter((record) => record.approvalStatus === 'approved'
+        && record.classification === 'private_equity_backed'
+        && Boolean(record.verifiedAt && record.approvedAt && record.approvedBy)
+        && record.evidence.length > 0
+        && record.evidence.every((evidence) => evidence.url.startsWith('https://') && !evidence.url.includes('.invalid')))
+    .map((record) => [record.businessId, record]))
+const registryEntities = new Map((ownershipRegistryData as unknown as { entities: RegistryEntity[] }).entities.map((entity) => [entity.id, entity]))
+const registryRelationships = (ownershipRegistryData as unknown as { relationships: RegistryRelationship[] }).relationships
+
+function ownershipChain(entityId: string): OwnershipChainStep[] {
+    const steps: OwnershipChainStep[] = []
+    const visited = new Set([entityId])
+    let currentId = entityId
+    for (let depth = 0; depth < 4; depth += 1) {
+        const relationship = registryRelationships.find((item) => item.fromEntityId === currentId
+            && ['acquired_by', 'majority_investment_by', 'portfolio_company_of'].includes(item.type)
+            && !visited.has(item.toEntityId))
+        if (!relationship) break
+        const destination = registryEntities.get(relationship.toEntityId)
+        if (!destination) break
+        steps.push({
+            fromEntity: registryEntities.get(currentId)?.name ?? currentId,
+            toEntity: destination.name,
+            relationship: relationship.type,
+            announcedAt: relationship.announcedAt ?? null,
+            effectiveAt: relationship.effectiveAt ?? null,
+            effectiveYear: relationship.effectiveYear,
+            verifiedAt: relationship.verifiedAt,
+            evidence: relationship.evidence,
+        })
+        currentId = relationship.toEntityId
+        visited.add(currentId)
+    }
+    return steps
+}
+
+function publicOwnership(businessId: string): VerifiedOwnershipRecord | null {
+    const record = approvedPublicRecords.get(businessId)
+    if (!record) return null
+    const chain = ownershipChain(record.entityId)
+    if (chain.length === 0) return null
+    return {
+        classification: 'pe-backed',
+        status: 'verified',
+        verifiedAt: record.verifiedAt,
+        relationships: [],
+        evidence: record.evidence.map((item) => ({ source: item.description, reference: item.url, url: item.url, description: item.description })),
+        approvalStatus: 'approved',
+        approvedAt: record.approvedAt,
+        approvedBy: record.approvedBy,
+        matchConfidence: record.matchConfidence,
+        matchReasons: record.matchReasons,
+        ownershipChain: chain,
+    }
+}
+
+export const importedHvacBusinesses = (importedHvacData.businesses as unknown as OvertureBusiness[]).map((business) => ({
+    ...business,
+    ownership: publicOwnership(business.id) ?? unknownOwnership,
+}))
 export const importSummary = importedHvacData.summary
 export const businesses: Business[] = [...importedHvacBusinesses, ...demoBusinesses]
