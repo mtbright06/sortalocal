@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -43,11 +44,30 @@ class ApprovalSafeguardTests(unittest.TestCase):
 
     def test_real_records_are_untouched_and_fictional_demo_names_do_not_match(self):
         listings = json.loads(research.LISTINGS.read_text(encoding="utf-8"))
-        registry = json.loads(research.REGISTRY.read_text(encoding="utf-8"))
+        registry = research.load_registry(research.ROOT / "data" / "ownershipRegistry.json")
         queue = research.generate_queue(listings, registry)
         self.assertEqual(queue["entries"], [])
         self.assertTrue(all(b["ownership"]["classification"] == "unknown" for b in listings["businesses"]))
         self.assertEqual(json.loads(research.PUBLIC.read_text(encoding="utf-8"))["records"], [])
+
+    def test_default_registry_is_real_and_empty_demo_queue_cannot_be_approved(self):
+        registry = research.load_registry(research.DEFAULT_REGISTRY)
+        self.assertEqual(registry["dataStatus"], "real_research")
+        self.assertEqual(registry["entities"], [])
+        with self.assertRaisesRegex(ValueError, "fictional demo"):
+            research.require_approvable_queue({"registryDataStatus": "fictional_demo_only"})
+
+    def test_registry_option_loads_selected_file(self):
+        demo = research.load_registry(research.ROOT / "data" / "ownershipRegistry.json")
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "registry.json"
+            path.write_text(json.dumps(demo), encoding="utf-8")
+            selected = research.load_registry(path)
+            self.assertEqual(selected["dataStatus"], "fictional_demo_only")
+            queue = research.generate_queue({"businesses": []}, selected)
+            queue["registryDataStatus"] = selected["dataStatus"]
+            with self.assertRaisesRegex(ValueError, "fictional demo"):
+                research.require_approvable_queue(queue)
 
 
 if __name__ == "__main__":

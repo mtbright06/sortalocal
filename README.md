@@ -29,11 +29,13 @@ The seven-city HVAC extent also includes Virginia Beach, Hampton, and Newport Ne
 
 Ownership research data is isolated in `data/`. `ownershipRegistry.json` contains clearly fictional demo entities and placeholder evidence; it must not be used to classify Overture businesses. `publicOwnership.json` starts empty and is not consumed by the frontend. Candidate matches never update source listings or assign ownership.
 
-Generate a local review queue with:
+Generate a local review queue using the empty, real research registry by default:
 
 ```sh
 python scripts/ownership_research.py match
 ```
+
+Select another registry with `python scripts/ownership_research.py match --registry data/realOwnershipRegistry.json`. The fictional examples remain in `data/ownershipRegistry.json`; queues generated from any registry marked `fictional_demo_only` are review-only and the approval command refuses to publish them. New real records belong in `data/realOwnershipRegistry.json` and must carry `dataStatus: "real_research"`.
 
 Review `data/ownershipResearchQueue.json`, then explicitly approve a verified candidate by providing its business/entity IDs, a non-unknown classification, a real HTTPS evidence URL, a verification date, and reviewer name:
 

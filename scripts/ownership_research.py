@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 LISTINGS = ROOT / "src" / "overtureHvacListings.json"
-REGISTRY = ROOT / "data" / "ownershipRegistry.json"
+DEFAULT_REGISTRY = ROOT / "data" / "realOwnershipRegistry.json"
 QUEUE = ROOT / "data" / "ownershipResearchQueue.json"
 PUBLIC = ROOT / "data" / "publicOwnership.json"
 CLASSES = {"independent", "private_equity_backed", "public_company", "subsidiary", "unknown"}
@@ -22,6 +22,15 @@ CLASSES = {"independent", "private_equity_backed", "public_company", "subsidiary
 def load(path: Path):
     with path.open(encoding="utf-8") as f:
         return json.load(f)
+
+
+def load_registry(path: Path) -> dict:
+    registry = load(path)
+    if registry.get("schemaVersion") != 1 or not isinstance(registry.get("entities"), list):
+        raise ValueError("Invalid ownership registry schema")
+    if registry.get("dataStatus") not in {"real_research", "fictional_demo_only"}:
+        raise ValueError("Registry must explicitly declare dataStatus")
+    return registry
 
 
 def norm(value: str | None) -> str:
@@ -110,14 +119,24 @@ def validate_public(data: dict) -> None:
             raise ValueError("Fictional evidence cannot enter the public dataset")
 
 
-def cmd_match(_args):
-    queue = generate_queue(load(LISTINGS), load(REGISTRY))
+def require_approvable_queue(queue: dict) -> None:
+    if queue.get("registryDataStatus") != "real_research":
+        raise ValueError("Approval is disabled for queues generated from fictional demo registries")
+
+
+def cmd_match(args):
+    registry_path = args.registry.resolve()
+    registry = load_registry(registry_path)
+    queue = generate_queue(load(LISTINGS), registry)
+    queue["registryPath"] = str(registry_path)
+    queue["registryDataStatus"] = registry["dataStatus"]
     QUEUE.write_text(json.dumps(queue, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {len(queue['entries'])} candidate businesses to {QUEUE.relative_to(ROOT)}")
 
 
 def cmd_approve(args):
     queue = load(QUEUE)
+    require_approvable_queue(queue)
     entry = next((e for e in queue["entries"] if e["businessId"] == args.business_id), None)
     if not entry:
         raise ValueError("Business ID is not in the current research queue")
@@ -152,6 +171,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(required=True)
     match = sub.add_parser("match", help="Generate candidate queue from current Overture listings")
+    match.add_argument("--registry", type=Path, default=DEFAULT_REGISTRY,
+                       help="Registry JSON path (default: real research registry; demo registry queues cannot be approved)")
     match.set_defaults(func=cmd_match)
     approve = sub.add_parser("approve", help="Manually verify and publish an ownership classification")
     approve.add_argument("business_id")
