@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react'
+import { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from 'react'
 import * as maplibregl from 'maplibre-gl'
 import type { Marker } from 'maplibre-gl'
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
@@ -7,6 +7,13 @@ import {
     BadgeCheck,
     Building2,
     CircleHelp,
+    ChevronRight,
+    Globe,
+    Phone,
+    Navigation,
+    FileText,
+    Info,
+    Star,
     ChevronDown,
     LocateFixed,
     MapPin,
@@ -22,6 +29,7 @@ import {
     ownershipLabels,
     type Business,
     type BusinessCategory,
+    type OwnershipChainStep,
     type OwnershipClassification,
 } from './businesses'
 import { distanceMiles, supportedZipCentroids, type SearchCenter, zipCentroidSource } from './location'
@@ -51,7 +59,10 @@ function App() {
     const mapContainer = useRef<HTMLDivElement>(null)
     const map = useRef<maplibregl.Map | null>(null)
     const markers = useRef<Marker[]>([])
-    const businessRows = useRef(new Map<string, HTMLButtonElement>())
+    const [viewMode, setViewMode] = useState<'directory' | 'map'>('directory')
+    const [filtersOpen, setFiltersOpen] = useState(() => window.matchMedia('(min-width: 1024px)').matches)
+    const [verifiedOnly, setVerifiedOnly] = useState(false)
+    const [completeOnly, setCompleteOnly] = useState(false)
     const [activeCategory, setActiveCategory] = useState<BusinessCategory>('hvac')
     const [activeOwnership, setActiveOwnership] = useState<OwnershipClassification[]>(ownershipTypes)
     const [sortMode, setSortMode] = useState<'nearest' | 'alphabetical' | 'ownership'>('nearest')
@@ -65,7 +76,7 @@ function App() {
     const [mapUnavailable, setMapUnavailable] = useState<string | null>(null)
     const [mapInitialized, setMapInitialized] = useState(false)
 
-    const visibleRows = businesses.map((business) => ({
+    const visibleRows = useMemo(() => businesses.map((business) => ({
         business,
         distance: distanceMiles(searchCenter, business),
     })).filter(({ business, distance }) => {
@@ -73,7 +84,7 @@ function App() {
         const matchesOwnership = activeOwnership.includes(business.ownership.classification)
         const searchText = `${business.name} ${business.city} ${business.neighborhood ?? ''}`.toLowerCase()
         const matchesRadius = radius === 'all' || distance <= radius
-        return matchesCategory && matchesOwnership && matchesRadius && searchText.includes(search.trim().toLowerCase())
+        return matchesCategory && matchesOwnership && matchesRadius && (!verifiedOnly || business.ownership.status === 'verified') && (!completeOnly || !business.incompleteFields?.length) && searchText.includes(search.trim().toLowerCase())
     }).sort((left, right) => {
         if (sortMode === 'nearest') return left.distance - right.distance || left.business.name.localeCompare(right.business.name)
         if (sortMode === 'ownership') {
@@ -81,8 +92,8 @@ function App() {
             if (ownershipDifference !== 0) return ownershipDifference
         }
         return left.business.name.localeCompare(right.business.name)
-    })
-    const visibleBusinesses = visibleRows.map(({ business }) => business)
+    }), [searchCenter, radius, activeCategory, activeOwnership, search, verifiedOnly, completeOnly, sortMode])
+    const visibleBusinesses = useMemo(() => visibleRows.map(({ business }) => business), [visibleRows])
     const visibleBusinessKey = visibleBusinesses.map((business) => business.id).join('|')
 
     const submitZip = (event: FormEvent<HTMLFormElement>) => {
@@ -161,20 +172,27 @@ function App() {
         markers.current = visibleBusinesses.map((business) => {
             const markerElement = document.createElement('button')
             markerElement.type = 'button'
+            markerElement.dataset.businessId = business.id
             const verifiedPe = business.dataSource === 'overture' && business.ownership.classification === 'pe-backed'
-            markerElement.className = `map-marker map-marker--${business.category}${verifiedPe ? ' map-marker--verified-pe' : ''}${selectedBusiness?.id === business.id ? ' is-selected' : ''}`
+            markerElement.className = `map-marker map-marker--${business.category}${verifiedPe ? ' map-marker--verified-pe' : ''}`
             markerElement.setAttribute('aria-label', `Open ${business.name}`)
             markerElement.title = business.name
             markerElement.addEventListener('click', () => {
                 setSelectedBusiness(business)
-                map.current?.flyTo({ center: [business.longitude, business.latitude], zoom: 11.5, duration: 650 })
             })
 
             return new maplibregl.Marker({ element: markerElement, anchor: 'center' })
                 .setLngLat([business.longitude, business.latitude])
                 .addTo(map.current!)
         })
-    }, [visibleBusinesses, selectedBusiness, mapInitialized])
+    }, [visibleBusinesses, mapInitialized])
+
+    useEffect(() => {
+        markers.current.forEach(marker => {
+            const element = marker.getElement()
+            element.classList.toggle('is-selected', element.dataset.businessId === selectedBusiness?.id)
+        })
+    }, [selectedBusiness, visibleBusinesses])
 
     useEffect(() => {
         if (!map.current || !mapInitialized) return
@@ -197,10 +215,11 @@ function App() {
     }, [searchCenter, radius, mapInitialized, visibleBusinessKey])
 
     useEffect(() => {
-        if (selectedBusiness) {
-            businessRows.current.get(selectedBusiness.id)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
-        }
-    }, [selectedBusiness])
+        if (!mapContainer.current || !map.current) return
+        const observer = new ResizeObserver(() => map.current?.resize())
+        observer.observe(mapContainer.current)
+        return () => observer.disconnect()
+    }, [mapInitialized])
 
     const toggleOwnership = (classification: OwnershipClassification) => {
         setActiveOwnership((current) => current.includes(classification)
@@ -211,28 +230,12 @@ function App() {
 
     const chooseBusiness = (business: Business) => {
         setSelectedBusiness(business)
-        map.current?.flyTo({ center: [business.longitude, business.latitude], zoom: 11.5, duration: 650 })
     }
 
     return (
-        <div className="app-shell">
-            <header className="topbar">
-                <a className="brand" href="#home" aria-label="Sorta Local home">
-                    <span className="brand-mark"><MapPin size={19} strokeWidth={2.2} /></span>
-                    <span>sorta<span className="brand-light">local</span></span>
-                </a>
-                <div className="topbar-place"><span className="place-dot" /> HAMPTON ROADS, VA</div>
-                <div className="demo-label"><span /> OVERTURE + DEMO DATA</div>
-            </header>
-
-            <main className="workspace" id="home">
-                <aside className="explorer" aria-label="Business directory filters">
-                    <div className="explorer-heading">
-                        <p className="eyebrow">A local-first guide</p>
-                        <h1>Good work,<br /><em>close to home.</em></h1>
-                        <p className="intro-copy">Find the people who keep Hampton Roads running.</p>
-                    </div>
-
+        <div className={`app-shell view-${viewMode}${filtersOpen ? ' filters-open' : ''}`}>
+            <header className="command-bar">
+                    <a className="brand" href="#home"><span className="brand-mark"><MapPin size={24} /></span><span className="brand-copy"><span className="brand-wordmark">sorta<span className="brand-light">local</span></span><span className="brand-tagline">Good work, close to home.</span></span></a>
                     <label className="search-box">
                         <Search size={16} aria-hidden="true" />
                         <input
@@ -246,9 +249,13 @@ function App() {
                             aria-label="Search businesses or cities"
                         />
                         {search && <button type="button" className="clear-search" aria-label="Clear search" onClick={() => setSearch('')}><X size={14} /></button>}
+                        <button type="button" className="current-location-action" onClick={useMyLocation} disabled={isLocating} aria-label={isLocating ? 'Finding your current location' : 'Use my current location'} title="Use my current location"><LocateFixed size={17} /><span>{isLocating ? 'Locating…' : 'Near me'}</span></button>
                     </label>
 
-                    <section className="location-controls" aria-label="Location and search radius">
+                <details className="location-picker">
+                    <summary aria-label={`Search location: ${searchCenter.label}`}><MapPin size={17} /><span>{searchCenter.label}</span><ChevronDown size={15} /></summary>
+                    <div className="location-popover"><h2>Search location</h2>
+                    <section className="location-controls" aria-label="Search location">
                         <form className="zip-form" onSubmit={submitZip}>
                             <label className="sr-only" htmlFor="zip-search">ZIP code</label>
                             <input
@@ -263,73 +270,81 @@ function App() {
                             />
                             <button type="submit" className="zip-submit">Set</button>
                         </form>
-                        <label className="radius-control">
-                            <span>Within</span>
-                            <select
-                                value={radius}
-                                aria-label="Search radius"
-                                onChange={(event) => {
-                                    const nextRadius = event.target.value === 'all' ? 'all' : Number(event.target.value) as SearchRadius
-                                    setRadius(nextRadius)
-                                    setSelectedBusiness(null)
-                                }}
-                            >
-                                {radiusOptions.map((option) => <option value={option} key={option}>{option} miles</option>)}
-                                <option value="all">All Hampton Roads</option>
-                            </select>
-                        </label>
                         <button type="button" className="geolocation-button" onClick={useMyLocation} disabled={isLocating}>
                             <LocateFixed size={15} /> {isLocating ? 'Locating' : 'Use My Location'}
                         </button>
                     </section>
-                    <div className="location-status" aria-live="polite">
-                        <span>{searchCenter.label}</span>
-                        <span>{radius === 'all' ? 'All Hampton Roads' : `${radius} mi`}</span>
-                        <strong>{visibleBusinesses.length} matches</strong>
+
+                    <p>Enter a Hampton Roads ZIP code or use your current location.</p></div>
+                </details>
+                    <div className="view-switch" aria-label="Display mode">
+                        <button aria-pressed={viewMode === 'directory'} onClick={() => setViewMode('directory')}>Directory</button>
+                        <button aria-pressed={viewMode === 'map'} onClick={() => setViewMode('map')}>Map</button>
                     </div>
-                    <div className="location-attribution">ZIP centroids: <a href="https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html" target="_blank" rel="noreferrer">{zipCentroidSource}</a></div>
-                    {locationMessage && <p className="location-message" role="status">{locationMessage}</p>}
-
-                    <section className="filter-section" aria-labelledby="category-heading">
-                        <div className="section-label"><SlidersHorizontal size={14} /><h2 id="category-heading">What do you need?</h2></div>
-                        <div className="category-filters" role="radiogroup" aria-labelledby="category-heading">
-                            {categories.map((category) => (
-                                <button
-                                    type="button"
-                                    role="radio"
-                                    key={category}
-                                    className={`category-filter${activeCategory === category ? ' is-active' : ''}`}
-                                    aria-checked={activeCategory === category}
-                                    tabIndex={activeCategory === category ? 0 : -1}
-                                    onClick={() => {
-                                        setActiveCategory(category)
-                                        setSelectedBusiness(null)
-                                    }}
-                                >
-                                    {categoryLabels[category]}
-                                </button>
-                            ))}
-                        </div>
+                    <button className="filter-toggle" aria-label="Additional filters" aria-expanded={filtersOpen} aria-controls="extra-filters" onClick={() => setFiltersOpen(!filtersOpen)}><SlidersHorizontal size={16} /><span className="filter-toggle-label">Filters</span>{(verifiedOnly || completeOnly) && ' •'}</button>
+                {locationMessage && <p className="location-message" role="status">{locationMessage}</p>}
+            </header>
+            <main className="workspace" id="home">
+                <aside className="filter-panel" id="extra-filters" aria-label="Additional filters" hidden={!filtersOpen}>
+                    <div className="panel-title"><h2>Refine results</h2><button className="clear-all" onClick={() => { setActiveOwnership(ownershipTypes); setActiveCategory('hvac'); setRadius(15); setVerifiedOnly(false); setCompleteOnly(false); setSearch(''); setSelectedBusiness(null) }}>Clear all</button></div>
+                    <section className="filter-group distance-group" aria-labelledby="distance-heading">
+                        <div className="filter-group-heading"><h3 id="distance-heading"><LocateFixed size={17} /> Distance</h3><strong>{radius === 'all' ? 'All areas' : `${radius} miles`}</strong></div>
+                        <input className="distance-slider" type="range" min="0" max={radiusOptions.length} step="1" value={radius === 'all' ? radiusOptions.length : radiusOptions.indexOf(radius)} aria-label="Search radius" aria-valuetext={radius === 'all' ? 'All Hampton Roads' : `${radius} miles`} onChange={event => { const index = Number(event.target.value); setRadius(index === radiusOptions.length ? 'all' : radiusOptions[index]); setSelectedBusiness(null) }} />
+                        <div className="distance-ticks" aria-hidden="true">{[...radiusOptions.map(value => `${value}`), 'All'].map(label => <span key={label}>{label}</span>)}</div>
                     </section>
-
-                    <section className="filter-section ownership-section" aria-labelledby="ownership-heading">
-                        <div className="section-label"><ShieldCheck size={14} /><h2 id="ownership-heading">Ownership</h2></div>
+                    <details className="filter-group" open>
+                        <summary><ShieldCheck size={17} /> Ownership <ChevronDown size={15} /></summary>
                         <div className="ownership-filters">
-                            {ownershipTypes.map((classification) => (
-                                <label className="ownership-option" key={classification}>
-                                    <input
-                                        type="checkbox"
-                                        checked={activeOwnership.includes(classification)}
-                                        onChange={() => toggleOwnership(classification)}
-                                    />
-                                    <span className={`ownership-dot ownership-dot--${classification}`} />
-                                    <span>{ownershipLabels[classification]}</span>
-                                    <span className="ownership-count">{businesses.filter((business) => business.ownership.classification === classification).length}</span>
-                                </label>
-                            ))}
+                            {ownershipTypes.map(classification => <label className="ownership-option" key={classification}>
+                                <input type="checkbox" checked={activeOwnership.includes(classification)} onChange={() => toggleOwnership(classification)} />
+                                <span className={`ownership-dot ownership-dot--${classification}`} />
+                                <span>{ownershipLabels[classification]}</span>
+                                <span className="ownership-count">{businesses.filter(business => business.category === activeCategory && business.ownership.classification === classification).length}</span>
+                            </label>)}
                         </div>
-                    </section>
-
+                        <p className="filter-count-note">Totals for {categoryLabels[activeCategory]} across all areas.</p>
+                    </details>
+                    <details className="filter-group" open>
+                        <summary><Building2 size={17} /> Industry <ChevronDown size={15} /></summary>
+                        <div className="industry-options">
+                            {categories.map(category => <label key={category} className={`industry-option${activeCategory === category ? ' is-active' : ''}`}>
+                                <input type="radio" name="industry" checked={activeCategory === category} onChange={() => { setActiveCategory(category); setSelectedBusiness(null) }} />
+                                <span>{categoryLabels[category]}</span><span className="ownership-count">{businesses.filter(business => business.category === category).length}</span>
+                            </label>)}
+                        </div>
+                    </details>
+                    <details className="filter-group additional-options">
+                        <summary><SlidersHorizontal size={17} /> More filters <ChevronDown size={15} /></summary>
+                        <label className="refine-option"><input type="checkbox" checked={verifiedOnly} onChange={event => setVerifiedOnly(event.target.checked)} /> Verified ownership records only</label>
+                        <label className="refine-option"><input type="checkbox" checked={completeOnly} onChange={event => setCompleteOnly(event.target.checked)} /> Hide incomplete listings</label>
+                        <p className="filter-note">Verified records in demo industries are fictional. Unknown ownership is never treated as verified.</p>
+                    </details>
+                    <details className="data-note"><summary>About this data</summary><p>HVAC listings come from Overture Maps. Dental, veterinary, and auto businesses are fictional demos.</p><p>Ownership is shown only as supported by the record’s evidence.</p>
+                    <p>ZIP centroids: <a href="https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html" target="_blank" rel="noreferrer">{zipCentroidSource}</a></p>
+                    {activeCategory === 'hvac' && <p>{importSummary.importedRecords} imported HVAC records; {importSummary.incompleteRecords} incomplete.</p>}</details>
+                </aside>
+                <section className="map-stage" aria-label="Hampton Roads business map">
+                    <div className="map-canvas" ref={mapContainer} />
+                    <div className="map-heading" aria-live="polite">
+                        <strong className="map-result-total">{visibleBusinesses.length} businesses</strong>
+                        {ownershipTypes.map(classification => {
+                            const count = visibleBusinesses.filter(business => business.ownership.classification === classification).length
+                            return count > 0 ? <span className="map-summary-row" key={classification}><span className={`ownership-dot ownership-dot--${classification}`} />{count} {ownershipLabels[classification]}</span> : null
+                        })}
+                    </div>
+                    <button
+                        type="button"
+                        className="locate-button"
+                        aria-label="Center map on the active search location"
+                        title="Center map on search location"
+                        onClick={() => map.current?.flyTo({ center: [searchCenter.longitude, searchCenter.latitude], zoom: 10.1, duration: 650 })}
+                    >
+                        <LocateFixed size={17} />
+                    </button>
+                    {mapUnavailable && <div className="map-message">The interactive map is unavailable: {mapUnavailable}</div>}
+                    <div className="map-demo-stamp">OVERTURE + DEMO DATA</div>
+                </section>
+                <aside className="directory-panel" aria-label="Business directory">
                     <section className="results-section" aria-labelledby="results-heading">
                         <div className="results-heading">
                             <h2 id="results-heading">Businesses <span>{visibleBusinesses.length}</span></h2>
@@ -350,85 +365,37 @@ function App() {
                                     selected={selectedBusiness?.id === business.id}
                                     onSelect={() => chooseBusiness(business)}
                                     distance={distance}
-                                    rowRef={(element) => {
-                                        if (element) businessRows.current.set(business.id, element)
-                                        else businessRows.current.delete(business.id)
-                                    }}
                                 />
                             ))}
                             {visibleBusinesses.length === 0 && <p className="empty-results">No matches. Try widening your filters.</p>}
                         </div>
                     </section>
-                    {activeCategory === 'hvac' && (
-                        <div className="import-summary" aria-label="Overture import summary">
-                            <span><strong>{importSummary.importedRecords}</strong> imported</span>
-                            <span><strong>{importSummary.excludedOutsideTargetCities}</strong> outside cities</span>
-                            <span><strong>{importSummary.excludedKnownFalsePositives.length}</strong> excluded</span>
-                            <span><strong>{importSummary.incompleteRecords}</strong> incomplete</span>
-                            <details className="exclusion-notes">
-                                <summary>Exclusion notes</summary>
-                                <ul>
-                                    <li>{importSummary.excludedOutsideTargetCities} HVAC taxonomy records were outside the four target city boundaries.</li>
-                                    {importSummary.excludedKnownFalsePositives.map((record: { sourceId: string; reason: string }) => (
-                                        <li key={record.sourceId}>{record.reason}</li>
-                                    ))}
-                                </ul>
-                            </details>
-                        </div>
-                    )}
-                    <div className="sidebar-footnote"><CircleHelp size={13} /> Dental, veterinary, and auto listings are fictional demo data.</div>
-                </aside>
 
-                <section className="map-stage" aria-label="Hampton Roads business map">
-                    <div className="map-canvas" ref={mapContainer} />
-                    <div className="map-heading">
-                        <span className="map-kicker">THE 757, LOCALLY</span>
-                        <span className="map-count">{visibleBusinesses.length} places on the map</span>
-                    </div>
-                    {visibleBusinesses.some((business) => business.dataSource === 'overture' && business.ownership.classification === 'pe-backed') && (
-                        <div className="map-legend" aria-label="Map marker legend">
-                            <span className="map-legend-marker" />
-                            <span>Verified PE-backed</span>
-                        </div>
-                    )}
-                    <button
-                        type="button"
-                        className="locate-button"
-                        aria-label="Center map on the active search location"
-                        title="Center map on search location"
-                        onClick={() => map.current?.flyTo({ center: [searchCenter.longitude, searchCenter.latitude], zoom: 10.1, duration: 650 })}
-                    >
-                        <LocateFixed size={17} />
-                    </button>
-                    {mapUnavailable && <div className="map-message">The interactive map is unavailable: {mapUnavailable}</div>}
-                    {selectedBusiness && <BusinessDetail business={selectedBusiness} onClose={() => setSelectedBusiness(null)} />}
-                    <div className="map-demo-stamp">OVERTURE + DEMO DATA</div>
-                </section>
+                </aside>
             </main>
+            {selectedBusiness && <BusinessDetail business={selectedBusiness} onClose={() => setSelectedBusiness(null)} />}
         </div>
     )
 }
 
-function BusinessRow({ business, selected, onSelect, rowRef, distance }: { business: Business; selected: boolean; onSelect: () => void; rowRef: (element: HTMLButtonElement | null) => void; distance: number }) {
-    const verified = business.ownership.status === 'verified'
+function BusinessRow({ business, selected, onSelect, distance }: { business: Business; selected: boolean; onSelect: () => void; distance: number }) {
     const isOverture = business.dataSource === 'overture'
 
     return (
-        <button ref={rowRef} type="button" className={`business-row${selected ? ' is-selected' : ''}`} aria-pressed={selected} onClick={onSelect}>
-            <span className={`business-symbol business-symbol--${business.category}`}><MapPin size={15} /></span>
+        <button type="button" className={`business-row${selected ? ' is-selected' : ''}`} aria-pressed={selected} onClick={onSelect}>
+            <span className={`business-symbol business-symbol--${business.category}`} aria-hidden="true">{business.name.split(/\s+/).slice(0, 2).map(word => word[0]).join('').toUpperCase()}</span>
             <span className="business-row-copy">
                 <span className="business-row-name">{business.name}</span>
                 <span className="business-row-meta">
-                    {business.neighborhood ? `${business.neighborhood} · ` : ''}{business.city} · {categoryLabels[business.category]} · {distance.toFixed(1)} mi
-                    <span className={`record-source record-source--${isOverture ? 'overture' : 'demo'}`}>{isOverture ? 'OVERTURE' : 'DEMO'}</span>
+                    {business.city}, VA <span className="distance-separator">·</span> {distance.toFixed(1)} mi <span className="distance-separator">·</span> {categoryLabels[business.category]}
+                    {!isOverture && <span className="record-source record-source--demo">DEMO</span>}
                     {isOverture && business.incompleteFields && business.incompleteFields.length > 0 && (
                         <span className="incomplete-flag" title={`Missing ${business.incompleteFields.join(', ')}`}>INCOMPLETE</span>
                     )}
                 </span>
+                <OwnershipBadge business={business} compact />
             </span>
-            <span className={`row-verification${verified ? ' is-verified' : ''}`} aria-label={verified ? (isOverture ? 'Ownership verified from approved sources' : 'Fictional demo ownership record') : 'Ownership unknown'}>
-                {verified ? <BadgeCheck size={15} /> : <CircleHelp size={15} />}
-            </span>
+            <ChevronRight className="business-row-arrow" size={17} aria-hidden="true" />
         </button>
     )
 }
@@ -437,110 +404,156 @@ function BusinessDetail({ business, onClose }: { business: Business; onClose: ()
     const ownership = business.ownership
     const isVerified = ownership.status === 'verified'
     const isOverture = business.dataSource === 'overture'
+    const events = [...(ownership.status === 'verified' ? ownership.ownershipChain ?? [] : [])]
+        .filter(step => step.relationship !== 'portfolio_company_of')
+        .sort((a, b) => ownershipEventDate(a).localeCompare(ownershipEventDate(b)))
+    const evidenceCount = isVerified ? new Set([
+        ...(ownership.ownershipChain ?? []).flatMap(step => step.evidence.map(evidence => evidence.url)),
+        ...ownership.evidence.map(evidence => evidence.url ?? evidence.reference),
+    ]).size : 0
+    const dialog = useRef<HTMLDialogElement>(null)
+    const returnFocus = useRef<HTMLElement | null>(null)
+
+    useEffect(() => {
+        returnFocus.current ??= document.activeElement as HTMLElement | null
+        dialog.current?.showModal()
+        return () => { returnFocus.current?.focus({ preventScroll: true }) }
+    }, [])
 
     return (
-        <article className="detail-panel" aria-labelledby="detail-title">
-            <div className="detail-topline">
-                <span className={`detail-demo-tag${isOverture ? ' detail-source-tag' : ''}`}><span /> {isOverture ? 'OVERTURE LISTING' : 'FICTIONAL DEMO'}</span>
-                <button type="button" className="icon-button close-detail" onClick={onClose} aria-label="Close business details"><X size={18} /></button>
-            </div>
-            <div className="detail-heading">
-                <span className={`detail-symbol detail-symbol--${business.category}`}><MapPin size={19} /></span>
-                <div>
-                    <p className="detail-category">{categoryLabels[business.category]} <span>·</span> {business.neighborhood ?? business.city}</p>
+        <dialog ref={dialog} className="detail-dialog" aria-labelledby="detail-title"
+            onCancel={event => { event.preventDefault(); onClose() }}
+            onClick={event => { if (event.target === event.currentTarget) onClose() }}>
+            <article className={`detail-panel ${isVerified ? 'profile-verified' : 'profile-unverified'}`}>
+                <button type="button" className="icon-button close-detail" onClick={onClose} aria-label="Close business details"><X size={20} /></button>
+                <header className="profile-header">
+                    <p className="detail-category">{categoryLabels[business.category]} · {business.city}, VA{!isOverture && <span className="profile-demo-label">Fictional demo</span>}</p>
                     <h2 id="detail-title">{business.name}</h2>
-                </div>
-            </div>
-            <p className="detail-description">{business.description ?? (isOverture ? 'HVAC service listing from Overture Maps.' : '')}</p>
-            <div className="detail-location">
-                <span>{business.address || (isOverture ? 'Address not available in this listing' : '')}</span>
-                <span>{business.city}, VA</span>
-            </div>
+                    <OwnershipBadge business={business} />
+                    {business.description && <p className="detail-description">{business.description}</p>}
+                    <div className="profile-address"><MapPin size={16} /><span>{business.address ? `${business.address}, ${business.city}, VA` : `Street address unavailable · ${business.city}, VA`}</span></div>
+                    <ContactActions business={business} />
+                </header>
+                <div className="profile-body" tabIndex={0} aria-label="Business profile information">
+                    {isVerified ? <>
+                        <section className="ownership-card" aria-labelledby="chain-heading">
+                            <h3 id="chain-heading"><Building2 size={20} /> {ownership.ownershipChain?.length ? 'Ownership chain' : 'Ownership record'}</h3>
+                            <OwnershipChain business={business} />
+                        </section>
+                        {events.length > 0 && <section className="acquisition-summary" aria-labelledby="acquisition-heading">
+                            <h3 id="acquisition-heading"><FileText size={18} /> Acquisition timeline</h3>
+                            <ol className="acquisition-timeline">
+                                {events.map((step, index) => <li key={`${step.fromEntity}-${step.relationship}-${index}`}>
+                                    <span className="event-date">{ownershipRelationshipDate(step)}</span>
+                                    <div>
+                                        <span className="relationship-label">{ownershipRelationshipLabel(step.relationship)}</span>
+                                        <strong className="event-title"><span className="event-role">{step.relationship === 'majority_investment_by' ? 'Investor' : step.relationship === 'acquired_by' ? 'Buyer' : 'Related entity'}: </span>{step.toEntity}</strong>
+                                        <span className="event-company">Company: {step.fromEntity}</span>
+                                    </div>
+                                </li>)}
+                            </ol>
+                        </section>}
+                        {(ownership.evidence.length > 0 || ownership.ownershipChain?.length) ? <section className="profile-sources" aria-labelledby="sources-heading">
+                            <h3 id="sources-heading"><FileText size={18} /> Sources{evidenceCount > 0 && <span className="profile-section-meta">{evidenceCount} {evidenceCount === 1 ? 'source' : 'sources'}</span>}</h3>
+                            {events.length > 0 && <p className="ownership-caveat">Timeline runs earliest to latest by recorded completion date, announcement date, or reported year. An announcement does not confirm a closing date.</p>}
+                            {ownership.ownershipChain?.map((step, index) => <div className="relationship" key={`${step.fromEntity}-${step.relationship}-${index}`}>
+                                <strong>{step.fromEntity} → {step.toEntity}</strong>
+                                <span className="relationship-label">{ownershipRelationshipLabel(step.relationship)} · {step.relationship === 'portfolio_company_of' ? `verified ${formatDate(step.verifiedAt)}` : ownershipRelationshipDate(step)}</span>
+                                {step.evidence.map(evidence => <a className="ownership-source-link" href={evidence.url} target="_blank" rel="noreferrer" key={evidence.url}>{evidence.description}<ArrowUpRight size={13} /></a>)}
+                            </div>)}
+                            {ownership.evidence.map(evidence => <div className="evidence-row" key={evidence.reference}>{evidence.url ? <a href={evidence.url} target="_blank" rel="noreferrer">{evidence.description ?? evidence.source}</a> : <><span>{evidence.source}</span><span>{evidence.reference}</span></>}</div>)}
+                        </section> : null}
+                        <ProfileSection title="Verification details" icon={<ShieldCheck size={17} />}>
+                            <p>{isOverture ? 'Ownership verified' : 'Fictional demo verification'} {formatDate(ownership.verifiedAt)}</p>
+                            {isOverture && ownership.approvalStatus === 'approved' && <div className="match-confidence">
+                                <strong>Business identity match: {Math.round((ownership.matchConfidence ?? 0) * 100)}%</strong>
+                                <p>Based on listing name, domain, and location. Identity matching is separate from ownership verification, which relies on the linked evidence.</p>
+                                {ownership.matchReasons?.length ? <ul>{ownership.matchReasons.map(reason => <li key={reason}>{reason}</li>)}</ul> : null}
+                            </div>}
+                            {isOverture && <p>Current investor relationships were checked on the verification date. Transaction dates follow the original source statements.</p>}
+                        </ProfileSection>
+                    </> : <section className="unknown-explanation"><Info size={19} /><div><h3>Ownership information</h3><p>We haven’t confirmed this business’s ownership from reviewed sources. This does not establish whether it is independent, corporate-owned, or PE-backed.</p></div></section>}
+                    <ProfileSection title="About this data" icon={<Info size={17} />}>
+                        {isOverture ? <div className="source-record">
+                            <a href="https://overturemaps.org/" target="_blank" rel="noreferrer">Listing from Overture Maps <ArrowUpRight size={12} /></a>
+                            <span>Place ID: {business.sourceId}</span>
+                            {business.sourceDataset && <span>Provider dataset: {business.sourceDataset}{business.sourceRecordId ? ` / ${business.sourceRecordId}` : ''}</span>}
+                            <span>Release {business.sourceRelease}</span>
+                            {business.incompleteFields?.length ? <span>Incomplete listing: missing {business.incompleteFields.join(', ')}</span> : null}
+                            <p>Listing information and ownership evidence are separate. Ownership is shown only when supported by reviewed sources.</p>
+                        </div> : <p>Fictional demonstration record. Not a real business or ownership claim.</p>}
+                    </ProfileSection>
+                    <div className="reviews-placeholder"><Star size={17} /><strong>Customer reviews</strong><span>Coming soon · No ratings or reviews available.</span></div>
 
-            <section className="ownership-card">
-                <details className="ownership-details">
-                    <summary className="ownership-card-title">
-                        <Building2 size={16} />
-                        <h3>Who owns this business?</h3>
-                        <ChevronDown className="ownership-chevron" size={15} />
-                    </summary>
-                <div className={`classification-pill classification-pill--${ownership.classification}`}>
-                    {isVerified ? <BadgeCheck size={15} /> : <CircleHelp size={15} />}
-                    <span>{ownershipLabels[ownership.classification]}</span>
-                    <span>{isVerified ? (isOverture ? 'APPROVED' : 'DEMO VERIFIED') : 'NOT VERIFIED'}</span>
                 </div>
-                {isVerified ? (
-                    <>
-                        {isOverture && ownership.approvalStatus === 'approved' && (
-                            <div className="match-confidence">
-                                <span className="match-confidence-label">Business identity match</span>
-                                <strong>{Math.round((ownership.matchConfidence ?? 0) * 100)}% match score</strong>
-                                <p>Based on listing name, domain, and location. This score measures identity matching; ownership verification comes from the sources below.</p>
-                            </div>
-                        )}
-                        {ownership.ownershipChain?.map((step, index) => (
-                            <div className="relationship" key={`${step.fromEntity}-${step.toEntity}-${index}`}>
-                                <span className="relationship-label">{ownershipRelationshipLabel(step.relationship)}</span>
-                                <span className="relationship-entity">{step.fromEntity} → {step.toEntity}</span>
-                                <span className="relationship-date">{ownershipRelationshipDate(step)}</span>
-                                {step.evidence.map((evidence) => (
-                                    <a className="ownership-source-link" href={evidence.url} target="_blank" rel="noreferrer" key={evidence.url}>
-                                        {evidence.description} <ArrowUpRight size={12} />
-                                    </a>
-                                ))}
-                            </div>
-                        ))}
-                        {isOverture && ownership.ownershipChain && ownership.ownershipChain.length > 0 && (
-                            <p className="ownership-caveat">Transaction dates follow the linked source statements. Current investor relationships were checked on the verification date shown below.</p>
-                        )}
-                        {ownership.relationships.map((relationship) => (
-                            <div className="relationship" key={`${relationship.entity}-${relationship.relationship}`}>
-                                <span className="relationship-label">{relationship.relationship}</span>
-                                <span className="relationship-entity">{relationship.entity}</span>
-                                <span className="relationship-date">Verified {formatDate(relationship.verifiedAt)}</span>
-                            </div>
-                        ))}
-                        {!isOverture && <div className="evidence-block">
-                            <span className="evidence-heading">SUPPORTING DEMO EVIDENCE</span>
-                            {ownership.evidence.map((evidence) => (
-                                <div className="evidence-row" key={evidence.reference}>
-                                    <span>{evidence.source}</span>
-                                    <span>{evidence.reference}</span>
-                                </div>
-                            ))}
-                        </div>}
-                    </>
-                ) : (
-                    <p className="unknown-note">We don’t have enough verified information to classify this business. Unknown is not an ownership type.</p>
-                )}
-                {isOverture && isVerified && <span className="record-date">Ownership verified {formatDate(ownership.verifiedAt)}</span>}
-                </details>
-            </section>
-            {isOverture && (
-                <section className="source-record" aria-label="Overture source information">
-                    <div className="source-record-heading">SOURCE RECORD</div>
-                    <a href="https://overturemaps.org/" target="_blank" rel="noreferrer">Overture Maps</a>
-                    <span>Place ID: {business.sourceId}</span>
-                    {business.sourceDataset && <span>Provider dataset: {business.sourceDataset}{business.sourceRecordId ? ` / ${business.sourceRecordId}` : ''}</span>}
-                    <span>Release {business.sourceRelease}</span>
-                    {business.incompleteFields && business.incompleteFields.length > 0 && (
-                        <span className="incomplete-notice">Incomplete listing: missing {business.incompleteFields.join(', ')}</span>
-                    )}
-                    {business.website && <a href={business.website} target="_blank" rel="noreferrer">Visit listed website <ArrowUpRight size={13} /></a>}
-                </section>
-            )}
-            {business.phone ? (
-                <a className="detail-link" href={`tel:${business.phone.replaceAll('-', '')}`}>
-                    Call {business.phone} <ArrowUpRight size={15} />
-                </a>
-            ) : (
-                <p className="unknown-note">Phone number not available in this listing.</p>
-            )}
-            <div className="detail-disclaimer"><ShieldCheck size={13} />
-                {isOverture ? (isVerified ? 'Ownership is approved from linked sources. Listing match confidence is separate and is not ownership evidence.' : 'Overture listing. Ownership remains unknown until evidence is reviewed and approved.') : 'Fictional demonstration record. Not a real business or ownership claim.'}
-            </div>
-        </article>
+            </article>
+        </dialog>
     )
+}
+
+function ContactActions({ business }: { business: Business }) {
+    return <div className="contact-actions" aria-label="Contact and directions">
+        {business.website ? <a className="profile-website" href={business.website} target="_blank" rel="noreferrer"><Globe size={16} /> Visit website <ArrowUpRight size={13} /></a> : <span>Website unavailable</span>}
+        {business.phone ? <a href={`tel:${business.phone.replace(/[^+\d]/g, '')}`} aria-label={`Call ${business.phone}`}><Phone size={16} />{business.phone}</a> : <span>Phone unavailable</span>}
+        <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${business.latitude},${business.longitude}`)}`} target="_blank" rel="noreferrer"><Navigation size={16} /> Directions <ArrowUpRight size={13} /></a>
+    </div>
+}
+
+function ProfileSection({ title, icon, meta, children }: { title: string; icon: ReactNode; meta?: string; children: ReactNode }) {
+    return <details className="profile-section">
+        <summary><span className="profile-section-icon">{icon}</span><span className="profile-section-title">{title}</span>{meta && <span className="profile-section-meta">{meta}</span>}<ChevronDown size={15} className="profile-section-chevron" aria-hidden="true" /></summary>
+        <div className="profile-section-content">{children}</div>
+    </details>
+}
+
+// Follow only recorded links. Merge duplicate graph edges for the visual chain;
+// keep every relationship and its original evidence in the sources section.
+function ownershipPaths(steps: OwnershipChainStep[]): OwnershipChainStep[][] {
+    const unique = steps.filter((step, index) => steps.findIndex(other => other.fromEntity === step.fromEntity && other.toEntity === step.toEntity) === index)
+    const roots = unique.filter(step => !unique.some(other => other.toEntity === step.fromEntity))
+    const paths: OwnershipChainStep[][] = []
+    const walk = (path: OwnershipChainStep[]) => {
+        const last = path[path.length - 1]
+        const next = unique.filter(step => step.fromEntity === last.toEntity && !path.some(previous => previous.fromEntity === step.toEntity))
+        if (next.length) next.forEach(step => walk([...path, step]))
+        else paths.push(path)
+    }
+    ;(roots.length ? roots : unique).forEach(step => walk([step]))
+    return paths
+}
+
+function OwnershipChain({ business }: { business: Business }) {
+    const ownership = business.ownership
+    if (ownership.status !== 'verified') return null
+    if (ownership.ownershipChain?.length) return <div className="chain-diagram">
+        {ownershipPaths(ownership.ownershipChain).map((path, index) => <ol className="chain-path" key={index} aria-label="Recorded ownership relationships">
+            <li className="chain-node"><Building2 size={19} /><strong>{path[0].fromEntity}</strong></li>
+            {path.map((step, stepIndex) => <li className="chain-step" key={`${step.toEntity}-${stepIndex}`}>
+                <span className="chain-arrow"><small>{step.relationship === 'acquired_by' ? 'Acquired by' : ownershipRelationshipLabel(step.relationship)}</small><span aria-hidden="true">→</span></span>
+                <span className="chain-node"><Building2 size={19} /><strong>{step.toEntity}</strong></span>
+            </li>)}
+        </ol>)}
+    </div>
+    return <div className="ownership-record">
+        {ownership.relationships.map(relationship => <div className="relationship" key={`${relationship.entity}-${relationship.relationship}`}>
+            <span className="relationship-label">{relationship.relationship}{business.dataSource !== 'overture' ? ' · fictional demo' : ''}</span><strong>{relationship.entity}</strong>
+        </div>)}
+        {!ownership.relationships.length && <p>{ownershipLabels[ownership.classification]} · verified {formatDate(ownership.verifiedAt)}</p>}
+    </div>
+}
+
+function OwnershipBadge({ business, compact = false }: { business: Business; compact?: boolean }) {
+    const verified = business.ownership.status === 'verified'
+    const demo = business.dataSource !== 'overture'
+    return <span className={`ownership-badge ownership-badge--${business.ownership.classification}${compact ? ' ownership-badge--compact' : ''}`}>
+        {verified ? <BadgeCheck size={compact ? 14 : 18} /> : <CircleHelp size={compact ? 14 : 18} />}
+        <span>{!verified && !compact ? 'Ownership unverified' : ownershipLabels[business.ownership.classification]}</span>
+        {!compact && verified && <small>{demo ? 'FICTIONAL DEMO' : 'APPROVED'}</small>}
+    </span>
+}
+
+function ownershipEventDate(step: { announcedAt: string | null; effectiveAt: string | null; effectiveYear?: number }) {
+    return step.effectiveAt ?? step.announcedAt ?? (step.effectiveYear ? `${step.effectiveYear}-01-01` : '9999-12-31')
 }
 
 function formatDate(date: string | null) {
@@ -556,7 +569,7 @@ function ownershipRelationshipLabel(relationship: string) {
 }
 
 function ownershipRelationshipDate(step: { announcedAt: string | null; effectiveAt: string | null; effectiveYear?: number }) {
-    if (step.effectiveAt) return `Completed ${formatDate(step.effectiveAt)}`
+    if (step.effectiveAt) return `Completed ${formatDate(step.effectiveAt)}${step.announcedAt ? ` · announced ${formatDate(step.announcedAt)}` : ''}`
     if (step.announcedAt) return `Announced ${formatDate(step.announcedAt)} · close date not disclosed`
     if (step.effectiveYear) return `Reported in ${step.effectiveYear} · exact date not disclosed`
     return 'Effective date not disclosed'
