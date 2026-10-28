@@ -1,0 +1,794 @@
+{
+  "schemaVersion": 1,
+  "sourceStatus": "primary_sources_reviewed_candidate_facts_only",
+  "checkedAt": "2026-10-28",
+  "candidates": [
+    {
+      "caseId": "case-smith-keene-cascade-2024",
+      "title": "Smith & Keene residential services carve-out → Cascade Services",
+      "candidateType": "documented_acquisition_and_pe_platform_relationship",
+      "reviewStatus": "ready_for_human_approval",
+      "proposedClassification": "private_equity_backed",
+      "businessIds": [
+        "overture-9e594c69-5dcc-46e7-bea7-e5c656d7198e"
+      ],
+      "identityLinks": [
+        {
+          "businessId": "overture-9e594c69-5dcc-46e7-bea7-e5c656d7198e",
+          "status": "strong_source_location_match",
+          "identityVerified": true,
+          "verifiedAt": "2026-10-28",
+          "address": "833 Live Oak Dr",
+          "city": "Chesapeake",
+          "identityEvidenceUrls": [
+            "https://www.cascadeservices.com/about/technician-epa-certification/"
+          ],
+          "reason": "Overture Chesapeake record is at 833 Live Oak Dr; Cascade's current EPA testing-location page lists Smith & Keene at the same address."
+        },
+        {
+          "businessId": "overture-25e8fd60-0c96-4709-99b4-338c93b048a2",
+          "status": "identity_requires_review",
+          "identityVerified": false,
+          "identityEvidenceUrls": [],
+          "reason": "Overture Newport News record uses the Smith & Keene name and domain but has a different address; supplied acquisition source does not identify this location. Do not include in an approval without additional identity evidence."
+        }
+      ],
+      "ownershipChain": [
+        {
+          "from": "Smith & Keene Home Services LLC",
+          "to": "Cascade Services",
+          "relationship": "acquired_residential_divisions"
+        },
+        {
+          "from": "Cascade Services",
+          "to": "Trive Capital",
+          "relationship": "formed_through_partnership"
+        },
+        {
+          "from": "Cascade Services",
+          "to": "LP First Capital",
+          "relationship": "formed_through_partnership"
+        }
+      ],
+      "acquisition": {
+        "acquirer": "Cascade Services",
+        "acquiredBusiness": "Retail (Installation) and Service (Repair) divisions of Smith & Keene Electric Service, Inc., doing business post-closing as S & K Electric",
+        "relationshipType": "residential_business_carve_out_acquisition",
+        "announcedAt": "2024-09-05",
+        "effectiveAt": null,
+        "effectiveDateStatus": "not disclosed in reviewed source",
+        "scopeCaveat": "This was not an acquisition of the seller's whole company. Its new-construction business remained with the seller, which continued as S & K Electric."
+      },
+      "investorRelationship": {
+        "platform": "Cascade Services",
+        "partners": [
+          "Trive Capital",
+          "LP First Capital",
+          "management team"
+        ],
+        "relationshipType": "formation_partnership",
+        "percentages": null,
+        "caveat": "Trive identifies itself as a private equity firm; LP First calls itself a private investment firm. The reviewed release does not disclose their respective stakes or establish that LP First is a PE firm."
+      },
+      "evidence": [
+        {
+          "url": "https://www.cascadeservices.com/cascade-services-announces-the-acquisitions-of-sun-plumbing-in-florida-and-smith-keene-home-services-in-virginia/",
+          "publisher": "Cascade Services",
+          "publishedAt": "2024-09-05",
+          "verifiedAt": "2026-10-27",
+          "supports": "Acquisition, carve-out scope, post-closing S & K Electric status, and service footprint. No closing date disclosed."
+        },
+        {
+          "url": "https://www.trivecapital.com/trive-capital-forms-cascade-services-to-partner-with-market-leading-brands-in-the-home-services-sector/",
+          "publisher": "Trive Capital",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-27",
+          "supports": "Cascade formed through partnership between Trive, LP First Capital, and management; Trive identifies as a PE firm and LP First as a private investment firm."
+        },
+        {
+          "url": "https://www.cascadeservices.com/about/technician-epa-certification/",
+          "publisher": "Cascade Services",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-27",
+          "supports": "Current Cascade location listing identifies Smith & Keene at 833 Live Oak Dr, Chesapeake, matching the selected Overture record."
+        }
+      ],
+      "approvalNotes": "Candidate is ready for a human to approve the Chesapeake Overture record after reviewing the proposed business identity and scoped carve-out. Do not approve the Newport News record from current evidence. Add registry entities/relationships only during approval.",
+      "registryEntities": [
+        {
+          "id": "company-smith-keene-home-services",
+          "type": "company",
+          "name": "Smith & Keene Home Services LLC",
+          "normalizedName": "smith keene home services",
+          "brands": [
+            "Smith & Keene Home Services",
+            "Smith and Keene Home Services"
+          ],
+          "websiteDomains": [
+            "smithandkeene.com"
+          ],
+          "locations": [
+            {
+              "city": "Chesapeake",
+              "address": "833 Live Oak Dr"
+            }
+          ],
+          "overtureBusinessIds": [
+            "overture-9e594c69-5dcc-46e7-bea7-e5c656d7198e"
+          ],
+          "notes": "Acquired residential Retail (Installation) and Service (Repair) divisions only; seller's new-construction business remained and operated as S & K Electric."
+        },
+        {
+          "id": "organization-cascade-services",
+          "type": "parent_organization",
+          "name": "Cascade Services",
+          "normalizedName": "cascade services",
+          "brands": [
+            "Cascade Residential Services"
+          ],
+          "websiteDomains": [
+            "cascadeservices.com"
+          ],
+          "locations": [],
+          "overtureBusinessIds": [],
+          "notes": "Residential tri-trade platform; its formation announcement says it was formed through partnership between Trive Capital, LP First Capital, and management."
+        },
+        {
+          "id": "organization-cascade-management-team",
+          "type": "management_team",
+          "name": "Cascade Services management team",
+          "normalizedName": "cascade services management team",
+          "brands": [],
+          "websiteDomains": [],
+          "locations": [],
+          "overtureBusinessIds": [],
+          "notes": "Cascade's formation announcement identifies an experienced management team as a formation partner; individual equity stakes are not disclosed."
+        },
+        {
+          "id": "investor-trive-capital",
+          "type": "pe_investor",
+          "name": "Trive Capital",
+          "normalizedName": "trive capital",
+          "brands": [
+            "Trive"
+          ],
+          "websiteDomains": [
+            "trivecapital.com"
+          ],
+          "locations": [],
+          "overtureBusinessIds": [],
+          "notes": "Trive's source describes Trive as a private equity firm and says Cascade was formed through partnership with Trive, LP First Capital, and management; ownership percentages not disclosed."
+        },
+        {
+          "id": "investor-lp-first-capital",
+          "type": "private_investment_firm",
+          "name": "LP First Capital",
+          "normalizedName": "lp first capital",
+          "brands": [
+            "LP First"
+          ],
+          "websiteDomains": [],
+          "locations": [],
+          "overtureBusinessIds": [],
+          "notes": "Trive identifies LP First as a private investment firm and a Cascade formation partner; do not label as PE or infer stake absent further evidence."
+        }
+      ],
+      "registryRelationships": [
+        {
+          "id": "rel-smith-keene-cascade-carveout",
+          "fromEntityId": "company-smith-keene-home-services",
+          "toEntityId": "organization-cascade-services",
+          "type": "acquired_by",
+          "transactionType": "carveout",
+          "scope": "Retail (Installation) and Service (Repair) divisions only; seller's new-construction business remained and operated as S & K Electric.",
+          "announcedAt": "2024-09-05",
+          "effectiveAt": null,
+          "verifiedAt": "2026-10-27",
+          "evidence": [
+            {
+              "url": "https://www.cascadeservices.com/cascade-services-announces-the-acquisitions-of-sun-plumbing-in-florida-and-smith-keene-home-services-in-virginia/",
+              "description": "Cascade announced acquisition of Smith & Keene Home Services LLC, consisting of Retail (Installation) and Service (Repair) divisions; new construction remained with seller. Exact closing date not disclosed.",
+              "publishedAt": "2024-09-05",
+              "verifiedAt": "2026-10-27"
+            }
+          ]
+        },
+        {
+          "id": "rel-cascade-trive-partnership",
+          "fromEntityId": "organization-cascade-services",
+          "toEntityId": "investor-trive-capital",
+          "type": "formed_through_partnership",
+          "announcedAt": null,
+          "effectiveAt": null,
+          "verifiedAt": "2026-10-27",
+          "evidence": [
+            {
+              "url": "https://www.trivecapital.com/trive-capital-forms-cascade-services-to-partner-with-market-leading-brands-in-the-home-services-sector/",
+              "description": "Trive says Cascade was formed through partnership between Trive, LP First Capital, and management. The announcement gives no date or ownership percentages.",
+              "publishedAt": null,
+              "verifiedAt": "2026-10-27"
+            }
+          ]
+        },
+        {
+          "id": "rel-cascade-lp-first-partnership",
+          "fromEntityId": "organization-cascade-services",
+          "toEntityId": "investor-lp-first-capital",
+          "type": "formed_through_partnership",
+          "announcedAt": null,
+          "effectiveAt": null,
+          "verifiedAt": "2026-10-27",
+          "evidence": [
+            {
+              "url": "https://www.trivecapital.com/trive-capital-forms-cascade-services-to-partner-with-market-leading-brands-in-the-home-services-sector/",
+              "description": "Trive says Cascade was formed through partnership between Trive, LP First Capital, and management. LP First's exact role and ownership percentage are not disclosed.",
+              "publishedAt": null,
+              "verifiedAt": "2026-10-27"
+            }
+          ]
+        },
+        {
+          "id": "rel-cascade-management-partnership",
+          "fromEntityId": "organization-cascade-services",
+          "toEntityId": "organization-cascade-management-team",
+          "type": "formed_through_partnership",
+          "announcedAt": null,
+          "effectiveAt": null,
+          "verifiedAt": "2026-10-27",
+          "evidence": [
+            {
+              "url": "https://www.trivecapital.com/trive-capital-forms-cascade-services-to-partner-with-market-leading-brands-in-the-home-services-sector/",
+              "description": "Trive says Cascade was formed through partnership between Trive, LP First Capital, and an experienced management team; individual stakes are not disclosed.",
+              "publishedAt": null,
+              "verifiedAt": "2026-10-27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "case-philbrick-kellam-affiliation",
+      "title": "Philbrick Heating & AC ↔ Kellam Home Services",
+      "candidateType": "documented_business_affiliation_ownership_unresolved",
+      "reviewStatus": "ownership_unresolved",
+      "proposedClassification": null,
+      "businessIds": [
+        "overture-de2168af-df92-4094-bd32-9a279986bd0d",
+        "overture-0dfd3f2e-02ef-4b94-8d48-18baa87ef525"
+      ],
+      "ownershipChain": [],
+      "documentedRelationship": {
+        "from": "Philbrick Heating & AC",
+        "to": "Kellam Home Services",
+        "relationship": "business_partnership_and_brand_affiliation_claimed_by_Kellam",
+        "announcedAt": null,
+        "effectiveAt": null,
+        "transactionStructure": "not established",
+        "ultimateOwnership": "not established"
+      },
+      "evidence": [
+        {
+          "url": "https://kellammechanical.com/philbrick-heating-ac-is-now-part-of-the-kellam-family/",
+          "publisher": "Kellam Home Services",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-27",
+          "supports": "Kellam says it is proud to partner with Philbrick and calls it part of the Kellam family; does not state a purchase, closing date, legal structure, or ultimate owner."
+        }
+      ],
+      "approvalNotes": "Review the affiliation claim as sourced. Do not classify Philbrick as a subsidiary or PE-backed without transaction and ultimate-ownership evidence. The two original Overture records remain separate."
+    },
+    {
+      "caseId": "case-one-hour-authority-franchise-network",
+      "title": "One Hour Heating & Air Conditioning franchise network; Virginia Beach operator unresolved",
+      "candidateType": "franchise_brand_parent_relationship_only",
+      "reviewStatus": "franchise_network_documented_operator_unresolved",
+      "proposedClassification": null,
+      "businessIds": [
+        "overture-952d7733-720a-48c8-a764-da6023bc9bb7",
+        "overture-8581617e-3a57-4bfb-9721-0e4d5cb348b2"
+      ],
+      "franchiseNetwork": {
+        "brand": "One Hour Heating & Air Conditioning",
+        "franchisor": "Authority Brands",
+        "franchisorInvestorRelationship": "Apax Funds are identified as majority owners; BCI announced an agreement to acquire a significant minority stake in 2022",
+        "relationshipType": "franchise_brand_and_franchisor_network",
+        "announcedAt": null,
+        "effectiveAt": null
+      },
+      "localOperator": {
+        "identity": null,
+        "ownership": null,
+        "status": "unresolved",
+        "caveat": "Authority Brands says its local One Hour locations are independently owned and operated. The supplied and reviewed sources do not identify the legal Virginia Beach franchisee or its owners. Do not transfer franchisor or brand ownership to either local listing."
+      },
+      "evidence": [
+        {
+          "url": "https://www.authoritybrands.com/our-brands/one-hour-heating-air-conditioning/",
+          "publisher": "Authority Brands",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-27",
+          "supports": "One Hour is an Authority Brands franchise brand; local locations are described as independently owned and operated."
+        },
+        {
+          "url": "https://www.apax.com/partnerships/authority-brands/",
+          "publisher": "Apax Partners",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-27",
+          "supports": "Apax lists Authority Brands as a current portfolio company and describes more than 1,000 franchise owners operating its territories."
+        },
+        {
+          "url": "https://www.apax.com/news-views/funds-advised-by-apax-partners-acquire-authority-brands/",
+          "publisher": "Apax Partners",
+          "publishedAt": "2018-09-24",
+          "verifiedAt": "2026-10-27",
+          "supports": "Apax announced its acquisition of Authority Brands; closing date and terms not stated on the reviewed page."
+        },
+        {
+          "url": "https://www.apax.com/news-views/bci-leads-significant-investment-in-authority-brands/",
+          "publisher": "Apax Partners",
+          "publishedAt": "2022-09-20",
+          "verifiedAt": "2026-10-27",
+          "supports": "BCI agreed to acquire a significant minority stake alongside Apax Funds, which retained majority ownership."
+        }
+      ],
+      "networkOwnershipEvents": [
+        {
+          "from": "Authority Brands",
+          "to": "Apax Funds",
+          "relationship": "majority_investment_announced",
+          "announcedAt": "2018-09-24",
+          "effectiveAt": null
+        },
+        {
+          "from": "Authority Brands",
+          "to": "British Columbia Investment Management Corporation",
+          "relationship": "significant_minority_investment_agreement",
+          "announcedAt": "2022-09-20",
+          "effectiveAt": null
+        }
+      ],
+      "approvalNotes": "The franchise network and its investor relationship are documented; neither Overture Virginia Beach record is approved as owned by Authority Brands or Apax. Identify each legal franchise operator from a Virginia franchise disclosure filing or other primary record before any local classification."
+    },
+    {
+      "caseId": "case-hobbs-air-blackstone-2024-2026",
+      "title": "Hobbs & Associates → AIR Control Concepts → Blackstone",
+      "candidateType": "documented_acquisition_and_pe_platform_relationship",
+      "reviewStatus": "ready_for_automatic_approval",
+      "proposedClassification": "private_equity_backed",
+      "businessIds": [
+        "overture-11f4ba78-3c4e-455c-a6ba-24e60e3d0a57"
+      ],
+      "identityLinks": [
+        {
+          "businessId": "overture-11f4ba78-3c4e-455c-a6ba-24e60e3d0a57",
+          "status": "strong_source_location_match",
+          "identityVerified": true,
+          "verifiedAt": "2026-10-28",
+          "address": "4850 Brookside Ct",
+          "city": "Norfolk",
+          "identityEvidenceUrls": [
+            "https://www.hobbsassociates.com/office-locations/norfolk%2C-va"
+          ],
+          "reason": "Overture name is Hobbs and Associates, website domain is hobbsassociates.com, and Norfolk location page lists 4850 Brookside Ct #100, Norfolk."
+        }
+      ],
+      "ownershipChain": [
+        {
+          "from": "Hobbs & Associates",
+          "to": "AIR Control Concepts",
+          "relationship": "operating_company_of_platform"
+        },
+        {
+          "from": "AIR Control Concepts",
+          "to": "Blackstone-managed funds",
+          "relationship": "sole_institutional_investor_since_2026-01-07"
+        }
+      ],
+      "investorRelationship": {
+        "platform": "AIR Control Concepts",
+        "currentInstitutionalInvestor": "Blackstone-managed private equity funds",
+        "otherCurrentCoInvestor": "Hobbs family",
+        "historicalInvestor": "Madison Dearborn Partners affiliated funds",
+        "historicalInvestorEndedAt": "2026-01-07",
+        "caveat": "Blackstone’s January 7, 2026 release says its acquisition of MDP’s remaining stake closed that day, making Blackstone AIR’s sole institutional investor; the Hobbs family also invested alongside Blackstone. MDP is historical, not current. No equity percentages inferred."
+      },
+      "events": [
+        {
+          "eventId": "event-air-blackstone-original-investment",
+          "entity": "AIR Control Concepts",
+          "eventType": "equity_investment",
+          "announcedAt": "2024-07-15",
+          "effectiveAt": null,
+          "investors": [
+            "Blackstone-managed funds",
+            "Madison Dearborn Partners affiliated funds",
+            "AIR management"
+          ],
+          "evidenceUrls": [
+            "https://www.blackstone.com/news/press/air-control-concepts-announces-investment-from-blackstone/"
+          ],
+          "description": "Blackstone joined AIR as an equity partner alongside MDP-affiliated funds and management; MDP was a historical co-investor."
+        },
+        {
+          "eventId": "event-air-mdp-exit-blackstone-sole-institutional",
+          "entity": "AIR Control Concepts",
+          "eventType": "investment_and_secondary_stake_acquisition",
+          "announcedAt": "2026-01-07",
+          "effectiveAt": "2026-01-07",
+          "effectiveDateEvidenceUrls": [
+            "https://www.blackstone.com/news/press/blackstone-announces-additional-investment-in-air-control-concepts/"
+          ],
+          "buyerOrInvestor": "Blackstone-managed funds",
+          "seller": "Madison Dearborn Partners affiliated funds",
+          "additionalCoInvestor": "Hobbs family",
+          "evidenceUrls": [
+            "https://www.blackstone.com/news/press/blackstone-announces-additional-investment-in-air-control-concepts/"
+          ],
+          "description": "Blackstone’s acquisition of MDP’s remaining AIR equity stake signed and closed; Blackstone became sole institutional investor. Hobbs family also invested alongside Blackstone."
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hobbsassociates.com/office-locations/norfolk%2C-va",
+          "publisher": "Hobbs & Associates",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-28",
+          "supports": "Hobbs & Associates Norfolk office is at 4850 Brookside Ct #100, Norfolk, VA 23502; exact name, domain, and street match the Overture record."
+        },
+        {
+          "url": "https://www.aircontrolconcepts.com/operating-companies/hobbs-associates",
+          "publisher": "AIR Control Concepts",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-28",
+          "supports": "Identifies Hobbs & Associates as an operating company in the AIR Control Concepts network, preserving the distinction between operating company and platform."
+        },
+        {
+          "url": "https://www.blackstone.com/news/press/air-control-concepts-announces-investment-from-blackstone/",
+          "publisher": "Blackstone",
+          "publishedAt": "2024-07-15",
+          "verifiedAt": "2026-10-28",
+          "supports": "AIR announced Blackstone as an equity investment partner alongside funds affiliated with Madison Dearborn Partners (MDP) and AIR management; identifies Hobbs & Associates among AIR operating brands."
+        },
+        {
+          "url": "https://www.blackstone.com/news/press/blackstone-announces-additional-investment-in-air-control-concepts/",
+          "publisher": "Blackstone",
+          "publishedAt": "2026-01-07",
+          "verifiedAt": "2026-10-28",
+          "supports": "Blackstone funds signed and closed the acquisition of MDP’s remaining AIR equity stake on January 7, 2026; Blackstone became AIR’s sole institutional investor. AIR founder Brad Hobbs and his family also invested alongside Blackstone."
+        }
+      ],
+      "contradictions": [],
+      "registryEntities": [
+        {
+          "id": "company-hobbs-associates",
+          "type": "company",
+          "name": "Hobbs & Associates",
+          "normalizedName": "hobbs associates",
+          "brands": [
+            "Hobbs and Associates"
+          ],
+          "websiteDomains": [
+            "hobbsassociates.com"
+          ],
+          "locations": [
+            {
+              "city": "Norfolk",
+              "address": "4850 Brookside Ct #100"
+            }
+          ],
+          "overtureBusinessIds": [
+            "overture-11f4ba78-3c4e-455c-a6ba-24e60e3d0a57"
+          ],
+          "notes": "Hobbs is the local commercial HVAC operating company; AIR Control Concepts is the parent platform/network. Its Norfolk office address is source-matched."
+        },
+        {
+          "id": "organization-air-control-concepts",
+          "type": "parent_organization",
+          "name": "AIR Control Concepts",
+          "normalizedName": "air control concepts",
+          "brands": [
+            "AIR"
+          ],
+          "websiteDomains": [
+            "aircontrolconcepts.com"
+          ],
+          "locations": [
+            {
+              "city": "Norfolk",
+              "address": null
+            }
+          ],
+          "overtureBusinessIds": [],
+          "notes": "Parent platform for operating companies including Hobbs & Associates. As of January 7, 2026 Blackstone-managed funds are the sole institutional investor; Hobbs family also invested. MDP-affiliated funds were historical investors and exited their remaining stake January 7, 2026."
+        },
+        {
+          "id": "investor-blackstone-pe-air",
+          "type": "pe_investor",
+          "name": "Blackstone-managed private equity funds",
+          "normalizedName": "blackstone managed private equity funds",
+          "brands": [
+            "Blackstone Private Equity"
+          ],
+          "websiteDomains": [
+            "blackstone.com"
+          ],
+          "locations": [],
+          "overtureBusinessIds": [],
+          "notes": "Blackstone-managed PE funds became AIR’s sole institutional investor on 2026-01-07. The Hobbs family also invested alongside them; no equity percentages inferred."
+        },
+        {
+          "id": "investor-madison-dearborn-air-historical",
+          "type": "institutional_investor",
+          "name": "Madison Dearborn Partners affiliated funds (historical AIR investor)",
+          "normalizedName": "madison dearborn partners affiliated funds historical air investor",
+          "brands": [
+            "Madison Dearborn Partners"
+          ],
+          "websiteDomains": [
+            "mdcp.com"
+          ],
+          "locations": [],
+          "overtureBusinessIds": [],
+          "notes": "Historical AIR investor alongside Blackstone from its July 2024 investment; Blackstone acquired MDP’s remaining stake and closed on 2026-01-07. Not a current AIR institutional investor."
+        },
+        {
+          "id": "coinvestor-hobbs-family-air",
+          "type": "founder_family_coinvestor",
+          "name": "Hobbs family (AIR co-investor)",
+          "normalizedName": "hobbs family air coinvestor",
+          "brands": [],
+          "websiteDomains": [],
+          "locations": [],
+          "overtureBusinessIds": [],
+          "notes": "Blackstone’s January 7, 2026 announcement says AIR founder Brad Hobbs and his family also invested alongside Blackstone. No stake inferred."
+        }
+      ],
+      "registryRelationships": [
+        {
+          "id": "rel-hobbs-air-operating-company",
+          "fromEntityId": "company-hobbs-associates",
+          "toEntityId": "organization-air-control-concepts",
+          "type": "portfolio_company_of",
+          "evidence": [
+            {
+              "url": "https://www.aircontrolconcepts.com/operating-companies/hobbs-associates",
+              "description": "Identifies Hobbs & Associates as an operating company in the AIR Control Concepts network, preserving the distinction between operating company and platform."
+            },
+            {
+              "url": "https://www.blackstone.com/news/press/air-control-concepts-announces-investment-from-blackstone/",
+              "description": "AIR announced Blackstone as an equity investment partner alongside funds affiliated with Madison Dearborn Partners (MDP) and AIR management; identifies Hobbs & Associates among AIR operating brands."
+            }
+          ]
+        },
+        {
+          "id": "rel-air-blackstone-current-institutional-investor",
+          "fromEntityId": "organization-air-control-concepts",
+          "toEntityId": "investor-blackstone-pe-air",
+          "type": "portfolio_company_of",
+          "announcedAt": "2026-01-07",
+          "effectiveAt": "2026-01-07",
+          "effectiveDateEvidenceUrls": [
+            "https://www.blackstone.com/news/press/blackstone-announces-additional-investment-in-air-control-concepts/"
+          ],
+          "evidence": [
+            {
+              "url": "https://www.blackstone.com/news/press/air-control-concepts-announces-investment-from-blackstone/",
+              "description": "AIR announced Blackstone as an equity investment partner alongside funds affiliated with Madison Dearborn Partners (MDP) and AIR management; identifies Hobbs & Associates among AIR operating brands."
+            },
+            {
+              "url": "https://www.blackstone.com/news/press/blackstone-announces-additional-investment-in-air-control-concepts/",
+              "description": "Blackstone funds signed and closed the acquisition of MDP’s remaining AIR equity stake on January 7, 2026; Blackstone became AIR’s sole institutional investor. AIR founder Brad Hobbs and his family also invested alongside Blackstone."
+            }
+          ]
+        }
+      ],
+      "approvalNotes": "Evidence-gate candidate only. MDP is retained in entities/events as a historical investor and must not be shown as current; Hobbs family is noted as co-investor. Preserve Hobbs & Associates as the operating company and AIR Control Concepts as its platform."
+    },
+    {
+      "caseId": "case-brr-coolsys-ares-2019",
+      "title": "BRR Refrigeration → CoolSys → Ares-managed PE fund",
+      "candidateType": "documented_acquisition_and_pe_platform_relationship",
+      "reviewStatus": "ready_for_automatic_approval",
+      "proposedClassification": "private_equity_backed",
+      "businessIds": [
+        "overture-91a5fbbf-2236-4922-8efe-8da5897f1074"
+      ],
+      "identityLinks": [
+        {
+          "businessId": "overture-91a5fbbf-2236-4922-8efe-8da5897f1074",
+          "status": "strong_source_location_match",
+          "identityVerified": true,
+          "verifiedAt": "2026-10-28",
+          "address": "961 Reon Dr",
+          "city": "Virginia Beach",
+          "identityEvidenceUrls": [
+            "https://coolsys.com/our-brands/brr-refrigeration/"
+          ],
+          "reason": "Overture BRR Refrigeration LLC is located at 961 Reon Dr, Virginia Beach; current CoolSys BRR page states BRR is now CoolSys and identifies C&I Virginia Beach Branch at the same address."
+        }
+      ],
+      "ownershipChain": [
+        {
+          "from": "BRR Refrigeration",
+          "to": "CoolSys",
+          "relationship": "acquired_by",
+          "announcedAt": "2019-12-20",
+          "effectiveAt": null
+        },
+        {
+          "from": "CoolSys",
+          "to": "Ares-managed private equity fund",
+          "relationship": "acquired_by",
+          "announcedAt": "2019-03-21",
+          "effectiveAt": null
+        }
+      ],
+      "acquisition": {
+        "acquirer": "CoolSys",
+        "acquiredBusiness": "BRR Refrigeration",
+        "relationshipType": "acquisition",
+        "announcedAt": "2019-12-20",
+        "effectiveAt": null,
+        "effectiveDateStatus": "closing/effective date not stated in reviewed sources",
+        "scopeCaveat": "Acquisition announcement date is independently corroborated as December 20, 2019. Do not use the March 21, 2019 CoolSys/Ares announcement date for BRR."
+      },
+      "events": [
+        {
+          "eventId": "event-coolsys-ares-acquisition",
+          "entity": "CoolSys",
+          "eventType": "private_equity_acquisition",
+          "announcedAt": "2019-03-21",
+          "effectiveAt": null,
+          "buyerOrInvestor": "Ares-managed Private Equity Group fund",
+          "evidenceUrls": [
+            "https://coolsys.com/resource/coolsys-acquired-by-ares-management-corporation/",
+            "https://coolsys.com/about-coolsys/leadership/"
+          ],
+          "description": "CoolSys announced it had been acquired by a fund managed by Ares Management Corporation Private Equity Group."
+        },
+        {
+          "eventId": "event-brr-acquired-by-coolsys",
+          "entity": "BRR Refrigeration",
+          "eventType": "acquisition",
+          "announcedAt": "2019-12-20",
+          "effectiveAt": null,
+          "buyerOrInvestor": "CoolSys",
+          "evidenceUrls": [
+            "https://coolsys.com/resource/coolsys-acquires-brr-refrigeration-in-virginia/",
+            "https://www.achrnews.com/articles/142364-coolsys-acquires-brr-refrigeration-in-virginia"
+          ],
+          "description": "CoolSys announced acquisition of BRR Refrigeration. Announcement date is December 20, 2019; effective/closing date remains unknown."
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://coolsys.com/resource/coolsys-acquires-brr-refrigeration-in-virginia/",
+          "publisher": "CoolSys / Business Wire press release",
+          "publishedAt": "2019-12-20",
+          "verifiedAt": "2026-10-28",
+          "supports": "CoolSys announced it acquired BRR Refrigeration, a Virginia Beach commercial HVAC/R contractor; the release says the acquisition closed that week. The effective/closing date is not specified."
+        },
+        {
+          "url": "https://coolsys.com/our-brands/brr-refrigeration/",
+          "publisher": "CoolSys",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-28",
+          "supports": "CoolSys states it acquired BRR, BRR now operates under the CoolSys brand, and lists its Virginia Beach branch at 961 Reon Dr, matching the exact Overture address."
+        },
+        {
+          "url": "https://coolsys.com/resource/coolsys-acquired-by-ares-management-corporation/",
+          "publisher": "CoolSys",
+          "publishedAt": "2019-03-21",
+          "verifiedAt": "2026-10-28",
+          "supports": "CoolSys announced it had been acquired by a fund managed by Ares Management Corporation’s Private Equity Group on March 21, 2019; no transaction terms disclosed."
+        },
+        {
+          "url": "https://coolsys.com/about-coolsys/leadership/",
+          "publisher": "CoolSys",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-28",
+          "supports": "Current CoolSys board page identifies Ares Private Equity Group partners/advisors on the CoolSys board, corroborating the continuing Ares relationship."
+        },
+        {
+          "url": "https://www.achrnews.com/articles/142364-coolsys-acquires-brr-refrigeration-in-virginia",
+          "publisher": "ACHR News",
+          "publishedAt": "2019-12-20",
+          "verifiedAt": "2026-10-28",
+          "supports": "Independent HVAC trade publication dated December 20, 2019 reports CoolSys’s BRR acquisition announcement; confirms announcement date without asserting closing date."
+        }
+      ],
+      "contradictions": [],
+      "registryEntities": [
+        {
+          "id": "company-brr-refrigeration",
+          "type": "company",
+          "name": "BRR Refrigeration LLC",
+          "normalizedName": "brr refrigeration",
+          "brands": [
+            "BRR Refrigeration"
+          ],
+          "websiteDomains": [],
+          "locations": [
+            {
+              "city": "Virginia Beach",
+              "address": "961 Reon Dr"
+            }
+          ],
+          "overtureBusinessIds": [
+            "overture-91a5fbbf-2236-4922-8efe-8da5897f1074"
+          ],
+          "notes": "Former Virginia Beach commercial refrigeration and HVAC contractor acquired by CoolSys; the current listing address matches CoolSys’s Virginia Beach branch."
+        },
+        {
+          "id": "organization-coolsys",
+          "type": "parent_organization",
+          "name": "CoolSys",
+          "normalizedName": "coolsys",
+          "brands": [
+            "CoolSys"
+          ],
+          "websiteDomains": [
+            "coolsys.com"
+          ],
+          "locations": [],
+          "overtureBusinessIds": [],
+          "notes": "Acquired BRR Refrigeration (announcement 2019-12-20; effective/closing date unknown). CoolSys was acquired by an Ares-managed PE fund (announcement 2019-03-21); Ares PE leadership remains represented on CoolSys board."
+        },
+        {
+          "id": "investor-ares-private-equity-coolsys",
+          "type": "pe_investor",
+          "name": "Ares Management Private Equity Group (managed fund)",
+          "normalizedName": "ares management private equity group managed fund",
+          "brands": [
+            "Ares Private Equity"
+          ],
+          "websiteDomains": [
+            "ares.com"
+          ],
+          "locations": [],
+          "overtureBusinessIds": [],
+          "notes": "A fund managed by Ares Management Corporation’s Private Equity Group acquired CoolSys; acquisition announced 2019-03-21. CoolSys leadership page currently lists Ares PE partners/advisors on its board."
+        }
+      ],
+      "registryRelationships": [
+        {
+          "id": "rel-brr-coolsys-acquisition",
+          "fromEntityId": "company-brr-refrigeration",
+          "toEntityId": "organization-coolsys",
+          "type": "acquired_by",
+          "announcedAt": "2019-12-20",
+          "effectiveAt": null,
+          "evidence": [
+            {
+              "url": "https://coolsys.com/resource/coolsys-acquires-brr-refrigeration-in-virginia/",
+              "description": "CoolSys announced it acquired BRR Refrigeration, a Virginia Beach commercial HVAC/R contractor; the release says the acquisition closed that week. The effective/closing date is not specified."
+            },
+            {
+              "url": "https://www.achrnews.com/articles/142364-coolsys-acquires-brr-refrigeration-in-virginia",
+              "description": "Independent HVAC trade publication dated December 20, 2019 reports CoolSys’s BRR acquisition announcement; confirms announcement date without asserting closing date."
+            }
+          ]
+        },
+        {
+          "id": "rel-coolsys-ares-acquisition",
+          "fromEntityId": "organization-coolsys",
+          "toEntityId": "investor-ares-private-equity-coolsys",
+          "type": "acquired_by",
+          "announcedAt": "2019-03-21",
+          "effectiveAt": null,
+          "evidence": [
+            {
+              "url": "https://coolsys.com/resource/coolsys-acquired-by-ares-management-corporation/",
+              "description": "CoolSys announced it had been acquired by a fund managed by Ares Management Corporation’s Private Equity Group on March 21, 2019; no transaction terms disclosed."
+            },
+            {
+              "url": "https://coolsys.com/about-coolsys/leadership/",
+              "description": "Current CoolSys board page identifies Ares Private Equity Group partners/advisors on the CoolSys board, corroborating the continuing Ares relationship."
+            }
+          ]
+        }
+      ],
+      "approvalNotes": "Evidence-gate candidate. The BRR acquisition announcement date is 2019-12-20; its effective/closing date remains unknown. The CoolSys/Ares announcement was March 21, 2019 and is a separate parent-platform event."
+    }
+  ]
+}

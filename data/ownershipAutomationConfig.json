@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "evidenceGatedAutoPublication": true,
+  "optionalResearch": {
+    "enabled": false,
+    "maxSpendUsdPerRun": 0,
+    "maxSpendUsdPerMonth": 0,
+    "providers": []
+  },
+  "notes": "This sprint uses only cached, locally curated evidence. AI or paid research providers are disabled and no provider integration is configured."
+}

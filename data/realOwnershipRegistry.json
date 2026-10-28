@@ -7,10 +7,23 @@
       "type": "company",
       "name": "Norfolk Air Heating, Cooling, Plumbing & Electrical",
       "normalizedName": "norfolk air heating cooling plumbing electrical",
-      "brands": ["Norfolk Air Heating, Cooling", "Norfolk Air Heating Cooling and Electrical", "Norfolk Air"],
-      "websiteDomains": ["norfolkair-hvac.com"],
-      "locations": [{"city": "Norfolk", "address": "916 East Little Creek Road"}],
-      "overtureBusinessIds": ["overture-af436b19-7ee9-48e7-ab77-b60f9a1d5dc5"],
+      "brands": [
+        "Norfolk Air Heating, Cooling",
+        "Norfolk Air Heating Cooling and Electrical",
+        "Norfolk Air"
+      ],
+      "websiteDomains": [
+        "norfolkair-hvac.com"
+      ],
+      "locations": [
+        {
+          "city": "Norfolk",
+          "address": "916 East Little Creek Road"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-af436b19-7ee9-48e7-ab77-b60f9a1d5dc5"
+      ],
       "notes": "Sila announced the acquisition on 2025-04-03. Its brand page says Norfolk Air became part of Guy Smith Home Services in 2025; no exact effective date was found."
     },
     {
@@ -18,10 +31,23 @@
       "type": "company",
       "name": "Guy Smith Home Services",
       "normalizedName": "guy smith home services",
-      "brands": ["Guy Smith Heating & Air Conditioning", "Guy Smith Heating & Cooling", "Guy Smith"],
-      "websiteDomains": ["guysmith.com"],
-      "locations": [{"city": "Portsmouth", "address": "804 High St"}],
-      "overtureBusinessIds": ["overture-7b4285da-a044-49a3-931d-536e6a91fd7a"],
+      "brands": [
+        "Guy Smith Heating & Air Conditioning",
+        "Guy Smith Heating & Cooling",
+        "Guy Smith"
+      ],
+      "websiteDomains": [
+        "guysmith.com"
+      ],
+      "locations": [
+        {
+          "city": "Portsmouth",
+          "address": "804 High St"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-7b4285da-a044-49a3-931d-536e6a91fd7a"
+      ],
       "notes": "Sila announced the acquisition on 2025-04-03. Norfolk Air was integrated into the Guy Smith Home Services brand during 2025; the exact effective date was not disclosed."
     },
     {
@@ -29,10 +55,23 @@
       "type": "company",
       "name": "Comfort Solutions of Tidewater, LLC",
       "normalizedName": "comfort solutions of tidewater",
-      "brands": ["Comfort Solutions Of Tidewater", "Comfort Solutions", "Comfort Solutions of Tidewater, LLC"],
-      "websiteDomains": ["comfortsolutions.net"],
-      "locations": [{"city": "Suffolk", "address": "1982 Northgate Commerce Pkwy Ste C"}],
-      "overtureBusinessIds": ["overture-1d558b21-e9e5-46f4-8a32-b90fd4a12415"],
+      "brands": [
+        "Comfort Solutions Of Tidewater",
+        "Comfort Solutions",
+        "Comfort Solutions of Tidewater, LLC"
+      ],
+      "websiteDomains": [
+        "comfortsolutions.net"
+      ],
+      "locations": [
+        {
+          "city": "Suffolk",
+          "address": "1982 Northgate Commerce Pkwy Ste C"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-1d558b21-e9e5-46f4-8a32-b90fd4a12415"
+      ],
       "notes": "Paramount announced a completed acquisition on 2025-05-01. This is a transaction-date relationship, not a guarantee of unchanged current ownership."
     },
     {
@@ -40,8 +79,12 @@
       "type": "parent_organization",
       "name": "Sila Services, LLC",
       "normalizedName": "sila services",
-      "brands": ["Sila Services"],
-      "websiteDomains": ["silaservices.com"],
+      "brands": [
+        "Sila Services"
+      ],
+      "websiteDomains": [
+        "silaservices.com"
+      ],
       "locations": [],
       "notes": "Sila's current company site identifies it as a portfolio company of Private Equity at Goldman Sachs Alternatives."
     },
@@ -50,8 +93,12 @@
       "type": "pe_investor",
       "name": "Goldman Sachs Alternatives (Private Equity)",
       "normalizedName": "goldman sachs alternatives private equity",
-      "brands": ["Goldman Sachs Alternatives"],
-      "websiteDomains": ["am.gs.com"],
+      "brands": [
+        "Goldman Sachs Alternatives"
+      ],
+      "websiteDomains": [
+        "am.gs.com"
+      ],
       "locations": [],
       "notes": "Goldman Sachs announced an agreement to acquire a majority stake in Sila on 2024-11-12. The announcement did not state the transaction's closing date."
     },
@@ -60,8 +107,13 @@
       "type": "parent_organization",
       "name": "Paramount Mechanical Corporation, LLC",
       "normalizedName": "paramount mechanical corporation",
-      "brands": ["Paramount Mechanical", "Paramount"],
-      "websiteDomains": ["paramount-mech.com"],
+      "brands": [
+        "Paramount Mechanical",
+        "Paramount"
+      ],
+      "websiteDomains": [
+        "paramount-mech.com"
+      ],
       "locations": [],
       "notes": "Stonebridge's current portfolio page lists Paramount as a portfolio company. Its 2021 recapitalization release states the founder retained significant ownership and equity was also provided by other parties; Stonebridge is not represented as the sole owner."
     },
@@ -70,10 +122,232 @@
       "type": "pe_investor",
       "name": "Stonebridge Partners",
       "normalizedName": "stonebridge partners",
-      "brands": ["Stonebridge"],
-      "websiteDomains": ["stonebridgepartners.com"],
+      "brands": [
+        "Stonebridge"
+      ],
+      "websiteDomains": [
+        "stonebridgepartners.com"
+      ],
       "locations": [],
       "notes": "Stonebridge's 2021 release describes its recapitalization of Paramount; the 2026 current portfolio page still lists Paramount."
+    },
+    {
+      "id": "company-smith-keene-home-services",
+      "type": "company",
+      "name": "Smith & Keene Home Services LLC",
+      "normalizedName": "smith keene home services",
+      "brands": [
+        "Smith & Keene Home Services",
+        "Smith and Keene Home Services"
+      ],
+      "websiteDomains": [
+        "smithandkeene.com"
+      ],
+      "locations": [
+        {
+          "city": "Chesapeake",
+          "address": "833 Live Oak Dr"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-9e594c69-5dcc-46e7-bea7-e5c656d7198e"
+      ],
+      "notes": "Acquired residential Retail (Installation) and Service (Repair) divisions only; seller's new-construction business remained and operated as S & K Electric."
+    },
+    {
+      "id": "organization-cascade-services",
+      "type": "parent_organization",
+      "name": "Cascade Services",
+      "normalizedName": "cascade services",
+      "brands": [
+        "Cascade Residential Services"
+      ],
+      "websiteDomains": [
+        "cascadeservices.com"
+      ],
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": "Residential tri-trade platform; its formation announcement says it was formed through partnership between Trive Capital, LP First Capital, and management."
+    },
+    {
+      "id": "organization-cascade-management-team",
+      "type": "management_team",
+      "name": "Cascade Services management team",
+      "normalizedName": "cascade services management team",
+      "brands": [],
+      "websiteDomains": [],
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": "Cascade's formation announcement identifies an experienced management team as a formation partner; individual equity stakes are not disclosed."
+    },
+    {
+      "id": "investor-trive-capital",
+      "type": "pe_investor",
+      "name": "Trive Capital",
+      "normalizedName": "trive capital",
+      "brands": [
+        "Trive"
+      ],
+      "websiteDomains": [
+        "trivecapital.com"
+      ],
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": "Trive's source describes Trive as a private equity firm and says Cascade was formed through partnership with Trive, LP First Capital, and management; ownership percentages not disclosed."
+    },
+    {
+      "id": "investor-lp-first-capital",
+      "type": "private_investment_firm",
+      "name": "LP First Capital",
+      "normalizedName": "lp first capital",
+      "brands": [
+        "LP First"
+      ],
+      "websiteDomains": [],
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": "Trive identifies LP First as a private investment firm and a Cascade formation partner; do not label as PE or infer stake absent further evidence."
+    },
+    {
+      "id": "company-hobbs-associates",
+      "type": "company",
+      "name": "Hobbs & Associates",
+      "normalizedName": "hobbs associates",
+      "brands": [
+        "Hobbs and Associates"
+      ],
+      "websiteDomains": [
+        "hobbsassociates.com"
+      ],
+      "locations": [
+        {
+          "city": "Norfolk",
+          "address": "4850 Brookside Ct #100"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-11f4ba78-3c4e-455c-a6ba-24e60e3d0a57"
+      ],
+      "notes": "Hobbs is the local commercial HVAC operating company; AIR Control Concepts is the parent platform/network. Its Norfolk office address is source-matched.",
+      "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "organization-air-control-concepts",
+      "type": "parent_organization",
+      "name": "AIR Control Concepts",
+      "normalizedName": "air control concepts",
+      "brands": [
+        "AIR"
+      ],
+      "websiteDomains": [
+        "aircontrolconcepts.com"
+      ],
+      "locations": [
+        {
+          "city": "Norfolk",
+          "address": null
+        }
+      ],
+      "overtureBusinessIds": [],
+      "notes": "Parent platform for operating companies including Hobbs & Associates. As of January 7, 2026 Blackstone-managed funds are the sole institutional investor; Hobbs family also invested. MDP-affiliated funds were historical investors and exited their remaining stake January 7, 2026.",
+      "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "investor-blackstone-pe-air",
+      "type": "pe_investor",
+      "name": "Blackstone-managed private equity funds",
+      "normalizedName": "blackstone managed private equity funds",
+      "brands": [
+        "Blackstone Private Equity"
+      ],
+      "websiteDomains": [
+        "blackstone.com"
+      ],
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": "Blackstone-managed PE funds became AIR’s sole institutional investor on 2026-01-07. The Hobbs family also invested alongside them; no equity percentages inferred.",
+      "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "investor-madison-dearborn-air-historical",
+      "type": "institutional_investor",
+      "name": "Madison Dearborn Partners affiliated funds (historical AIR investor)",
+      "normalizedName": "madison dearborn partners affiliated funds historical air investor",
+      "brands": [
+        "Madison Dearborn Partners"
+      ],
+      "websiteDomains": [
+        "mdcp.com"
+      ],
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": "Historical AIR investor alongside Blackstone from its July 2024 investment; Blackstone acquired MDP’s remaining stake and closed on 2026-01-07. Not a current AIR institutional investor.",
+      "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "coinvestor-hobbs-family-air",
+      "type": "founder_family_coinvestor",
+      "name": "Hobbs family (AIR co-investor)",
+      "normalizedName": "hobbs family air coinvestor",
+      "brands": [],
+      "websiteDomains": [],
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": "Blackstone’s January 7, 2026 announcement says AIR founder Brad Hobbs and his family also invested alongside Blackstone. No stake inferred.",
+      "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "company-brr-refrigeration",
+      "type": "company",
+      "name": "BRR Refrigeration LLC",
+      "normalizedName": "brr refrigeration",
+      "brands": [
+        "BRR Refrigeration"
+      ],
+      "websiteDomains": [],
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "961 Reon Dr"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-91a5fbbf-2236-4922-8efe-8da5897f1074"
+      ],
+      "notes": "Former Virginia Beach commercial refrigeration and HVAC contractor acquired by CoolSys; the current listing address matches CoolSys’s Virginia Beach branch.",
+      "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "organization-coolsys",
+      "type": "parent_organization",
+      "name": "CoolSys",
+      "normalizedName": "coolsys",
+      "brands": [
+        "CoolSys"
+      ],
+      "websiteDomains": [
+        "coolsys.com"
+      ],
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": "Acquired BRR Refrigeration (announcement 2019-12-20; effective/closing date unknown). CoolSys was acquired by an Ares-managed PE fund (announcement 2019-03-21); Ares PE leadership remains represented on CoolSys board.",
+      "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "investor-ares-private-equity-coolsys",
+      "type": "pe_investor",
+      "name": "Ares Management Private Equity Group (managed fund)",
+      "normalizedName": "ares management private equity group managed fund",
+      "brands": [
+        "Ares Private Equity"
+      ],
+      "websiteDomains": [
+        "ares.com"
+      ],
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": "A fund managed by Ares Management Corporation’s Private Equity Group acquired CoolSys; acquisition announced 2019-03-21. CoolSys leadership page currently lists Ares PE partners/advisors on its board.",
+      "publicationId": "20261028T134237Z-dafafbf78f"
     }
   ],
   "relationships": [
@@ -85,7 +359,14 @@
       "announcedAt": "2025-04-03",
       "effectiveAt": null,
       "verifiedAt": "2026-10-27",
-      "evidence": [{"url": "https://silaservices.com/sila-services-expands-footprint-in-virginia-with-acquisitions-of-norfolk-air-heating-cooling-plumbing-electrical-and-guy-smith-heating-cooling/", "description": "Sila announced the acquisition of Norfolk Air; exact closing date not stated.", "publishedAt": "2025-04-03", "verifiedAt": "2026-10-27"}]
+      "evidence": [
+        {
+          "url": "https://silaservices.com/sila-services-expands-footprint-in-virginia-with-acquisitions-of-norfolk-air-heating-cooling-plumbing-electrical-and-guy-smith-heating-cooling/",
+          "description": "Sila announced the acquisition of Norfolk Air; exact closing date not stated.",
+          "publishedAt": "2025-04-03",
+          "verifiedAt": "2026-10-27"
+        }
+      ]
     },
     {
       "id": "rel-guy-smith-sila-acquisition",
@@ -95,7 +376,14 @@
       "announcedAt": "2025-04-03",
       "effectiveAt": null,
       "verifiedAt": "2026-10-27",
-      "evidence": [{"url": "https://silaservices.com/sila-services-expands-footprint-in-virginia-with-acquisitions-of-norfolk-air-heating-cooling-plumbing-electrical-and-guy-smith-heating-cooling/", "description": "Sila announced the acquisition of Guy Smith; exact closing date not stated.", "publishedAt": "2025-04-03", "verifiedAt": "2026-10-27"}]
+      "evidence": [
+        {
+          "url": "https://silaservices.com/sila-services-expands-footprint-in-virginia-with-acquisitions-of-norfolk-air-heating-cooling-plumbing-electrical-and-guy-smith-heating-cooling/",
+          "description": "Sila announced the acquisition of Guy Smith; exact closing date not stated.",
+          "publishedAt": "2025-04-03",
+          "verifiedAt": "2026-10-27"
+        }
+      ]
     },
     {
       "id": "rel-sila-goldman-investment",
@@ -106,8 +394,18 @@
       "effectiveAt": null,
       "verifiedAt": "2026-10-27",
       "evidence": [
-        {"url": "https://am.gs.com/en-au/advisors/news/press-release/2024/sila-services-investment", "description": "Goldman Sachs Alternatives announced it would acquire a majority stake, subject to customary regulatory approvals; close date not stated.", "publishedAt": "2024-11-12", "verifiedAt": "2026-10-27"},
-        {"url": "https://silaservices.com/", "description": "Current Sila company site identifies Sila as a portfolio company of Private Equity at Goldman Sachs Alternatives.", "publishedAt": null, "verifiedAt": "2026-10-27"}
+        {
+          "url": "https://am.gs.com/en-au/advisors/news/press-release/2024/sila-services-investment",
+          "description": "Goldman Sachs Alternatives announced it would acquire a majority stake, subject to customary regulatory approvals; close date not stated.",
+          "publishedAt": "2024-11-12",
+          "verifiedAt": "2026-10-27"
+        },
+        {
+          "url": "https://silaservices.com/",
+          "description": "Current Sila company site identifies Sila as a portfolio company of Private Equity at Goldman Sachs Alternatives.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-27"
+        }
       ]
     },
     {
@@ -119,7 +417,14 @@
       "effectiveAt": null,
       "effectiveYear": 2025,
       "verifiedAt": "2026-10-27",
-      "evidence": [{"url": "https://silaservices.com/brands/?id=399", "description": "Sila's brand page states Norfolk Air became part of Guy Smith Home Services in 2025; exact date not stated.", "publishedAt": null, "verifiedAt": "2026-10-27"}]
+      "evidence": [
+        {
+          "url": "https://silaservices.com/brands/?id=399",
+          "description": "Sila's brand page states Norfolk Air became part of Guy Smith Home Services in 2025; exact date not stated.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-27"
+        }
+      ]
     },
     {
       "id": "rel-comfort-solutions-paramount-acquisition",
@@ -129,7 +434,14 @@
       "announcedAt": "2025-05-01",
       "effectiveAt": "2025-05-01",
       "verifiedAt": "2026-10-27",
-      "evidence": [{"url": "https://stonebridgepartners.com/stonebridge-partners-announces-the-acquisition-of-comfort-solutions-by-paramount-mechanical-corporation/", "description": "Stonebridge states Paramount successfully completed the acquisition on May 1, 2025.", "publishedAt": "2025-05-01", "verifiedAt": "2026-10-27"}]
+      "evidence": [
+        {
+          "url": "https://stonebridgepartners.com/stonebridge-partners-announces-the-acquisition-of-comfort-solutions-by-paramount-mechanical-corporation/",
+          "description": "Stonebridge states Paramount successfully completed the acquisition on May 1, 2025.",
+          "publishedAt": "2025-05-01",
+          "verifiedAt": "2026-10-27"
+        }
+      ]
     },
     {
       "id": "rel-paramount-stonebridge-investment",
@@ -140,9 +452,178 @@
       "effectiveAt": "2021-03-11",
       "verifiedAt": "2026-10-27",
       "evidence": [
-        {"url": "https://stonebridgepartners.com/stonebridge-partners-completes-the-recapitalization-of-paramount-mechanical-corporation/", "description": "Stonebridge announced the recapitalization closed on March 11, 2021; the release says founder retained significant ownership and equity capital also came from Midwest, 747 Capital, management, and Stonebridge.", "publishedAt": "2021-03-11", "verifiedAt": "2026-10-27"},
-        {"url": "https://stonebridgepartners.com/current-portfolio-companies/", "description": "Stonebridge's current portfolio companies page continues to list Paramount Mechanical.", "publishedAt": null, "verifiedAt": "2026-10-27"}
+        {
+          "url": "https://stonebridgepartners.com/stonebridge-partners-completes-the-recapitalization-of-paramount-mechanical-corporation/",
+          "description": "Stonebridge announced the recapitalization closed on March 11, 2021; the release says founder retained significant ownership and equity capital also came from Midwest, 747 Capital, management, and Stonebridge.",
+          "publishedAt": "2021-03-11",
+          "verifiedAt": "2026-10-27"
+        },
+        {
+          "url": "https://stonebridgepartners.com/current-portfolio-companies/",
+          "description": "Stonebridge's current portfolio companies page continues to list Paramount Mechanical.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-27"
+        }
       ]
+    },
+    {
+      "id": "rel-smith-keene-cascade-carveout",
+      "fromEntityId": "company-smith-keene-home-services",
+      "toEntityId": "organization-cascade-services",
+      "type": "acquired_by",
+      "transactionType": "carveout",
+      "scope": "Retail (Installation) and Service (Repair) divisions only; seller's new-construction business remained and operated as S & K Electric.",
+      "announcedAt": "2024-09-05",
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-28",
+      "evidence": [
+        {
+          "url": "https://www.cascadeservices.com/cascade-services-announces-the-acquisitions-of-sun-plumbing-in-florida-and-smith-keene-home-services-in-virginia/",
+          "description": "Cascade announced acquisition of Smith & Keene Home Services LLC, consisting of Retail (Installation) and Service (Repair) divisions; new construction remained with seller. Exact closing date not disclosed.",
+          "publishedAt": "2024-09-05",
+          "verifiedAt": "2026-10-28"
+        }
+      ]
+    },
+    {
+      "id": "rel-cascade-trive-partnership",
+      "fromEntityId": "organization-cascade-services",
+      "toEntityId": "investor-trive-capital",
+      "type": "formed_through_partnership",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-28",
+      "evidence": [
+        {
+          "url": "https://www.trivecapital.com/trive-capital-forms-cascade-services-to-partner-with-market-leading-brands-in-the-home-services-sector/",
+          "description": "Trive says Cascade was formed through partnership between Trive, LP First Capital, and management. The announcement gives no date or ownership percentages.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-28"
+        }
+      ]
+    },
+    {
+      "id": "rel-cascade-lp-first-partnership",
+      "fromEntityId": "organization-cascade-services",
+      "toEntityId": "investor-lp-first-capital",
+      "type": "formed_through_partnership",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-28",
+      "evidence": [
+        {
+          "url": "https://www.trivecapital.com/trive-capital-forms-cascade-services-to-partner-with-market-leading-brands-in-the-home-services-sector/",
+          "description": "Trive says Cascade was formed through partnership between Trive, LP First Capital, and management. LP First's exact role and ownership percentage are not disclosed.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-28"
+        }
+      ]
+    },
+    {
+      "id": "rel-cascade-management-partnership",
+      "fromEntityId": "organization-cascade-services",
+      "toEntityId": "organization-cascade-management-team",
+      "type": "formed_through_partnership",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-28",
+      "evidence": [
+        {
+          "url": "https://www.trivecapital.com/trive-capital-forms-cascade-services-to-partner-with-market-leading-brands-in-the-home-services-sector/",
+          "description": "Trive says Cascade was formed through partnership between Trive, LP First Capital, and an experienced management team; individual stakes are not disclosed.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-28"
+        }
+      ]
+    },
+    {
+      "id": "rel-hobbs-air-operating-company",
+      "fromEntityId": "company-hobbs-associates",
+      "toEntityId": "organization-air-control-concepts",
+      "type": "portfolio_company_of",
+      "evidence": [
+        {
+          "url": "https://www.aircontrolconcepts.com/operating-companies/hobbs-associates",
+          "description": "Identifies Hobbs & Associates as an operating company in the AIR Control Concepts network, preserving the distinction between operating company and platform.",
+          "verifiedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.blackstone.com/news/press/air-control-concepts-announces-investment-from-blackstone/",
+          "description": "AIR announced Blackstone as an equity investment partner alongside funds affiliated with Madison Dearborn Partners (MDP) and AIR management; identifies Hobbs & Associates among AIR operating brands.",
+          "verifiedAt": "2026-10-28"
+        }
+      ],
+      "verifiedAt": "2026-10-28",
+      "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "rel-air-blackstone-current-institutional-investor",
+      "fromEntityId": "organization-air-control-concepts",
+      "toEntityId": "investor-blackstone-pe-air",
+      "type": "portfolio_company_of",
+      "announcedAt": "2026-01-07",
+      "effectiveAt": "2026-01-07",
+      "effectiveDateEvidenceUrls": [
+        "https://www.blackstone.com/news/press/blackstone-announces-additional-investment-in-air-control-concepts/"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.blackstone.com/news/press/air-control-concepts-announces-investment-from-blackstone/",
+          "description": "AIR announced Blackstone as an equity investment partner alongside funds affiliated with Madison Dearborn Partners (MDP) and AIR management; identifies Hobbs & Associates among AIR operating brands.",
+          "verifiedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.blackstone.com/news/press/blackstone-announces-additional-investment-in-air-control-concepts/",
+          "description": "Blackstone funds signed and closed the acquisition of MDP’s remaining AIR equity stake on January 7, 2026; Blackstone became AIR’s sole institutional investor. AIR founder Brad Hobbs and his family also invested alongside Blackstone.",
+          "verifiedAt": "2026-10-28"
+        }
+      ],
+      "verifiedAt": "2026-10-28",
+      "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "rel-brr-coolsys-acquisition",
+      "fromEntityId": "company-brr-refrigeration",
+      "toEntityId": "organization-coolsys",
+      "type": "acquired_by",
+      "announcedAt": "2019-12-20",
+      "effectiveAt": null,
+      "evidence": [
+        {
+          "url": "https://coolsys.com/resource/coolsys-acquires-brr-refrigeration-in-virginia/",
+          "description": "CoolSys announced it acquired BRR Refrigeration, a Virginia Beach commercial HVAC/R contractor; the release says the acquisition closed that week. The effective/closing date is not specified.",
+          "verifiedAt": "2026-10-28"
+        },
+        {
+          "url": "https://www.achrnews.com/articles/142364-coolsys-acquires-brr-refrigeration-in-virginia",
+          "description": "Independent HVAC trade publication dated December 20, 2019 reports CoolSys’s BRR acquisition announcement; confirms announcement date without asserting closing date.",
+          "verifiedAt": "2026-10-28"
+        }
+      ],
+      "verifiedAt": "2026-10-28",
+      "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "rel-coolsys-ares-acquisition",
+      "fromEntityId": "organization-coolsys",
+      "toEntityId": "investor-ares-private-equity-coolsys",
+      "type": "acquired_by",
+      "announcedAt": "2019-03-21",
+      "effectiveAt": null,
+      "evidence": [
+        {
+          "url": "https://coolsys.com/resource/coolsys-acquired-by-ares-management-corporation/",
+          "description": "CoolSys announced it had been acquired by a fund managed by Ares Management Corporation’s Private Equity Group on March 21, 2019; no transaction terms disclosed.",
+          "verifiedAt": "2026-10-28"
+        },
+        {
+          "url": "https://coolsys.com/about-coolsys/leadership/",
+          "description": "Current CoolSys board page identifies Ares Private Equity Group partners/advisors on the CoolSys board, corroborating the continuing Ares relationship.",
+          "verifiedAt": "2026-10-28"
+        }
+      ],
+      "verifiedAt": "2026-10-28",
+      "publicationId": "20261028T134237Z-dafafbf78f"
     }
   ]
 }

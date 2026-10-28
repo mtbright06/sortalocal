@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from 'react'
+import { useEffect, useId, useMemo, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from 'react'
 import * as maplibregl from 'maplibre-gl'
 import type { Marker } from 'maplibre-gl'
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
@@ -15,6 +15,10 @@ import {
     Info,
     Star,
     ChevronDown,
+    Fan,
+    PawPrint,
+    CarFront,
+    Check,
     LocateFixed,
     MapPin,
     Search,
@@ -292,6 +296,7 @@ function App() {
                         <input className="distance-slider" type="range" min="0" max={radiusOptions.length} step="1" value={radius === 'all' ? radiusOptions.length : radiusOptions.indexOf(radius)} aria-label="Search radius" aria-valuetext={radius === 'all' ? 'All Hampton Roads' : `${radius} miles`} onChange={event => { const index = Number(event.target.value); setRadius(index === radiusOptions.length ? 'all' : radiusOptions[index]); setSelectedBusiness(null) }} />
                         <div className="distance-ticks" aria-hidden="true">{[...radiusOptions.map(value => `${value}`), 'All'].map(label => <span key={label}>{label}</span>)}</div>
                     </section>
+                    <IndustrySelector value={activeCategory} onChange={category => { setActiveCategory(category); setSelectedBusiness(null) }} />
                     <details className="filter-group" open>
                         <summary><ShieldCheck size={17} /> Ownership <ChevronDown size={15} /></summary>
                         <div className="ownership-filters">
@@ -303,15 +308,6 @@ function App() {
                             </label>)}
                         </div>
                         <p className="filter-count-note">Totals for {categoryLabels[activeCategory]} across all areas.</p>
-                    </details>
-                    <details className="filter-group" open>
-                        <summary><Building2 size={17} /> Industry <ChevronDown size={15} /></summary>
-                        <div className="industry-options">
-                            {categories.map(category => <label key={category} className={`industry-option${activeCategory === category ? ' is-active' : ''}`}>
-                                <input type="radio" name="industry" checked={activeCategory === category} onChange={() => { setActiveCategory(category); setSelectedBusiness(null) }} />
-                                <span>{categoryLabels[category]}</span><span className="ownership-count">{businesses.filter(business => business.category === category).length}</span>
-                            </label>)}
-                        </div>
                     </details>
                     <details className="filter-group additional-options">
                         <summary><SlidersHorizontal size={17} /> More filters <ChevronDown size={15} /></summary>
@@ -378,6 +374,92 @@ function App() {
     )
 }
 
+const industryIcons: Partial<Record<BusinessCategory, ReactNode>> = {
+    hvac: <Fan size={23} aria-hidden="true" />,
+    dental: <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 4c-3-2-7-1-7 3 0 3 2 5 2 8 0 2 0 6 2 6s1-8 3-8 1 8 3 8 2-4 2-6c0-3 2-5 2-8 0-4-4-5-7-3Z" /><path d="M9 4c1 1 3 2 5 1" /></svg>,
+    veterinary: <PawPrint size={23} aria-hidden="true" />,
+    automotive: <CarFront size={23} aria-hidden="true" />,
+}
+
+function IndustrySelector({ value, onChange }: { value: BusinessCategory; onChange: (category: BusinessCategory) => void }) {
+    const [isOpen, setIsOpen] = useState(false)
+    const [focusedIndex, setFocusedIndex] = useState(0)
+    const root = useRef<HTMLDivElement>(null)
+    const trigger = useRef<HTMLButtonElement>(null)
+    const options = useRef<(HTMLButtonElement | null)[]>([])
+    const typed = useRef({ text: '', at: 0 })
+    const id = useId()
+    const labelId = `${id}-label`
+    const listId = `${id}-options`
+
+    useEffect(() => {
+        if (!isOpen) return
+        const outsideClick = (event: PointerEvent) => {
+            if (event.target instanceof Node && !root.current?.contains(event.target)) setIsOpen(false)
+        }
+        document.addEventListener('pointerdown', outsideClick, true)
+        return () => document.removeEventListener('pointerdown', outsideClick, true)
+    }, [isOpen])
+
+    useEffect(() => {
+        if (!isOpen) return
+        const option = options.current[focusedIndex]
+        option?.focus({ preventScroll: true })
+        const menu = option?.parentElement
+        if (option && menu) {
+            if (option.offsetTop < menu.scrollTop) menu.scrollTop = option.offsetTop
+            else if (option.offsetTop + option.offsetHeight > menu.scrollTop + menu.clientHeight) {
+                menu.scrollTop = option.offsetTop + option.offsetHeight - menu.clientHeight
+            }
+        }
+    }, [isOpen, focusedIndex])
+
+    const openAt = (index: number) => {
+        typed.current = { text: '', at: 0 }
+        setFocusedIndex(index)
+        setIsOpen(true)
+    }
+    const choose = (category: BusinessCategory) => {
+        onChange(category)
+        setIsOpen(false)
+        trigger.current?.focus({ preventScroll: true })
+    }
+    const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+        if (event.key === 'Escape' && isOpen) {
+            event.preventDefault()
+            event.stopPropagation()
+            setIsOpen(false)
+            trigger.current?.focus({ preventScroll: true })
+        } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+            event.preventDefault()
+            if (!isOpen) openAt(categories.indexOf(value))
+            else setFocusedIndex(current => (current + (event.key === 'ArrowDown' ? 1 : -1) + categories.length) % categories.length)
+        } else if (event.key === 'Home' || event.key === 'End') {
+            event.preventDefault()
+            openAt(event.key === 'Home' ? 0 : categories.length - 1)
+        } else if (event.key.length === 1 && /[a-z]/i.test(event.key) && !event.ctrlKey && !event.altKey && !event.metaKey) {
+            event.preventDefault()
+            const now = event.timeStamp
+            const text = (now - typed.current.at < 600 ? typed.current.text : '') + event.key.toLowerCase()
+            typed.current = { text, at: now }
+            const index = categories.findIndex(category => categoryLabels[category].toLowerCase().startsWith(text))
+            if (index >= 0) { setFocusedIndex(index); setIsOpen(true) }
+        }
+    }
+
+    return <div ref={root} className="filter-group industry-picker" onKeyDown={handleKeyDown} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setIsOpen(false) }}>
+        <h3 id={labelId} className="industry-picker-label"><Building2 size={17} aria-hidden="true" /> Industry</h3>
+        <button ref={trigger} type="button" className="industry-picker-trigger" aria-haspopup="listbox" aria-expanded={isOpen} aria-controls={isOpen ? listId : undefined} aria-labelledby={`${labelId} ${id}-value`} onClick={() => isOpen ? setIsOpen(false) : openAt(categories.indexOf(value))}>
+            <span className="industry-picker-icon">{industryIcons[value] ?? <Building2 size={23} aria-hidden="true" />}</span><span id={`${id}-value`}>{categoryLabels[value]}</span><ChevronDown size={17} aria-hidden="true" />
+        </button>
+        {isOpen && <div id={listId} role="listbox" aria-labelledby={labelId} className="industry-picker-menu">
+            {categories.map((category, index) => <button key={category} ref={element => { options.current[index] = element }} type="button" role="option" aria-selected={value === category} tabIndex={focusedIndex === index ? 0 : -1} className={`industry-picker-option${value === category ? ' is-selected' : ''}`} onClick={() => choose(category)} onFocus={() => setFocusedIndex(index)}>
+                <span className="industry-picker-icon">{industryIcons[category] ?? <Building2 size={23} aria-hidden="true" />}</span><span>{categoryLabels[category]}</span>{value === category && <Check size={19} aria-hidden="true" />}
+            </button>)}
+        </div>}
+    </div>
+}
+
 function BusinessRow({ business, selected, onSelect, distance }: { business: Business; selected: boolean; onSelect: () => void; distance: number }) {
     const isOverture = business.dataSource === 'overture'
 
@@ -405,7 +487,7 @@ function BusinessDetail({ business, onClose }: { business: Business; onClose: ()
     const isVerified = ownership.status === 'verified'
     const isOverture = business.dataSource === 'overture'
     const events = [...(ownership.status === 'verified' ? ownership.ownershipChain ?? [] : [])]
-        .filter(step => step.relationship !== 'portfolio_company_of')
+        .filter(step => !['portfolio_company_of', 'formed_through_partnership'].includes(step.relationship))
         .sort((a, b) => ownershipEventDate(a).localeCompare(ownershipEventDate(b)))
     const evidenceCount = isVerified ? new Set([
         ...(ownership.ownershipChain ?? []).flatMap(step => step.evidence.map(evidence => evidence.url)),
@@ -446,9 +528,10 @@ function BusinessDetail({ business, onClose }: { business: Business; onClose: ()
                                 {events.map((step, index) => <li key={`${step.fromEntity}-${step.relationship}-${index}`}>
                                     <span className="event-date">{ownershipRelationshipDate(step)}</span>
                                     <div>
-                                        <span className="relationship-label">{ownershipRelationshipLabel(step.relationship)}</span>
+                                        <span className="relationship-label">{ownershipRelationshipLabel(step.relationship)}{step.transactionType === 'carveout' ? ' · residential carve-out' : ''}</span>
                                         <strong className="event-title"><span className="event-role">{step.relationship === 'majority_investment_by' ? 'Investor' : step.relationship === 'acquired_by' ? 'Buyer' : 'Related entity'}: </span>{step.toEntity}</strong>
                                         <span className="event-company">Company: {step.fromEntity}</span>
+                                        {step.scope && <span className="event-company">Scope: {step.scope}</span>}
                                     </div>
                                 </li>)}
                             </ol>
@@ -529,7 +612,7 @@ function OwnershipChain({ business }: { business: Business }) {
         {ownershipPaths(ownership.ownershipChain).map((path, index) => <ol className="chain-path" key={index} aria-label="Recorded ownership relationships">
             <li className="chain-node"><Building2 size={19} /><strong>{path[0].fromEntity}</strong></li>
             {path.map((step, stepIndex) => <li className="chain-step" key={`${step.toEntity}-${stepIndex}`}>
-                <span className="chain-arrow"><small>{step.relationship === 'acquired_by' ? 'Acquired by' : ownershipRelationshipLabel(step.relationship)}</small><span aria-hidden="true">→</span></span>
+                                <span className="chain-arrow"><small>{step.relationship === 'acquired_by' ? 'Acquired by' : ownershipRelationshipLabel(step.relationship)}{step.transactionType === 'carveout' ? ' · residential' : ''}</small><span aria-hidden="true">→</span></span>
                 <span className="chain-node"><Building2 size={19} /><strong>{step.toEntity}</strong></span>
             </li>)}
         </ol>)}

@@ -15,15 +15,16 @@ const server = await createServer({
         name: 'expose-profile-for-render-checks',
         enforce: 'pre',
         transform(code, id) {
-            if (id.endsWith('/src/App.tsx')) {
-                return `${code}\nexport { BusinessDetail, ownershipPaths, ownershipEventDate };`
+            if (id.split('?')[0].endsWith('/src/App.tsx')) {
+                const renderCode = id.includes('industry-open-test') ? code.replace('const [isOpen, setIsOpen] = useState(false)', 'const [isOpen, setIsOpen] = useState(true)') : code
+                return `${renderCode}\nexport { BusinessDetail, ownershipPaths, ownershipEventDate, IndustrySelector };`
             }
         },
     }],
 })
 const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll("'", '&#x27;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
 try {
-    const { default: App, BusinessDetail, ownershipPaths, ownershipEventDate } = await server.ssrLoadModule('/src/App.tsx')
+    const { default: App, BusinessDetail, ownershipPaths, ownershipEventDate, IndustrySelector } = await server.ssrLoadModule('/src/App.tsx')
     const { businesses } = await server.ssrLoadModule('/src/businesses.ts')
     assert.equal(businesses.filter(business => business.dataSource === 'overture').length, 293)
     for (viewportWidth of [1280, 1440, 1920, 390]) {
@@ -37,10 +38,35 @@ try {
         assert.equal((html.match(/Good work, close to home\./g) ?? []).length, 1)
         assert.equal(html.includes('aria-expanded="true"'), viewportWidth >= 1024)
         assert(html.includes('distance-slider'))
-        assert(html.includes('name="industry"'))
+        assert(html.includes('aria-haspopup="listbox"'))
+        assert(!html.includes('name="industry"'), 'Industry radios have been replaced')
+        assert.equal((html.match(/aria-haspopup="listbox"/g) ?? []).length, 1, 'Only one industry selector')
+        assert(html.indexOf('distance-group') < html.indexOf('industry-picker'))
+        assert(html.indexOf('industry-picker') < html.indexOf('ownership-filters'))
+        assert(html.indexOf('ownership-filters') < html.indexOf('additional-options'))
         assert(html.includes('Totals for HVAC across all areas.'))
         assert(html.includes('map-summary-row'))
     }
+    // Render both states for every real category. Interaction/viewport checks
+    // still require a connected browser; these are markup and data checks only.
+    const { IndustrySelector: OpenIndustrySelector } = await server.ssrLoadModule('/src/App.tsx?industry-open-test')
+    const { categoryLabels } = await server.ssrLoadModule('/src/businesses.ts')
+    for (const [category, label] of Object.entries(categoryLabels)) {
+        const closed = renderToStaticMarkup(createElement(IndustrySelector, { value: category, onChange() {} }))
+        assert(closed.includes(escape(label)))
+        assert(closed.includes('aria-expanded="false"'))
+        assert(!closed.includes('role="listbox"'))
+        assert(!closed.includes('<select'))
+        const opened = renderToStaticMarkup(createElement(OpenIndustrySelector, { value: category, onChange() {} }))
+        assert(opened.includes('role="listbox"'))
+        assert.equal((opened.match(/role="option"/g) ?? []).length, Object.keys(categoryLabels).length)
+        assert.equal((opened.match(/aria-selected="true"/g) ?? []).length, 1)
+        const selected = opened.match(/<button[^>]*role="option"[^>]*aria-selected="true"[^>]*>([\s\S]*?)<\/button>/)?.[1]
+        assert(selected?.includes(escape(label)))
+        assert(selected?.includes('lucide-check'), 'Selected industry has a checkmark')
+        for (const optionLabel of Object.values(categoryLabels)) assert(opened.includes(escape(optionLabel)))
+    }
+    console.log('Passed industry selector checks: sidebar order, single custom control, icons, and selected menu option for every category.')
     for (const business of businesses) {
         const html = renderToStaticMarkup(createElement(BusinessDetail, { business, onClose() {} }))
         const header = html.slice(html.indexOf('<header'), html.indexOf('</header>'))
@@ -73,7 +99,7 @@ try {
         for (const step of steps) {
             for (const evidence of step.evidence) assert(html.includes(escape(evidence.url)), 'All original evidence links remain available')
         }
-        const events = steps.filter(step => step.relationship !== 'portfolio_company_of').sort((a, b) => ownershipEventDate(a).localeCompare(ownershipEventDate(b)))
+        const events = steps.filter(step => !['portfolio_company_of', 'formed_through_partnership'].includes(step.relationship)).sort((a, b) => ownershipEventDate(a).localeCompare(ownershipEventDate(b)))
         let previousPosition = -1
         const timeline = html.match(/<ol class="acquisition-timeline">([\s\S]*?)<\/ol>/)?.[1] ?? ''
         for (const event of events) {
@@ -105,6 +131,20 @@ try {
     }
     assert(guyHtml.includes('Verification details'))
     console.log('Passed Guy Smith acceptance check: chain and both dated events render outside all expandable sections.')
+
+    const smithKeene = businesses.find(business => business.id === 'overture-9e594c69-5dcc-46e7-bea7-e5c656d7198e')
+    assert(smithKeene?.ownership.status === 'verified')
+    assert.equal(smithKeene.ownership.classification, 'pe-backed')
+    const smithHtml = renderToStaticMarkup(createElement(BusinessDetail, { business: smithKeene, onClose() {} }))
+    const smithChain = smithHtml.slice(smithHtml.indexOf('id="chain-heading"'), smithHtml.indexOf('<details'))
+    for (const name of ['Smith & Keene Home Services LLC', 'Cascade Services', 'Trive Capital', 'LP First Capital', 'Cascade Services management team']) {
+        assert(smithChain.includes(escape(name)), `Approved Smith & Keene partnership chain includes ${name}`)
+    }
+    assert(smithHtml.includes('Announced Sep 5, 2024'))
+    assert(smithHtml.includes('residential carve-out'))
+    assert(smithHtml.includes('seller&#x27;s new-construction business remained and operated as S &amp; K Electric.'))
+    assert(smithHtml.includes('An announcement does not confirm a closing date.'))
+    console.log('Passed Smith & Keene approval check: scoped carve-out, announcement date, and Cascade partner branches render.')
     // Exercise absent fields and lengthy content using copies of real records.
     // These fixtures are never added to the business dataset.
     const verified = businesses.find(business => business.dataSource === 'overture' && business.ownership.status === 'verified' && business.ownership.ownershipChain?.length)
@@ -126,7 +166,7 @@ try {
     assert(extensiveHtml.includes(escape(extensive.name)))
     const originalPaths = ownershipPaths(verified.ownership.ownershipChain)
     assert.deepEqual(ownershipPaths(extensiveSteps), originalPaths, 'Repeated evidence must not duplicate chain entities')
-    const expectedEvents = extensiveSteps.filter(step => step.relationship !== 'portfolio_company_of').length
+    const expectedEvents = extensiveSteps.filter(step => !['portfolio_company_of', 'formed_through_partnership'].includes(step.relationship)).length
     assert.equal((extensiveHtml.match(/class="event-date"/g) ?? []).length, expectedEvents, 'Extensive acquisition history is fully retained')
     const visibleHeader = extensiveHtml.slice(extensiveHtml.indexOf('<header'), extensiveHtml.indexOf('</header>'))
     assert(!visibleHeader.includes('Business identity match'), 'Identity confidence stays secondary')

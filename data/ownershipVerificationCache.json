@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "caseFingerprints": {
+    "case-smith-keene-cascade-2024": {
+      "fingerprints": {
+        "overture-9e594c69-5dcc-46e7-bea7-e5c656d7198e": "14c8df7921fad859fa4218060a9e312037bd6cb0c0ecad9954959430e5609bff"
+      },
+      "lastDecision": "already_published",
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 1,
+      "evidenceUrls": [
+        "https://www.cascadeservices.com/about/technician-epa-certification/",
+        "https://www.cascadeservices.com/cascade-services-announces-the-acquisitions-of-sun-plumbing-in-florida-and-smith-keene-home-services-in-virginia/",
+        "https://www.trivecapital.com/trive-capital-forms-cascade-services-to-partner-with-market-leading-brands-in-the-home-services-sector/"
+      ]
+    },
+    "case-philbrick-kellam-affiliation": {
+      "fingerprints": {
+        "overture-de2168af-df92-4094-bd32-9a279986bd0d": "e0f06c69cd55ac967deced8acad328269d88c9092a04dad7b3cd4772dceaf429",
+        "overture-0dfd3f2e-02ef-4b94-8d48-18baa87ef525": "e6a72897ce5792204f21c711bcc9fae56e327c1baab70668a55dfb14d9a97398"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 1,
+      "evidenceUrls": [
+        "https://kellammechanical.com/philbrick-heating-ac-is-now-part-of-the-kellam-family/"
+      ]
+    },
+    "case-one-hour-authority-franchise-network": {
+      "fingerprints": {
+        "overture-952d7733-720a-48c8-a764-da6023bc9bb7": "2cb989f6adc4a8ccbf0f4ae5a8fdd15ca8a84bd462928c77dcf1536a1568958b",
+        "overture-8581617e-3a57-4bfb-9721-0e4d5cb348b2": "36d4fa5c432b4b3507be2631fb736e261ea7738de2ebd15eaffcdcc817e9b238"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 1,
+      "evidenceUrls": [
+        "https://www.apax.com/news-views/bci-leads-significant-investment-in-authority-brands/",
+        "https://www.apax.com/news-views/funds-advised-by-apax-partners-acquire-authority-brands/",
+        "https://www.apax.com/partnerships/authority-brands/",
+        "https://www.authoritybrands.com/our-brands/one-hour-heating-air-conditioning/"
+      ]
+    },
+    "case-hobbs-air-blackstone-2024-2026": {
+      "fingerprints": {
+        "overture-11f4ba78-3c4e-455c-a6ba-24e60e3d0a57": "1c98f3cfee9bd81ed1e12320cf2b8c81e65fbd597568e2f3868bd49711141fa5"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.aircontrolconcepts.com/operating-companies/hobbs-associates",
+        "https://www.blackstone.com/news/press/air-control-concepts-announces-investment-from-blackstone/",
+        "https://www.blackstone.com/news/press/blackstone-announces-additional-investment-in-air-control-concepts/",
+        "https://www.hobbsassociates.com/office-locations/norfolk%2C-va"
+      ]
+    },
+    "case-brr-coolsys-ares-2019": {
+      "fingerprints": {
+        "overture-91a5fbbf-2236-4922-8efe-8da5897f1074": "d8240e1c8c12c2bf3307966f6f8c87167a1158b168e7805fb88b43612d8beadd"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://coolsys.com/about-coolsys/leadership/",
+        "https://coolsys.com/our-brands/brr-refrigeration/",
+        "https://coolsys.com/resource/coolsys-acquired-by-ares-management-corporation/",
+        "https://coolsys.com/resource/coolsys-acquires-brr-refrigeration-in-virginia/",
+        "https://www.achrnews.com/articles/142364-coolsys-acquires-brr-refrigeration-in-virginia"
+      ]
+    }
+  },
+  "evidence": {
+    "https://www.cascadeservices.com/cascade-services-announces-the-acquisitions-of-sun-plumbing-in-florida-and-smith-keene-home-services-in-virginia/": {
+      "fingerprint": "876d4ee3261ede4f4f4861be9f37b12bae55f998eac1d4f175217bb8a6e84e7b",
+      "caseIds": [
+        "case-smith-keene-cascade-2024"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 1
+    },
+    "https://www.trivecapital.com/trive-capital-forms-cascade-services-to-partner-with-market-leading-brands-in-the-home-services-sector/": {
+      "fingerprint": "306f0d067069ffa372d9aa027837bab50f00eff17310d0d7157f2c7bd29a2ce3",
+      "caseIds": [
+        "case-smith-keene-cascade-2024"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 1
+    },
+    "https://www.cascadeservices.com/about/technician-epa-certification/": {
+      "fingerprint": "aa4ca0d4d88b6eb146e33e6cead0387bb6da048f5a9b658ba679f5e58965fc30",
+      "caseIds": [
+        "case-smith-keene-cascade-2024"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 1
+    },
+    "https://kellammechanical.com/philbrick-heating-ac-is-now-part-of-the-kellam-family/": {
+      "fingerprint": "42aa20edf2e23207b4dd549c8cddac37ec0210e4cd1b730534f026aa3ba2f635",
+      "caseIds": [
+        "case-philbrick-kellam-affiliation"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 1
+    },
+    "https://www.authoritybrands.com/our-brands/one-hour-heating-air-conditioning/": {
+      "fingerprint": "f02ced856e7bebd44086c1287f4577ef892e6aaf41dd9c51923f830033f8dea1",
+      "caseIds": [
+        "case-one-hour-authority-franchise-network"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 1
+    },
+    "https://www.apax.com/partnerships/authority-brands/": {
+      "fingerprint": "22c9c051cac1f34a95f75fa8ab667a30564948d76aa017bac90eacebdf18037b",
+      "caseIds": [
+        "case-one-hour-authority-franchise-network"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 1
+    },
+    "https://www.apax.com/news-views/funds-advised-by-apax-partners-acquire-authority-brands/": {
+      "fingerprint": "a324384bf3ba2c614cf4a54357f4a4871580d1108284e68c95babbb777552022",
+      "caseIds": [
+        "case-one-hour-authority-franchise-network"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 1
+    },
+    "https://www.apax.com/news-views/bci-leads-significant-investment-in-authority-brands/": {
+      "fingerprint": "2738f4506e315a3353a93447d83a30f7d845f601e105684e5cbe95e5f491ce81",
+      "caseIds": [
+        "case-one-hour-authority-franchise-network"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 1
+    },
+    "https://www.hobbsassociates.com/office-locations/norfolk%2C-va": {
+      "fingerprint": "c5ae0fd30bd59436a3f2753cc0bde4e12cab98bc555fb90e0aebdecd44ff32de",
+      "caseIds": [
+        "case-hobbs-air-blackstone-2024-2026"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 0
+    },
+    "https://www.aircontrolconcepts.com/operating-companies/hobbs-associates": {
+      "fingerprint": "975ed8284a7abe92fc24a41b3b4b3cf858745fb180821754d81ebd96bfdc9f20",
+      "caseIds": [
+        "case-hobbs-air-blackstone-2024-2026"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 0
+    },
+    "https://www.blackstone.com/news/press/air-control-concepts-announces-investment-from-blackstone/": {
+      "fingerprint": "8ef80c1c8ed40b7b19a460f27c87a2a5cb5f86a1460057d8e78a56c14e70d654",
+      "caseIds": [
+        "case-hobbs-air-blackstone-2024-2026"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 0
+    },
+    "https://www.blackstone.com/news/press/blackstone-announces-additional-investment-in-air-control-concepts/": {
+      "fingerprint": "944df2981666b1971dae9bc790f8c6fef8b35939427b1a19123c478066da0562",
+      "caseIds": [
+        "case-hobbs-air-blackstone-2024-2026"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 0
+    },
+    "https://coolsys.com/resource/coolsys-acquires-brr-refrigeration-in-virginia/": {
+      "fingerprint": "7febf72020206404e8a6cda4183f36a9307c76b2e303a9f7922dcbcb8962db00",
+      "caseIds": [
+        "case-brr-coolsys-ares-2019"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 0
+    },
+    "https://coolsys.com/our-brands/brr-refrigeration/": {
+      "fingerprint": "d0a0bdde4eeff7fd5dfdc649cbafbd44370be71bbbfaa736b394a9d41ae75eb5",
+      "caseIds": [
+        "case-brr-coolsys-ares-2019"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 0
+    },
+    "https://coolsys.com/resource/coolsys-acquired-by-ares-management-corporation/": {
+      "fingerprint": "21f4b498c818926df31e5d0be266d6f25bec58c91dd2366ab69985961765d478",
+      "caseIds": [
+        "case-brr-coolsys-ares-2019"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 0
+    },
+    "https://coolsys.com/about-coolsys/leadership/": {
+      "fingerprint": "1af010b36b748ce7724bf935735f1f0bdfca0b7443c071bf3432be6ecd2ac9fe",
+      "caseIds": [
+        "case-brr-coolsys-ares-2019"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 0
+    },
+    "https://www.achrnews.com/articles/142364-coolsys-acquires-brr-refrigeration-in-virginia": {
+      "fingerprint": "f5834259eadf8477bc15afcc1a5113756dc493d0cdc21609bd84e5a3bcb83dc7",
+      "caseIds": [
+        "case-brr-coolsys-ares-2019"
+      ],
+      "lastEvaluatedAt": "2026-10-28",
+      "unchangedRuns": 0
+    }
+  }
+}

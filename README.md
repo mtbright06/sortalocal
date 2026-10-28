@@ -43,6 +43,47 @@ Review `data/ownershipResearchQueue.json`, then explicitly approve a verified ca
 python scripts/ownership_research.py approve BUSINESS_ID ENTITY_ID --classification private_equity_backed --evidence-url https://source.example/article --evidence-note "Ownership disclosed in source" --verified-at 2026-10-01 --approved-by "Reviewer name"
 ```
 
+Source-backed acquisition and ownership candidates are maintained in `data/ownershipResearchCases.json`. Stage them into the existing review queue and regenerate the separate prioritization output with:
+
+```sh
+python3 scripts/ownership_research.py stage-cases
+python3 scripts/ownership_research.py discover
+```
+
+Cases marked `ready_for_human_approval` can be approved with `approve-case`. Repeat `--business-id` only for records whose identity is supported by the source; unresolved record IDs are excluded:
+
+```sh
+python3 scripts/ownership_research.py approve-case CASE_ID --business-id BUSINESS_ID --verified-at YYYY-MM-DD --approved-by "Reviewer name"
+```
+
+This command records one approved finding against each selected original Overture ID without merging the listings. Affiliation-only and franchise-network cases cannot be approved as local ownership classifications until their legal ownership is established.
+
+## Evidence-gated automatic verification
+
+The optional automatic publication path uses only the source facts and identity evidence already staged in `ownershipResearchQueue.json`. It makes no web/API calls. The default configuration at `data/ownershipAutomationConfig.json` disables optional research and sets its spending limits to $0.
+
+Inspect proposed changes without writing any files:
+
+```sh
+python3 scripts/ownership_research.py auto-dry-run
+```
+
+Publish cases that pass the source, relationship, and per-listing identity gates:
+
+```sh
+python3 scripts/ownership_research.py auto-publish
+```
+
+Each actual publication writes a targeted pre-publication snapshot under `data/ownershipSnapshots/` and an evidence fingerprint cache at `data/ownershipVerificationCache.json`. Unchanged evidence is recognized by its fingerprint; no repeated external research is performed.
+
+To undo a specific automated publication, use the snapshot ID printed by `auto-publish`:
+
+```sh
+python3 scripts/ownership_research.py rollback SNAPSHOT_ID
+```
+
+Rollback removes only records and registry relationships/entities added by that publication, restores previous mappings and review status, and marks the snapshot rolled back. Dry-run never modifies public data, cache, queue, registry, or snapshots.
+
 Approval writes a validated entry to the separate public dataset. The script does no web access or scraping. Registry relationships and brand names provide match context; candidate confidence is only a review aid. The matcher accepts source listings as read-only and real listing ownership remains unknown until a human verifies evidence and approves it.
 
 Run focused safeguards with `python -m unittest discover -s tests`. The repo's `npm run lint` covers frontend source; Python scripts use only the standard library.

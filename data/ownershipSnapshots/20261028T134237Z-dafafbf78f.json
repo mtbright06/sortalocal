@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "20261028T134237Z-dafafbf78f",
+  "createdAt": "2026-10-28T13:42:37Z",
+  "status": "applied",
+  "caseIds": [
+    "case-hobbs-air-blackstone-2024-2026",
+    "case-brr-coolsys-ares-2019"
+  ],
+  "businessIds": [
+    "overture-11f4ba78-3c4e-455c-a6ba-24e60e3d0a57",
+    "overture-91a5fbbf-2236-4922-8efe-8da5897f1074"
+  ],
+  "publicRecordsBefore": {
+    "overture-11f4ba78-3c4e-455c-a6ba-24e60e3d0a57": null,
+    "overture-91a5fbbf-2236-4922-8efe-8da5897f1074": null
+  },
+  "registryEntitiesAdded": [
+    "company-hobbs-associates",
+    "organization-air-control-concepts",
+    "investor-blackstone-pe-air",
+    "investor-madison-dearborn-air-historical",
+    "coinvestor-hobbs-family-air",
+    "company-brr-refrigeration",
+    "organization-coolsys",
+    "investor-ares-private-equity-coolsys"
+  ],
+  "registryRelationshipsAdded": [
+    "rel-hobbs-air-operating-company",
+    "rel-air-blackstone-current-institutional-investor",
+    "rel-brr-coolsys-acquisition",
+    "rel-coolsys-ares-acquisition"
+  ],
+  "entityBusinessIdsBefore": {
+    "company-hobbs-associates": [
+      "overture-11f4ba78-3c4e-455c-a6ba-24e60e3d0a57"
+    ],
+    "company-brr-refrigeration": [
+      "overture-91a5fbbf-2236-4922-8efe-8da5897f1074"
+    ]
+  },
+  "caseFieldsBefore": {
+    "case-hobbs-air-blackstone-2024-2026": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-brr-coolsys-ares-2019": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    }
+  }
+}

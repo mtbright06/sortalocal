@@ -66,6 +66,105 @@
           "description": "Stonebridge states Paramount acquired Comfort Solutions and was its portfolio company; current Stonebridge portfolio page confirms Paramount remains listed."
         }
       ]
+    },
+    {
+      "businessId": "overture-9e594c69-5dcc-46e7-bea7-e5c656d7198e",
+      "entityId": "company-smith-keene-home-services",
+      "classification": "private_equity_backed",
+      "approvalStatus": "approved",
+      "verifiedAt": "2026-10-28",
+      "approvedAt": "2026-10-28",
+      "approvedBy": "Human reviewer",
+      "matchReasons": [
+        "human_reviewed_research_case",
+        "source_supported_business_identity"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.cascadeservices.com/cascade-services-announces-the-acquisitions-of-sun-plumbing-in-florida-and-smith-keene-home-services-in-virginia/",
+          "description": "Acquisition, carve-out scope, post-closing S & K Electric status, and service footprint. No closing date disclosed."
+        },
+        {
+          "url": "https://www.trivecapital.com/trive-capital-forms-cascade-services-to-partner-with-market-leading-brands-in-the-home-services-sector/",
+          "description": "Cascade formed through partnership between Trive, LP First Capital, and management; Trive identifies as a PE firm and LP First as a private investment firm."
+        },
+        {
+          "url": "https://www.cascadeservices.com/about/technician-epa-certification/",
+          "description": "Current Cascade location listing identifies Smith & Keene at 833 Live Oak Dr, Chesapeake, matching the selected Overture record."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-11f4ba78-3c4e-455c-a6ba-24e60e3d0a57",
+      "entityId": "company-hobbs-associates",
+      "classification": "private_equity_backed",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261028T134237Z-dafafbf78f",
+      "verifiedAt": "2026-10-28",
+      "approvedAt": "2026-10-28",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hobbsassociates.com/office-locations/norfolk%2C-va",
+          "description": "Hobbs & Associates Norfolk office is at 4850 Brookside Ct #100, Norfolk, VA 23502; exact name, domain, and street match the Overture record."
+        },
+        {
+          "url": "https://www.aircontrolconcepts.com/operating-companies/hobbs-associates",
+          "description": "Identifies Hobbs & Associates as an operating company in the AIR Control Concepts network, preserving the distinction between operating company and platform."
+        },
+        {
+          "url": "https://www.blackstone.com/news/press/air-control-concepts-announces-investment-from-blackstone/",
+          "description": "AIR announced Blackstone as an equity investment partner alongside funds affiliated with Madison Dearborn Partners (MDP) and AIR management; identifies Hobbs & Associates among AIR operating brands."
+        },
+        {
+          "url": "https://www.blackstone.com/news/press/blackstone-announces-additional-investment-in-air-control-concepts/",
+          "description": "Blackstone funds signed and closed the acquisition of MDP’s remaining AIR equity stake on January 7, 2026; Blackstone became AIR’s sole institutional investor. AIR founder Brad Hobbs and his family also invested alongside Blackstone."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-91a5fbbf-2236-4922-8efe-8da5897f1074",
+      "entityId": "company-brr-refrigeration",
+      "classification": "private_equity_backed",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261028T134237Z-dafafbf78f",
+      "verifiedAt": "2026-10-28",
+      "approvedAt": "2026-10-28",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://coolsys.com/resource/coolsys-acquires-brr-refrigeration-in-virginia/",
+          "description": "CoolSys announced it acquired BRR Refrigeration, a Virginia Beach commercial HVAC/R contractor; the release says the acquisition closed that week. The effective/closing date is not specified."
+        },
+        {
+          "url": "https://coolsys.com/our-brands/brr-refrigeration/",
+          "description": "CoolSys states it acquired BRR, BRR now operates under the CoolSys brand, and lists its Virginia Beach branch at 961 Reon Dr, matching the exact Overture address."
+        },
+        {
+          "url": "https://coolsys.com/resource/coolsys-acquired-by-ares-management-corporation/",
+          "description": "CoolSys announced it had been acquired by a fund managed by Ares Management Corporation’s Private Equity Group on March 21, 2019; no transaction terms disclosed."
+        },
+        {
+          "url": "https://coolsys.com/about-coolsys/leadership/",
+          "description": "Current CoolSys board page identifies Ares Private Equity Group partners/advisors on the CoolSys board, corroborating the continuing Ares relationship."
+        },
+        {
+          "url": "https://www.achrnews.com/articles/142364-coolsys-acquires-brr-refrigeration-in-virginia",
+          "description": "Independent HVAC trade publication dated December 20, 2019 reports CoolSys’s BRR acquisition announcement; confirms announcement date without asserting closing date."
+        }
+      ]
     }
   ]
 }

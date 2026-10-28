@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "dataStatus": "unreviewed_research_leads",
+  "checkedAt": "2026-10-27",
+  "safeguard": "Company website statements below are research leads only. They do not establish ownership classification and are not approved ownership evidence.",
+  "leads": [
+    {
+      "businessIds": ["overture-1f25a7bc-0e62-4671-bc78-a5da31f3e0ba", "overture-441c109a-f114-45c3-906d-d24903b1ec47"],
+      "label": "Bennett company history",
+      "url": "https://www.bennettac.com/about-us/",
+      "sourceType": "company website",
+      "note": "The company describes itself as family-owned and operated and identifies Mike Bennett as its founder. Self-description; independent ownership has not been established or approved."
+    },
+    {
+      "businessIds": ["overture-969bcd91-7b10-4a45-be1f-8d72a718b121", "overture-14608baa-e9b0-4f45-9605-44ec1d34a3c6"],
+      "label": "Controlled Conditions company site",
+      "url": "https://controlledconditions.com/",
+      "sourceType": "company website",
+      "note": "The company describes itself as American-owned and locally rooted. This is not evidence of a specific ownership classification or investor relationship."
+    },
+    {
+      "businessIds": ["overture-359b6d43-ee38-46e8-8a60-091305ef3b75", "overture-29f07a58-553d-4278-bf2f-d75976dd2ca2"],
+      "label": "Fair Mechanical company history",
+      "url": "https://fairairva.com/about-fair-mechanical",
+      "sourceType": "company website",
+      "note": "The company describes a family legacy and says Danny Fair founded it in 2014. This is a lead for positive ownership verification, not proof of current independence."
+    },
+    {
+      "businessIds": ["overture-a4072a80-6210-44d3-9577-efca4652fce0", "overture-3cc82169-1d48-42d7-b8b1-8e07c8c9876a", "overture-795c62b7-45a9-48df-97be-7fc8f0e205a8"],
+      "label": "Ductman company website",
+      "url": "https://www.ductmanhvac.com/",
+      "sourceType": "company website",
+      "note": "The company website says Ductman has served the region since 2003. It does not identify current equity ownership; no ownership conclusion is drawn."
+    },
+    {
+      "businessIds": ["overture-b92ccc70-972d-4708-8870-9f786e98a95e", "overture-a5abe362-dc4a-42ab-b4a8-3bf48cda92a8"],
+      "label": "Bertolino company history",
+      "url": "https://bertolinoinc.com/about-bertolino-plumbers/",
+      "sourceType": "company website",
+      "note": "The company describes founder Rob Bertolino, a family legacy, and a partnership with his brother Tony. This self-description does not establish current legal or equity ownership."
+    }
+  ]
+}

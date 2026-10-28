@@ -22,6 +22,8 @@ export interface OwnershipChainStep {
     fromEntity: string
     toEntity: string
     relationship: string
+    transactionType?: string
+    scope?: string
     announcedAt: string | null
     effectiveAt: string | null
     effectiveYear?: number
@@ -218,6 +220,8 @@ interface RegistryRelationship {
     fromEntityId: string
     toEntityId: string
     type: string
+    transactionType?: string
+    scope?: string
     announcedAt?: string | null
     effectiveAt?: string | null
     effectiveYear?: number
@@ -239,26 +243,32 @@ const registryRelationships = (ownershipRegistryData as unknown as { relationshi
 function ownershipChain(entityId: string): OwnershipChainStep[] {
     const steps: OwnershipChainStep[] = []
     const visited = new Set([entityId])
-    let currentId = entityId
-    for (let depth = 0; depth < 4; depth += 1) {
-        const relationship = registryRelationships.find((item) => item.fromEntityId === currentId
-            && ['acquired_by', 'majority_investment_by', 'portfolio_company_of'].includes(item.type)
-            && !visited.has(item.toEntityId))
-        if (!relationship) break
-        const destination = registryEntities.get(relationship.toEntityId)
-        if (!destination) break
-        steps.push({
-            fromEntity: registryEntities.get(currentId)?.name ?? currentId,
-            toEntity: destination.name,
-            relationship: relationship.type,
-            announcedAt: relationship.announcedAt ?? null,
-            effectiveAt: relationship.effectiveAt ?? null,
-            effectiveYear: relationship.effectiveYear,
-            verifiedAt: relationship.verifiedAt,
-            evidence: relationship.evidence,
-        })
-        currentId = relationship.toEntityId
-        visited.add(currentId)
+    let frontier = [entityId]
+    for (let depth = 0; depth < 4 && frontier.length; depth += 1) {
+        const nextFrontier: string[] = []
+        for (const currentId of frontier) {
+            for (const relationship of registryRelationships.filter((item) => item.fromEntityId === currentId
+                && ['acquired_by', 'majority_investment_by', 'portfolio_company_of', 'formed_through_partnership'].includes(item.type)
+                && !visited.has(item.toEntityId))) {
+                const destination = registryEntities.get(relationship.toEntityId)
+                if (!destination) continue
+                steps.push({
+                    fromEntity: registryEntities.get(currentId)?.name ?? currentId,
+                    toEntity: destination.name,
+                    relationship: relationship.type,
+                    transactionType: relationship.transactionType,
+                    scope: relationship.scope,
+                    announcedAt: relationship.announcedAt ?? null,
+                    effectiveAt: relationship.effectiveAt ?? null,
+                    effectiveYear: relationship.effectiveYear,
+                    verifiedAt: relationship.verifiedAt,
+                    evidence: relationship.evidence,
+                })
+                visited.add(relationship.toEntityId)
+                nextFrontier.push(relationship.toEntityId)
+            }
+        }
+        frontier = nextFrontier
     }
     return steps
 }

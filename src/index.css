@@ -253,10 +253,18 @@ input[type=checkbox] { width: 18px; height: 18px; flex-shrink: 0; accent-color: 
 .distance-slider { display: block; width: calc(100% - 22px); margin: 2px 11px 5px; height: 26px; accent-color: #105540; cursor: pointer; }
 .distance-ticks { display: flex; justify-content: space-between; margin: 0 11px 12px; color: #45604b; font-size: 12px; font-variant-numeric: tabular-nums; }
 .filter-count-note { margin: 4px 11px 10px; font-size: 12px; line-height: 1.5; color: var(--muted); }
-.industry-options { padding: 4px 11px 10px; }
-.industry-option { display: flex; align-items: center; gap: 8px; min-height: 40px; font-size: 14px; cursor: pointer; }
-.industry-option input { width: 18px; height: 18px; accent-color: #105540; }
-.industry-option.is-active { color: #084d36; font-weight: 650; }
+.industry-picker { position: relative; padding: 12px; }
+.industry-picker-label { display: flex; align-items: center; gap: 8px; margin: 0 0 9px; font-size: 15px; font-weight: 650; }
+.industry-picker-trigger { display: flex; align-items: center; gap: 11px; width: 100%; min-height: 48px; padding: 10px 12px; border: 1px solid #6c9c7c; border-radius: 8px; background: linear-gradient(120deg, #eff5e8, #e7efe0); color: var(--forest); font-size: 15px; text-align: left; }
+.industry-picker-trigger > svg:last-child { margin-left: auto; flex-shrink: 0; }
+.industry-picker-trigger[aria-expanded=true] > svg:last-child { transform: rotate(180deg); }
+.industry-picker-icon { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 25px; color: var(--green); }
+.industry-picker-menu { position: absolute; top: calc(100% + 5px); left: 7px; right: 7px; z-index: 6; max-height: min(300px, calc(100dvh - 160px)); overflow-y: auto; padding: 6px; border: 1px solid #d1dcc9; border-radius: 10px; background: #fffef9; box-shadow: 0 12px 30px #173c2626, 0 2px 6px #173c260c; }
+.industry-picker-option { display: flex; align-items: center; gap: 11px; width: 100%; min-height: 45px; padding: 9px 11px; border: 1px solid transparent; border-radius: 7px; background: transparent; color: var(--forest); font-size: 15px; text-align: left; }
+.industry-picker-option > svg:last-child { margin-left: auto; flex-shrink: 0; }
+.industry-picker-option:hover, .industry-picker-option:focus-visible { background: #f0f5e9; border-color: #c4d5bc; }
+.industry-picker-option.is-selected { background: #e5efdd; color: var(--green); font-weight: 650; }
+.industry-picker-option:focus-visible { outline-offset: -3px; }
 .additional-options .refine-option { margin: 10px 11px; font-size: 14px; }
 .additional-options .filter-note { margin: 10px 11px 12px; font-size: 12px; }
 .map-result-total { color: #15382b; font-size: 17px; }
