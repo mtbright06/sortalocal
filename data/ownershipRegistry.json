@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "dataStatus": "fictional_demo_only",
+  "entities": [
+    {
+      "id": "demo-company-harbor-breeze",
+      "type": "company",
+      "name": "Harbor Breeze Mechanical (Fictional)",
+      "normalizedName": "harbor breeze mechanical",
+      "brands": ["Harbor Breeze Heating (Fictional)"],
+      "websiteDomains": ["harborbreeze-demo.invalid"],
+      "locations": [{"city": "Norfolk", "address": "100 Demo Way"}],
+      "notes": "Fictional training record. Never use as evidence about a real business."
+    },
+    {
+      "id": "demo-parent-tidewater-home-group",
+      "type": "parent_organization",
+      "name": "Tidewater Home Group (Fictional)",
+      "normalizedName": "tidewater home group",
+      "brands": [],
+      "websiteDomains": ["tidewatergroup-demo.invalid"],
+      "locations": [],
+      "notes": "Fictional training record."
+    },
+    {
+      "id": "demo-investor-blue-marsh-capital",
+      "type": "pe_investor",
+      "name": "Blue Marsh Capital (Fictional)",
+      "normalizedName": "blue marsh capital",
+      "brands": [],
+      "websiteDomains": ["bluemarsh-demo.invalid"],
+      "locations": [],
+      "notes": "Fictional training record."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "demo-rel-company-parent",
+      "fromEntityId": "demo-company-harbor-breeze",
+      "toEntityId": "demo-parent-tidewater-home-group",
+      "type": "owned_by",
+      "evidence": [{"url": "https://example.invalid/fictional-demo-evidence", "description": "Placeholder fictional evidence; not a real source.", "verifiedAt": "2026-01-15"}],
+      "verifiedAt": "2026-01-15"
+    },
+    {
+      "id": "demo-rel-parent-investor",
+      "fromEntityId": "demo-parent-tidewater-home-group",
+      "toEntityId": "demo-investor-blue-marsh-capital",
+      "type": "backed_by",
+      "evidence": [{"url": "https://example.invalid/fictional-demo-investor-evidence", "description": "Placeholder fictional evidence; not a real source.", "verifiedAt": "2026-01-15"}],
+      "verifiedAt": "2026-01-15"
+    }
+  ]
+}
