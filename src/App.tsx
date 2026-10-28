@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import * as maplibregl from 'maplibre-gl'
 import type { Marker } from 'maplibre-gl'
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
@@ -23,10 +23,21 @@ import {
     type BusinessCategory,
     type OwnershipClassification,
 } from './businesses'
+import { distanceMiles, supportedZipCentroids, type SearchCenter, zipCentroidSource } from './location'
 import 'maplibre-gl/dist/maplibre-gl.css'
 
 const categories = Object.keys(categoryLabels) as BusinessCategory[]
 const ownershipTypes = Object.keys(ownershipLabels) as OwnershipClassification[]
+const DEFAULT_SEARCH_CENTER: SearchCenter = { latitude: 36.8508, longitude: -76.2859, label: 'Norfolk, VA' }
+const radiusOptions = [5, 10, 15, 25, 50] as const
+type SearchRadius = typeof radiusOptions[number] | 'all'
+const radiusZoom: Record<Exclude<SearchRadius, 'all'>, number> = {
+    5: 11.6,
+    10: 11,
+    15: 10.5,
+    25: 9.8,
+    50: 9,
+}
 const ownershipSortOrder: Record<OwnershipClassification, number> = {
     'pe-backed': 0,
     independent: 1,
@@ -42,24 +53,72 @@ function App() {
     const businessRows = useRef(new Map<string, HTMLButtonElement>())
     const [activeCategory, setActiveCategory] = useState<BusinessCategory>('hvac')
     const [activeOwnership, setActiveOwnership] = useState<OwnershipClassification[]>(ownershipTypes)
-    const [sortMode, setSortMode] = useState<'alphabetical' | 'ownership'>('alphabetical')
+    const [sortMode, setSortMode] = useState<'nearest' | 'alphabetical' | 'ownership'>('nearest')
     const [search, setSearch] = useState('')
+    const [zipInput, setZipInput] = useState('')
+    const [searchCenter, setSearchCenter] = useState<SearchCenter>(DEFAULT_SEARCH_CENTER)
+    const [radius, setRadius] = useState<SearchRadius>(15)
+    const [locationMessage, setLocationMessage] = useState('')
+    const [isLocating, setIsLocating] = useState(false)
     const [selectedBusiness, setSelectedBusiness] = useState<Business | null>(null)
     const [mapUnavailable, setMapUnavailable] = useState<string | null>(null)
     const [mapInitialized, setMapInitialized] = useState(false)
 
-    const visibleBusinesses = businesses.filter((business) => {
+    const visibleRows = businesses.map((business) => ({
+        business,
+        distance: distanceMiles(searchCenter, business),
+    })).filter(({ business, distance }) => {
         const matchesCategory = business.category === activeCategory
         const matchesOwnership = activeOwnership.includes(business.ownership.classification)
         const searchText = `${business.name} ${business.city} ${business.neighborhood ?? ''}`.toLowerCase()
-        return matchesCategory && matchesOwnership && searchText.includes(search.trim().toLowerCase())
+        const matchesRadius = radius === 'all' || distance <= radius
+        return matchesCategory && matchesOwnership && matchesRadius && searchText.includes(search.trim().toLowerCase())
     }).sort((left, right) => {
+        if (sortMode === 'nearest') return left.distance - right.distance || left.business.name.localeCompare(right.business.name)
         if (sortMode === 'ownership') {
-            const ownershipDifference = ownershipSortOrder[left.ownership.classification] - ownershipSortOrder[right.ownership.classification]
+            const ownershipDifference = ownershipSortOrder[left.business.ownership.classification] - ownershipSortOrder[right.business.ownership.classification]
             if (ownershipDifference !== 0) return ownershipDifference
         }
-        return left.name.localeCompare(right.name)
+        return left.business.name.localeCompare(right.business.name)
     })
+    const visibleBusinesses = visibleRows.map(({ business }) => business)
+    const visibleBusinessKey = visibleBusinesses.map((business) => business.id).join('|')
+
+    const submitZip = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        const zip = zipInput.trim()
+        const centroid = supportedZipCentroids[zip]
+        if (!/^\d{5}$/.test(zip) || !centroid) {
+            setLocationMessage('Enter a supported 5-digit Hampton Roads ZIP code.')
+            return
+        }
+        setSearchCenter({ ...centroid, label: `ZIP ${zip} · ${centroid.city}` })
+        setLocationMessage('')
+        setSelectedBusiness(null)
+    }
+
+    const useMyLocation = () => {
+        if (!navigator.geolocation) {
+            setLocationMessage('Location is not available in this browser.')
+            return
+        }
+        setIsLocating(true)
+        setLocationMessage('')
+        navigator.geolocation.getCurrentPosition(
+            ({ coords }) => {
+                setSearchCenter({ latitude: coords.latitude, longitude: coords.longitude, label: 'Your location' })
+                setSelectedBusiness(null)
+                setIsLocating(false)
+            },
+            (error) => {
+                setLocationMessage(error.code === error.PERMISSION_DENIED
+                    ? 'Location permission was denied. Enter a ZIP code instead.'
+                    : 'Could not get your location. Enter a ZIP code instead.')
+                setIsLocating(false)
+            },
+            { enableHighAccuracy: false, maximumAge: 300_000, timeout: 10_000 },
+        )
+    }
 
     useEffect(() => {
         if (!mapContainer.current) return
@@ -67,8 +126,8 @@ function App() {
         const instance = new maplibregl.Map({
             container: mapContainer.current,
             style: 'https://tiles.openfreemap.org/styles/liberty',
-            center: [-76.36, 36.91],
-            zoom: 9.05,
+            center: [DEFAULT_SEARCH_CENTER.longitude, DEFAULT_SEARCH_CENTER.latitude],
+            zoom: radiusZoom[15],
             minZoom: 7.5,
             maxZoom: 16,
             attributionControl: false,
@@ -114,6 +173,26 @@ function App() {
                 .addTo(map.current!)
         })
     }, [visibleBusinesses, selectedBusiness, mapInitialized])
+
+    useEffect(() => {
+        if (!map.current || !mapInitialized) return
+        if (radius === 'all' && visibleBusinessKey) {
+            const bounds = new maplibregl.LngLatBounds()
+            const visibleIds = new Set(visibleBusinessKey.split('|'))
+            businesses.forEach((business) => {
+                if (visibleIds.has(business.id)) bounds.extend([business.longitude, business.latitude])
+            })
+            map.current.fitBounds(bounds, { padding: 60, maxZoom: 10, duration: 650 })
+            return
+        }
+        if (radius !== 'all') {
+            map.current.flyTo({
+                center: [searchCenter.longitude, searchCenter.latitude],
+                zoom: radiusZoom[radius],
+                duration: 650,
+            })
+        }
+    }, [searchCenter, radius, mapInitialized, visibleBusinessKey])
 
     useEffect(() => {
         if (selectedBusiness) {
@@ -167,6 +246,48 @@ function App() {
                         {search && <button type="button" className="clear-search" aria-label="Clear search" onClick={() => setSearch('')}><X size={14} /></button>}
                     </label>
 
+                    <section className="location-controls" aria-label="Location and search radius">
+                        <form className="zip-form" onSubmit={submitZip}>
+                            <label className="sr-only" htmlFor="zip-search">ZIP code</label>
+                            <input
+                                id="zip-search"
+                                inputMode="numeric"
+                                autoComplete="postal-code"
+                                maxLength={5}
+                                pattern="[0-9]{5}"
+                                value={zipInput}
+                                onChange={(event) => setZipInput(event.target.value.replace(/\D/g, '').slice(0, 5))}
+                                placeholder="ZIP code"
+                            />
+                            <button type="submit" className="zip-submit">Set</button>
+                        </form>
+                        <label className="radius-control">
+                            <span>Within</span>
+                            <select
+                                value={radius}
+                                aria-label="Search radius"
+                                onChange={(event) => {
+                                    const nextRadius = event.target.value === 'all' ? 'all' : Number(event.target.value) as SearchRadius
+                                    setRadius(nextRadius)
+                                    setSelectedBusiness(null)
+                                }}
+                            >
+                                {radiusOptions.map((option) => <option value={option} key={option}>{option} miles</option>)}
+                                <option value="all">All Hampton Roads</option>
+                            </select>
+                        </label>
+                        <button type="button" className="geolocation-button" onClick={useMyLocation} disabled={isLocating}>
+                            <LocateFixed size={15} /> {isLocating ? 'Locating' : 'Use My Location'}
+                        </button>
+                    </section>
+                    <div className="location-status" aria-live="polite">
+                        <span>{searchCenter.label}</span>
+                        <span>{radius === 'all' ? 'All Hampton Roads' : `${radius} mi`}</span>
+                        <strong>{visibleBusinesses.length} matches</strong>
+                    </div>
+                    <div className="location-attribution">ZIP centroids: <a href="https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html" target="_blank" rel="noreferrer">{zipCentroidSource}</a></div>
+                    {locationMessage && <p className="location-message" role="status">{locationMessage}</p>}
+
                     <section className="filter-section" aria-labelledby="category-heading">
                         <div className="section-label"><SlidersHorizontal size={14} /><h2 id="category-heading">What do you need?</h2></div>
                         <div className="category-filters" role="radiogroup" aria-labelledby="category-heading">
@@ -213,18 +334,20 @@ function App() {
                             <label className="sort-control">
                                 <span>Sort</span>
                                 <select value={sortMode} onChange={(event) => setSortMode(event.target.value as typeof sortMode)} aria-label="Sort businesses">
+                                    <option value="nearest">Nearest</option>
                                     <option value="alphabetical">A-Z</option>
                                     <option value="ownership">Ownership</option>
                                 </select>
                             </label>
                         </div>
                         <div className="business-list">
-                            {visibleBusinesses.map((business) => (
+                            {visibleRows.map(({ business, distance }) => (
                                 <BusinessRow
                                     business={business}
                                     key={business.id}
                                     selected={selectedBusiness?.id === business.id}
                                     onSelect={() => chooseBusiness(business)}
+                                    distance={distance}
                                     rowRef={(element) => {
                                         if (element) businessRows.current.set(business.id, element)
                                         else businessRows.current.delete(business.id)
@@ -263,9 +386,9 @@ function App() {
                     <button
                         type="button"
                         className="locate-button"
-                        aria-label="Show all businesses on the map"
-                        title="Show all businesses"
-                        onClick={() => map.current?.flyTo({ center: [-76.36, 36.91], zoom: 9.05, duration: 650 })}
+                        aria-label="Center map on the active search location"
+                        title="Center map on search location"
+                        onClick={() => map.current?.flyTo({ center: [searchCenter.longitude, searchCenter.latitude], zoom: 10.1, duration: 650 })}
                     >
                         <LocateFixed size={17} />
                     </button>
@@ -278,7 +401,7 @@ function App() {
     )
 }
 
-function BusinessRow({ business, selected, onSelect, rowRef }: { business: Business; selected: boolean; onSelect: () => void; rowRef: (element: HTMLButtonElement | null) => void }) {
+function BusinessRow({ business, selected, onSelect, rowRef, distance }: { business: Business; selected: boolean; onSelect: () => void; rowRef: (element: HTMLButtonElement | null) => void; distance: number }) {
     const verified = business.ownership.status === 'verified'
     const isOverture = business.dataSource === 'overture'
 
@@ -288,7 +411,7 @@ function BusinessRow({ business, selected, onSelect, rowRef }: { business: Busin
             <span className="business-row-copy">
                 <span className="business-row-name">{business.name}</span>
                 <span className="business-row-meta">
-                    {business.neighborhood ? `${business.neighborhood} · ` : ''}{business.city} · {categoryLabels[business.category]}
+                    {business.neighborhood ? `${business.neighborhood} · ` : ''}{business.city} · {categoryLabels[business.category]} · {distance.toFixed(1)} mi
                     <span className={`record-source record-source--${isOverture ? 'overture' : 'demo'}`}>{isOverture ? 'OVERTURE' : 'DEMO'}</span>
                     {isOverture && business.incompleteFields && business.incompleteFields.length > 0 && (
                         <span className="incomplete-flag" title={`Missing ${business.incompleteFields.join(', ')}`}>INCOMPLETE</span>

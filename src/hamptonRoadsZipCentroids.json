@@ -1,0 +1,337 @@
+{
+  "source": "U.S. Census Bureau 2026 ZCTA Gazetteer",
+  "sourceUrl": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2026_Gazetteer/2026_Gaz_zcta_national.zip",
+  "sourceNote": "Representative internal points for Census ZIP Code Tabulation Areas; not every USPS ZIP is represented and ZCTAs are not exact USPS delivery areas.",
+  "targetCities": [
+    "Suffolk",
+    "Chesapeake",
+    "Portsmouth",
+    "Norfolk",
+    "Virginia Beach",
+    "Hampton",
+    "Newport News"
+  ],
+  "overtureBoundaryRelease": "2026-10-21.0",
+  "centroids": {
+    "23320": {
+      "latitude": 36.751734,
+      "longitude": -76.217637,
+      "city": "Chesapeake"
+    },
+    "23321": {
+      "latitude": 36.800398,
+      "longitude": -76.421152,
+      "city": "Chesapeake"
+    },
+    "23322": {
+      "latitude": 36.625988,
+      "longitude": -76.267768,
+      "city": "Chesapeake"
+    },
+    "23323": {
+      "latitude": 36.696998,
+      "longitude": -76.379915,
+      "city": "Chesapeake"
+    },
+    "23324": {
+      "latitude": 36.799859,
+      "longitude": -76.273557,
+      "city": "Chesapeake"
+    },
+    "23325": {
+      "latitude": 36.813625,
+      "longitude": -76.239857,
+      "city": "Chesapeake"
+    },
+    "23432": {
+      "latitude": 36.861811,
+      "longitude": -76.551562,
+      "city": "Suffolk"
+    },
+    "23433": {
+      "latitude": 36.916127,
+      "longitude": -76.484469,
+      "city": "Suffolk"
+    },
+    "23434": {
+      "latitude": 36.703904,
+      "longitude": -76.591905,
+      "city": "Suffolk"
+    },
+    "23435": {
+      "latitude": 36.848602,
+      "longitude": -76.472899,
+      "city": "Suffolk"
+    },
+    "23436": {
+      "latitude": 36.893936,
+      "longitude": -76.503963,
+      "city": "Suffolk"
+    },
+    "23437": {
+      "latitude": 36.627115,
+      "longitude": -76.803197,
+      "city": "Suffolk"
+    },
+    "23438": {
+      "latitude": 36.581192,
+      "longitude": -76.697189,
+      "city": "Suffolk"
+    },
+    "23451": {
+      "latitude": 36.872358,
+      "longitude": -76.004319,
+      "city": "Virginia Beach"
+    },
+    "23452": {
+      "latitude": 36.845812,
+      "longitude": -76.091964,
+      "city": "Virginia Beach"
+    },
+    "23453": {
+      "latitude": 36.78349,
+      "longitude": -76.071207,
+      "city": "Virginia Beach"
+    },
+    "23454": {
+      "latitude": 36.864599,
+      "longitude": -76.055124,
+      "city": "Virginia Beach"
+    },
+    "23455": {
+      "latitude": 36.886051,
+      "longitude": -76.147283,
+      "city": "Virginia Beach"
+    },
+    "23456": {
+      "latitude": 36.737052,
+      "longitude": -76.035897,
+      "city": "Virginia Beach"
+    },
+    "23457": {
+      "latitude": 36.617383,
+      "longitude": -76.015339,
+      "city": "Virginia Beach"
+    },
+    "23459": {
+      "latitude": 36.91681,
+      "longitude": -76.171748,
+      "city": "Virginia Beach"
+    },
+    "23460": {
+      "latitude": 36.818488,
+      "longitude": -76.0316,
+      "city": "Virginia Beach"
+    },
+    "23461": {
+      "latitude": 36.770602,
+      "longitude": -75.963772,
+      "city": "Virginia Beach"
+    },
+    "23462": {
+      "latitude": 36.836242,
+      "longitude": -76.145948,
+      "city": "Virginia Beach"
+    },
+    "23464": {
+      "latitude": 36.796917,
+      "longitude": -76.187631,
+      "city": "Virginia Beach"
+    },
+    "23502": {
+      "latitude": 36.860586,
+      "longitude": -76.204883,
+      "city": "Norfolk"
+    },
+    "23503": {
+      "latitude": 36.948786,
+      "longitude": -76.266459,
+      "city": "Norfolk"
+    },
+    "23504": {
+      "latitude": 36.857302,
+      "longitude": -76.265612,
+      "city": "Norfolk"
+    },
+    "23505": {
+      "latitude": 36.912882,
+      "longitude": -76.299596,
+      "city": "Norfolk"
+    },
+    "23507": {
+      "latitude": 36.864564,
+      "longitude": -76.303218,
+      "city": "Norfolk"
+    },
+    "23508": {
+      "latitude": 36.885284,
+      "longitude": -76.310337,
+      "city": "Norfolk"
+    },
+    "23509": {
+      "latitude": 36.882473,
+      "longitude": -76.263939,
+      "city": "Norfolk"
+    },
+    "23510": {
+      "latitude": 36.852414,
+      "longitude": -76.29148,
+      "city": "Norfolk"
+    },
+    "23511": {
+      "latitude": 36.937399,
+      "longitude": -76.309032,
+      "city": "Norfolk"
+    },
+    "23513": {
+      "latitude": 36.889281,
+      "longitude": -76.236939,
+      "city": "Norfolk"
+    },
+    "23517": {
+      "latitude": 36.869238,
+      "longitude": -76.292055,
+      "city": "Norfolk"
+    },
+    "23518": {
+      "latitude": 36.916118,
+      "longitude": -76.215375,
+      "city": "Norfolk"
+    },
+    "23523": {
+      "latitude": 36.830857,
+      "longitude": -76.27226,
+      "city": "Norfolk"
+    },
+    "23551": {
+      "latitude": 36.923536,
+      "longitude": -76.292547,
+      "city": "Norfolk"
+    },
+    "23601": {
+      "latitude": 37.037807,
+      "longitude": -76.479769,
+      "city": "Newport News"
+    },
+    "23602": {
+      "latitude": 37.113416,
+      "longitude": -76.517947,
+      "city": "Newport News"
+    },
+    "23603": {
+      "latitude": 37.191057,
+      "longitude": -76.564535,
+      "city": "Newport News"
+    },
+    "23604": {
+      "latitude": 37.119123,
+      "longitude": -76.593192,
+      "city": "Newport News"
+    },
+    "23605": {
+      "latitude": 37.01867,
+      "longitude": -76.436702,
+      "city": "Newport News"
+    },
+    "23606": {
+      "latitude": 37.062705,
+      "longitude": -76.517837,
+      "city": "Newport News"
+    },
+    "23607": {
+      "latitude": 36.969683,
+      "longitude": -76.421938,
+      "city": "Newport News"
+    },
+    "23608": {
+      "latitude": 37.147813,
+      "longitude": -76.543036,
+      "city": "Newport News"
+    },
+    "23651": {
+      "latitude": 37.001732,
+      "longitude": -76.306783,
+      "city": "Hampton"
+    },
+    "23661": {
+      "latitude": 37.003434,
+      "longitude": -76.360161,
+      "city": "Hampton"
+    },
+    "23663": {
+      "latitude": 37.015912,
+      "longitude": -76.322526,
+      "city": "Hampton"
+    },
+    "23664": {
+      "latitude": 37.073116,
+      "longitude": -76.295078,
+      "city": "Hampton"
+    },
+    "23665": {
+      "latitude": 37.083989,
+      "longitude": -76.360136,
+      "city": "Hampton"
+    },
+    "23666": {
+      "latitude": 37.057009,
+      "longitude": -76.408083,
+      "city": "Hampton"
+    },
+    "23667": {
+      "latitude": 37.02201,
+      "longitude": -76.329688,
+      "city": "Hampton"
+    },
+    "23668": {
+      "latitude": 37.020264,
+      "longitude": -76.338549,
+      "city": "Hampton"
+    },
+    "23669": {
+      "latitude": 37.050708,
+      "longitude": -76.339274,
+      "city": "Hampton"
+    },
+    "23681": {
+      "latitude": 37.096813,
+      "longitude": -76.383535,
+      "city": "Hampton"
+    },
+    "23701": {
+      "latitude": 36.811975,
+      "longitude": -76.369378,
+      "city": "Portsmouth"
+    },
+    "23702": {
+      "latitude": 36.803271,
+      "longitude": -76.326721,
+      "city": "Portsmouth"
+    },
+    "23703": {
+      "latitude": 36.893339,
+      "longitude": -76.373292,
+      "city": "Portsmouth"
+    },
+    "23704": {
+      "latitude": 36.826697,
+      "longitude": -76.312032,
+      "city": "Portsmouth"
+    },
+    "23707": {
+      "latitude": 36.841794,
+      "longitude": -76.340331,
+      "city": "Portsmouth"
+    },
+    "23708": {
+      "latitude": 36.847681,
+      "longitude": -76.304081,
+      "city": "Portsmouth"
+    },
+    "23709": {
+      "latitude": 36.817213,
+      "longitude": -76.298849,
+      "city": "Portsmouth"
+    }
+  }
+}

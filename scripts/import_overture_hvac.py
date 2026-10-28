@@ -13,8 +13,16 @@ from pathlib import Path
 from typing import Any
 
 DEFAULT_RELEASE = "2026-10-21.0"
-DEFAULT_BBOX = "-76.95,36.55,-76.02,37.14"
-TARGET_CITIES = ("Suffolk", "Chesapeake", "Portsmouth", "Norfolk")
+DEFAULT_BBOX = "-76.95,36.45,-75.85,37.20"
+TARGET_CITIES = (
+    "Suffolk",
+    "Chesapeake",
+    "Portsmouth",
+    "Norfolk",
+    "Virginia Beach",
+    "Hampton",
+    "Newport News",
+)
 OVERTURE_HVAC_PRIMARY = "hvac_service"
 OVERTURE_HOME_SERVICE = "home_service"
 COMBINED_HVAC_TERMS = ("hvac", "heating", "cooling", "air conditioning")
