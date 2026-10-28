@@ -1,6 +1,148 @@
 {
   "schemaVersion": 1,
   "dataStatus": "real_research",
-  "entities": [],
-  "relationships": []
+  "entities": [
+    {
+      "id": "company-norfolk-air",
+      "type": "company",
+      "name": "Norfolk Air Heating, Cooling, Plumbing & Electrical",
+      "normalizedName": "norfolk air heating cooling plumbing electrical",
+      "brands": ["Norfolk Air Heating, Cooling", "Norfolk Air Heating Cooling and Electrical", "Norfolk Air"],
+      "websiteDomains": ["norfolkair-hvac.com"],
+      "locations": [{"city": "Norfolk", "address": "916 East Little Creek Road"}],
+      "overtureBusinessIds": ["overture-af436b19-7ee9-48e7-ab77-b60f9a1d5dc5"],
+      "notes": "Sila announced the acquisition on 2025-04-03. Its brand page says Norfolk Air became part of Guy Smith Home Services in 2025; no exact effective date was found."
+    },
+    {
+      "id": "company-guy-smith",
+      "type": "company",
+      "name": "Guy Smith Home Services",
+      "normalizedName": "guy smith home services",
+      "brands": ["Guy Smith Heating & Air Conditioning", "Guy Smith Heating & Cooling", "Guy Smith"],
+      "websiteDomains": ["guysmith.com"],
+      "locations": [{"city": "Portsmouth", "address": "804 High St"}],
+      "overtureBusinessIds": ["overture-7b4285da-a044-49a3-931d-536e6a91fd7a"],
+      "notes": "Sila announced the acquisition on 2025-04-03. Norfolk Air was integrated into the Guy Smith Home Services brand during 2025; the exact effective date was not disclosed."
+    },
+    {
+      "id": "company-comfort-solutions-tidewater",
+      "type": "company",
+      "name": "Comfort Solutions of Tidewater, LLC",
+      "normalizedName": "comfort solutions of tidewater",
+      "brands": ["Comfort Solutions Of Tidewater", "Comfort Solutions", "Comfort Solutions of Tidewater, LLC"],
+      "websiteDomains": ["comfortsolutions.net"],
+      "locations": [{"city": "Suffolk", "address": "1982 Northgate Commerce Pkwy Ste C"}],
+      "overtureBusinessIds": ["overture-1d558b21-e9e5-46f4-8a32-b90fd4a12415"],
+      "notes": "Paramount announced a completed acquisition on 2025-05-01. This is a transaction-date relationship, not a guarantee of unchanged current ownership."
+    },
+    {
+      "id": "organization-sila-services",
+      "type": "parent_organization",
+      "name": "Sila Services, LLC",
+      "normalizedName": "sila services",
+      "brands": ["Sila Services"],
+      "websiteDomains": ["silaservices.com"],
+      "locations": [],
+      "notes": "Sila's current company site identifies it as a portfolio company of Private Equity at Goldman Sachs Alternatives."
+    },
+    {
+      "id": "investor-goldman-sachs-alternatives",
+      "type": "pe_investor",
+      "name": "Goldman Sachs Alternatives (Private Equity)",
+      "normalizedName": "goldman sachs alternatives private equity",
+      "brands": ["Goldman Sachs Alternatives"],
+      "websiteDomains": ["am.gs.com"],
+      "locations": [],
+      "notes": "Goldman Sachs announced an agreement to acquire a majority stake in Sila on 2024-11-12. The announcement did not state the transaction's closing date."
+    },
+    {
+      "id": "organization-paramount-mechanical",
+      "type": "parent_organization",
+      "name": "Paramount Mechanical Corporation, LLC",
+      "normalizedName": "paramount mechanical corporation",
+      "brands": ["Paramount Mechanical", "Paramount"],
+      "websiteDomains": ["paramount-mech.com"],
+      "locations": [],
+      "notes": "Stonebridge's current portfolio page lists Paramount as a portfolio company. Its 2021 recapitalization release states the founder retained significant ownership and equity was also provided by other parties; Stonebridge is not represented as the sole owner."
+    },
+    {
+      "id": "investor-stonebridge-partners",
+      "type": "pe_investor",
+      "name": "Stonebridge Partners",
+      "normalizedName": "stonebridge partners",
+      "brands": ["Stonebridge"],
+      "websiteDomains": ["stonebridgepartners.com"],
+      "locations": [],
+      "notes": "Stonebridge's 2021 release describes its recapitalization of Paramount; the 2026 current portfolio page still lists Paramount."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-norfolk-air-sila-acquisition",
+      "fromEntityId": "company-norfolk-air",
+      "toEntityId": "organization-sila-services",
+      "type": "acquired_by",
+      "announcedAt": "2025-04-03",
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-27",
+      "evidence": [{"url": "https://silaservices.com/sila-services-expands-footprint-in-virginia-with-acquisitions-of-norfolk-air-heating-cooling-plumbing-electrical-and-guy-smith-heating-cooling/", "description": "Sila announced the acquisition of Norfolk Air; exact closing date not stated.", "publishedAt": "2025-04-03", "verifiedAt": "2026-10-27"}]
+    },
+    {
+      "id": "rel-guy-smith-sila-acquisition",
+      "fromEntityId": "company-guy-smith",
+      "toEntityId": "organization-sila-services",
+      "type": "acquired_by",
+      "announcedAt": "2025-04-03",
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-27",
+      "evidence": [{"url": "https://silaservices.com/sila-services-expands-footprint-in-virginia-with-acquisitions-of-norfolk-air-heating-cooling-plumbing-electrical-and-guy-smith-heating-cooling/", "description": "Sila announced the acquisition of Guy Smith; exact closing date not stated.", "publishedAt": "2025-04-03", "verifiedAt": "2026-10-27"}]
+    },
+    {
+      "id": "rel-sila-goldman-investment",
+      "fromEntityId": "organization-sila-services",
+      "toEntityId": "investor-goldman-sachs-alternatives",
+      "type": "majority_investment_by",
+      "announcedAt": "2024-11-12",
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-27",
+      "evidence": [
+        {"url": "https://am.gs.com/en-au/advisors/news/press-release/2024/sila-services-investment", "description": "Goldman Sachs Alternatives announced it would acquire a majority stake, subject to customary regulatory approvals; close date not stated.", "publishedAt": "2024-11-12", "verifiedAt": "2026-10-27"},
+        {"url": "https://silaservices.com/", "description": "Current Sila company site identifies Sila as a portfolio company of Private Equity at Goldman Sachs Alternatives.", "publishedAt": null, "verifiedAt": "2026-10-27"}
+      ]
+    },
+    {
+      "id": "rel-norfolk-air-guy-smith-brand-integration",
+      "fromEntityId": "company-norfolk-air",
+      "toEntityId": "company-guy-smith",
+      "type": "brand_integrated_into",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "effectiveYear": 2025,
+      "verifiedAt": "2026-10-27",
+      "evidence": [{"url": "https://silaservices.com/brands/?id=399", "description": "Sila's brand page states Norfolk Air became part of Guy Smith Home Services in 2025; exact date not stated.", "publishedAt": null, "verifiedAt": "2026-10-27"}]
+    },
+    {
+      "id": "rel-comfort-solutions-paramount-acquisition",
+      "fromEntityId": "company-comfort-solutions-tidewater",
+      "toEntityId": "organization-paramount-mechanical",
+      "type": "acquired_by",
+      "announcedAt": "2025-05-01",
+      "effectiveAt": "2025-05-01",
+      "verifiedAt": "2026-10-27",
+      "evidence": [{"url": "https://stonebridgepartners.com/stonebridge-partners-announces-the-acquisition-of-comfort-solutions-by-paramount-mechanical-corporation/", "description": "Stonebridge states Paramount successfully completed the acquisition on May 1, 2025.", "publishedAt": "2025-05-01", "verifiedAt": "2026-10-27"}]
+    },
+    {
+      "id": "rel-paramount-stonebridge-investment",
+      "fromEntityId": "organization-paramount-mechanical",
+      "toEntityId": "investor-stonebridge-partners",
+      "type": "portfolio_company_of",
+      "announcedAt": "2021-03-11",
+      "effectiveAt": "2021-03-11",
+      "verifiedAt": "2026-10-27",
+      "evidence": [
+        {"url": "https://stonebridgepartners.com/stonebridge-partners-completes-the-recapitalization-of-paramount-mechanical-corporation/", "description": "Stonebridge announced the recapitalization closed on March 11, 2021; the release says founder retained significant ownership and equity capital also came from Midwest, 747 Capital, management, and Stonebridge.", "publishedAt": "2021-03-11", "verifiedAt": "2026-10-27"},
+        {"url": "https://stonebridgepartners.com/current-portfolio-companies/", "description": "Stonebridge's current portfolio companies page continues to list Paramount Mechanical.", "publishedAt": null, "verifiedAt": "2026-10-27"}
+      ]
+    }
+  ]
 }

@@ -53,7 +53,7 @@ class ApprovalSafeguardTests(unittest.TestCase):
     def test_default_registry_is_real_and_empty_demo_queue_cannot_be_approved(self):
         registry = research.load_registry(research.DEFAULT_REGISTRY)
         self.assertEqual(registry["dataStatus"], "real_research")
-        self.assertEqual(registry["entities"], [])
+        self.assertEqual(len(registry["entities"]), 7)
         with self.assertRaisesRegex(ValueError, "fictional demo"):
             research.require_approvable_queue({"registryDataStatus": "fictional_demo_only"})
 
@@ -68,6 +68,36 @@ class ApprovalSafeguardTests(unittest.TestCase):
             queue["registryDataStatus"] = selected["dataStatus"]
             with self.assertRaisesRegex(ValueError, "fictional demo"):
                 research.require_approvable_queue(queue)
+
+    def test_real_historical_registry_matches_only_the_three_requested_overture_ids(self):
+        listings = json.loads(research.LISTINGS.read_text(encoding="utf-8"))
+        registry = research.load_registry(research.DEFAULT_REGISTRY)
+        queue = research.generate_queue(listings, registry)
+        expected = {
+            "overture-af436b19-7ee9-48e7-ab77-b60f9a1d5dc5": "company-norfolk-air",
+            "overture-7b4285da-a044-49a3-931d-536e6a91fd7a": "company-guy-smith",
+            "overture-1d558b21-e9e5-46f4-8a32-b90fd4a12415": "company-comfort-solutions-tidewater",
+        }
+        results = {entry["businessId"]: entry for entry in queue["entries"]}
+        self.assertEqual(set(results), set(expected))
+        for business_id, entity_id in expected.items():
+            candidate, = results[business_id]["candidates"]
+            self.assertEqual(candidate["entityId"], entity_id)
+            self.assertEqual(candidate["confidence"], 0.95)
+            self.assertIn("exact_normalized_name", candidate["matchReasons"])
+            self.assertIn("website_domain", candidate["matchReasons"])
+            self.assertEqual(results[business_id]["reviewStatus"], "pending")
+            self.assertFalse(results[business_id]["ownershipAssigned"])
+
+    def test_registry_preserves_unknown_effective_dates_and_public_file(self):
+        registry = research.load_registry(research.DEFAULT_REGISTRY)
+        relationships = {r["id"]: r for r in registry["relationships"]}
+        self.assertIsNone(relationships["rel-sila-goldman-investment"]["effectiveAt"])
+        self.assertEqual(relationships["rel-sila-goldman-investment"]["announcedAt"], "2024-11-12")
+        self.assertIsNone(relationships["rel-norfolk-air-sila-acquisition"]["effectiveAt"])
+        self.assertEqual(relationships["rel-comfort-solutions-paramount-acquisition"]["effectiveAt"], "2025-05-01")
+        self.assertEqual(relationships["rel-paramount-stonebridge-investment"]["effectiveAt"], "2021-03-11")
+        self.assertEqual(json.loads(research.PUBLIC.read_text(encoding="utf-8")), {"schemaVersion": 1, "records": []})
 
 
 if __name__ == "__main__":

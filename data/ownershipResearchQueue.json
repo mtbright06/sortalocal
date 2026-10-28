@@ -2,7 +2,68 @@
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "source": "Overture Maps; candidate links are unverified and do not assign ownership",
-  "entries": [],
+  "entries": [
+    {
+      "businessId": "overture-1d558b21-e9e5-46f4-8a32-b90fd4a12415",
+      "businessName": "Comfort Solutions Of Tidewater",
+      "city": "Suffolk",
+      "candidates": [
+        {
+          "entityId": "company-comfort-solutions-tidewater",
+          "entityName": "Comfort Solutions of Tidewater, LLC",
+          "confidence": 0.95,
+          "matchReasons": [
+            "exact_normalized_name",
+            "website_domain",
+            "address",
+            "city"
+          ]
+        }
+      ],
+      "reviewStatus": "pending",
+      "ownershipAssigned": false
+    },
+    {
+      "businessId": "overture-7b4285da-a044-49a3-931d-536e6a91fd7a",
+      "businessName": "Guy Smith Heating & Air Conditioning",
+      "city": "Portsmouth",
+      "candidates": [
+        {
+          "entityId": "company-guy-smith",
+          "entityName": "Guy Smith Home Services",
+          "confidence": 0.95,
+          "matchReasons": [
+            "exact_normalized_name",
+            "website_domain",
+            "address",
+            "city"
+          ]
+        }
+      ],
+      "reviewStatus": "pending",
+      "ownershipAssigned": false
+    },
+    {
+      "businessId": "overture-af436b19-7ee9-48e7-ab77-b60f9a1d5dc5",
+      "businessName": "Norfolk Air Heating, Cooling",
+      "city": "Norfolk",
+      "candidates": [
+        {
+          "entityId": "company-norfolk-air",
+          "entityName": "Norfolk Air Heating, Cooling, Plumbing & Electrical",
+          "confidence": 0.95,
+          "matchReasons": [
+            "exact_normalized_name",
+            "website_domain",
+            "address",
+            "city"
+          ]
+        }
+      ],
+      "reviewStatus": "pending",
+      "ownershipAssigned": false
+    }
+  ],
   "registryPath": "C:\\sortalocal\\data\\realOwnershipRegistry.json",
   "registryDataStatus": "real_research"
 }
