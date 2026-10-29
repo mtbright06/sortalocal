@@ -10,18 +10,26 @@ npm run dev
 npm run build
 ```
 
-The map uses OpenFreeMap's Liberty style with OpenStreetMap data and needs an internet connection. Attribution is shown on the map. HVAC listings are imported from Overture Maps; dental, veterinary, and auto repair records remain fictional demos.
+The map uses OpenFreeMap's Liberty style with OpenStreetMap data and needs an internet connection. Attribution is shown on the map. HVAC, dental, veterinary, and auto repair listings are imported from Overture Maps.
 
 Location search defaults to Norfolk within 15 miles. ZIP lookup uses bundled Census 2026 ZCTA internal points, not a paid geocoder; ZCTAs are not exact USPS delivery areas. ZIP centroid source attribution is shown in the sidebar.
 
-## Refresh HVAC listings
+## Refresh Overture listings
 
 ```sh
 python -m pip install -r scripts/requirements.txt
 python scripts/import_overture_hvac.py
 ```
 
-The importer pins release `2026-10-21.0`, clips listings to Overture boundary polygons for Suffolk, Chesapeake, Portsmouth, Norfolk, Virginia Beach, Hampton, and Newport News, and writes `src/overtureHvacListings.json` with counts, exclusions, source IDs, and incomplete-field flags. Imported ownership is always unknown with no relationships or evidence. The map and Overture source records require an internet connection.
+The existing HVAC command still imports only HVAC and writes `src/overtureHvacListings.json`. For the three added industries, download/place-boundary data once and create Dental, Veterinary, and Auto Repair together:
+
+```sh
+python scripts/import_overture_hvac.py --industry all
+```
+
+To refresh one category only, use `--industry dental`, `--industry veterinary`, or `--industry auto-repair`. The corresponding outputs are `src/overtureDentalListings.json`, `src/overtureVeterinaryListings.json`, and `src/overtureAutoRepairListings.json`. Use `--release RELEASE` to pin another Overture release; `--bbox WEST,SOUTH,EAST,NORTH` changes the download extent, while the importer still clips results to the same seven city boundary polygons. `--places PATH --areas PATH` reuses local GeoJSON downloads, and `--output PATH` redirects a single-industry import. The `all` mode never overwrites HVAC.
+
+The importer uses Overture's primary taxonomy and alternates/hierarchy as appropriate, keeps original Overture IDs and source metadata, deduplicates same-name/same-address records and same-name records within 30 meters, and reports per-city counts, exclusions, low-confidence rows, and missing address/phone/website values in each output summary. New source records carry Unknown ownership and no ownership evidence; the app applies an existing approved record only when its original Overture ID matches. Dealerships and vehicle-sales listings are filtered from Auto Repair; obvious taxonomy conflicts such as pet grooming/training and non-dental services are excluded and counted. The map and Overture source records require an internet connection.
 
 The seven-city HVAC extent also includes Virginia Beach, Hampton, and Newport News. Refresh the bundled regional ZIP lookup with `python scripts/import_zip_centroids.py`; it downloads the Census Gazetteer and clips ZCTA centroids to the same Overture city polygons.
 

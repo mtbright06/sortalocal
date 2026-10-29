@@ -26,6 +26,52 @@ TARGET_CITIES = (
 OVERTURE_HVAC_PRIMARY = "hvac_service"
 OVERTURE_HOME_SERVICE = "home_service"
 COMBINED_HVAC_TERMS = ("hvac", "heating", "cooling", "air conditioning")
+INDUSTRIES: dict[str, dict[str, Any]] = {
+    "hvac": {
+        "category": "hvac", "label": "HVAC", "output": "overtureHvacListings.json",
+        "taxonomyTerms": set(),
+    },
+    "dental": {
+        "category": "dental", "label": "Dental", "output": "overtureDentalListings.json",
+        "taxonomyTerms": {
+            "dentist", "dental_clinic", "general_dentistry", "orthodontics",
+            "pediatric_dentistry", "cosmetic_dentistry", "endodontics",
+            "periodontics", "prosthodontics", "oral_surgery", "oral_and_maxillofacial_surgery",
+        },
+    },
+    "veterinary": {
+        "category": "veterinary", "label": "Veterinary", "output": "overtureVeterinaryListings.json",
+        "taxonomyTerms": {
+            "veterinary_care", "veterinarian", "animal_hospital", "emergency_pet_hospital",
+            "veterinary_specialist", "equine_veterinarian", "pet_hospice",
+        },
+    },
+    "auto-repair": {
+        "category": "automotive", "label": "Auto Repair", "output": "overtureAutoRepairListings.json",
+        "taxonomyTerms": {
+            "automotive_repair", "tire_shop", "transmission_repair", "car_inspection",
+            "engine_repair_service", "exhaust_and_muffler_repair", "brake_service_and_repair",
+            "hybrid_car_repair", "auto_glass_repair", "automotive_electrical_repair",
+            "vehicle_repair", "car_repair",
+        },
+        "excludeTerms": {"car_dealer", "used_car_dealer", "auto_dealer", "vehicle_sales", "dealership"},
+        "excludeNameTerms": (" car sales", " auto sales", " used cars", " dealership", " dealer service"),
+    },
+}
+VETERINARY_FALSE_POSITIVE_NAME_TERMS = (
+    "dog training", "gundog", "gun dog", "pet grooming", "dog grooming",
+    "pet boarding", "dog daycare", "pet supplies",
+)
+DENTAL_FALSE_POSITIVE_NAME_TERMS = (
+    "arthritis consultants", "family services", "elementary school", "dental lab",
+    "dental laboratory", "dental careers", "dental supply", "dental equipment",
+)
+AUTO_DEALERSHIP_NAME_TERMS = (
+    "first team kia", "first team toyota", "banister nissan", "freedom ford",
+    "virginia beach dodge", "audi virginia beach", "classic nissan", "checkered flag",
+    "hyundai of hampton", "suttle motors service department", "carafello's auto sales",
+    "southside harley davidson", "pop and son auto sales", "carafello's auto sales",
+)
 KNOWN_FALSE_POSITIVES = {
     "72b260a2-0f00-4d40-b320-a0976ece1568": "Healthcare practitioner misclassified as HVAC service",
     "b283a586-4f5d-4fe5-a0e4-d65f469d5489": "Climate-control equipment rental, not HVAC contracting/service",
@@ -33,14 +79,19 @@ KNOWN_FALSE_POSITIVES = {
     "978149ff-c52d-485e-a57a-58c2f481b211": "HVAC equipment distributor, not HVAC contracting/service",
     "2d376d97-243a-402f-adf8-6ff609f49187": "HVAC equipment distributor, not HVAC contracting/service",
 }
-OUTPUT_PATH = Path(__file__).resolve().parents[1] / "src" / "overtureHvacListings.json"
+SOURCE_ROOT = Path(__file__).resolve().parents[1] / "src"
+OUTPUT_PATH = SOURCE_ROOT / INDUSTRIES["hvac"]["output"]
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Import HVAC service listings from Overture Maps Places.")
+    parser = argparse.ArgumentParser(description="Import local service listings from Overture Maps Places.")
+    parser.add_argument("--industry", choices=[*INDUSTRIES, "all"], default="hvac",
+                        help="Industry to import. 'all' imports Dental, Veterinary, and Auto Repair without touching HVAC.")
     parser.add_argument("--release", default=DEFAULT_RELEASE, help="Pinned Overture release (default: %(default)s).")
     parser.add_argument("--bbox", default=DEFAULT_BBOX, help="Download bbox in west,south,east,north order.")
-    parser.add_argument("--output", type=Path, default=OUTPUT_PATH, help="Generated JSON path.")
+    parser.add_argument("--places", type=Path, help="Reuse a downloaded Overture place GeoJSON file.")
+    parser.add_argument("--areas", type=Path, help="Reuse a downloaded Overture division-area GeoJSON file.")
+    parser.add_argument("--output", type=Path, help="Generated JSON path (single industry only).")
     return parser.parse_args()
 
 
@@ -163,7 +214,8 @@ def is_duplicate(candidate: dict[str, Any], existing: dict[str, Any]) -> bool:
     return SequenceMatcher(None, normalize(candidate["name"]), normalize(existing["name"])).ratio() >= 0.92
 
 
-def make_business(feature: dict[str, Any], city: str, match_reason: str) -> dict[str, Any] | None:
+def make_business(feature: dict[str, Any], city: str, match_reason: str, industry: str = "hvac",
+                  release: str = DEFAULT_RELEASE) -> dict[str, Any] | None:
     properties = feature.get("properties") or {}
     name = ((properties.get("names") or {}).get("primary") or "").strip()
     coordinates = (feature.get("geometry") or {}).get("coordinates")
@@ -188,7 +240,7 @@ def make_business(feature: dict[str, Any], city: str, match_reason: str) -> dict
     return {
         "id": f"overture-{feature.get('id')}",
         "name": name,
-        "category": "hvac",
+        "category": INDUSTRIES[industry]["category"],
         "address": address,
         "city": city,
         "latitude": latitude,
@@ -199,7 +251,8 @@ def make_business(feature: dict[str, Any], city: str, match_reason: str) -> dict
         "sourceId": feature.get("id"),
         "sourceDataset": source.get("dataset"),
         "sourceRecordId": source.get("record_id"),
-        "sourceRelease": DEFAULT_RELEASE,
+        "sourceRelease": release,
+        "overtureConfidence": properties.get("confidence"),
         "overtureTaxonomyPrimary": (properties.get("taxonomy") or {}).get("primary"),
         "overtureMatchReason": match_reason,
         "incompleteFields": incomplete_fields,
@@ -231,15 +284,73 @@ def hvac_match_reason(properties: dict[str, Any]) -> str | None:
     return None
 
 
-def import_records(place_features: list[dict[str, Any]], polygons: dict[str, dict[str, Any]]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+def industry_match_reason(properties: dict[str, Any], industry: str) -> str | None:
+    if industry == "hvac":
+        return hvac_match_reason(properties)
+    if industry_exclusion_reason(properties, industry):
+        return None
+    config = INDUSTRIES[industry]
+    taxonomy = properties.get("taxonomy") or {}
+    primary = taxonomy.get("primary")
+    hierarchy = taxonomy.get("hierarchy") or []
+    alternates = taxonomy.get("alternates") or []
+    basic = properties.get("basic_category")
+    labels = {value for value in [primary, basic, *hierarchy, *alternates] if isinstance(value, str)}
+    if labels & config["taxonomyTerms"]:
+        if industry == "auto-repair":
+            name = f" {((properties.get('names') or {}).get('primary') or '').casefold()} "
+        if primary in config["taxonomyTerms"]:
+            return f"taxonomy_primary_{primary}"
+        if basic in config["taxonomyTerms"]:
+            return f"basic_category_{basic}"
+        return "taxonomy_hierarchy_or_alternate"
+    return None
+
+
+def industry_exclusion_reason(properties: dict[str, Any], industry: str) -> str | None:
+    if industry not in INDUSTRIES or industry == "hvac":
+        return None
+    config = INDUSTRIES[industry]
+    taxonomy = properties.get("taxonomy") or {}
+    labels = {value for value in [properties.get("basic_category"), taxonomy.get("primary"),
+                                   *(taxonomy.get("hierarchy") or []), *(taxonomy.get("alternates") or [])]
+              if isinstance(value, str)}
+    name = ((properties.get("names") or {}).get("primary") or "").casefold()
+    if industry == "dental" and any(term in name for term in DENTAL_FALSE_POSITIVE_NAME_TERMS):
+        return "taxonomy/category conflict: non-practice name pattern"
+    if industry == "veterinary" and any(term in name for term in VETERINARY_FALSE_POSITIVE_NAME_TERMS):
+        return "pet service/training business, not veterinary care"
+    if industry == "auto-repair":
+        if labels & config.get("excludeTerms", set()):
+            return "vehicle sales/dealership taxonomy"
+        padded_name = f" {name} "
+        if any(term in padded_name for term in config.get("excludeNameTerms", ())):
+            return "vehicle sales/dealership name"
+        if any(term in name for term in AUTO_DEALERSHIP_NAME_TERMS):
+            return "known vehicle dealership name"
+    return None
+
+
+def import_records(place_features: list[dict[str, Any]], polygons: dict[str, dict[str, Any]],
+                   industry: str = "hvac", release: str = DEFAULT_RELEASE) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    if industry not in INDUSTRIES:
+        raise ValueError(f"Unknown industry: {industry}")
     match_counts: Counter[str] = Counter()
+    excluded_industry_false_positives: list[dict[str, str]] = []
     in_city_records: list[tuple[str, dict[str, Any], str]] = []
     outside_city = 0
     invalid_features = 0
     for feature in place_features:
         properties = feature.get("properties") or {}
-        match_reason = hvac_match_reason(properties)
+        match_reason = industry_match_reason(properties, industry)
         if match_reason is None:
+            exclusion_reason = industry_exclusion_reason(properties, industry)
+            if exclusion_reason:
+                excluded_industry_false_positives.append({
+                    "sourceId": str(feature.get("id") or ""),
+                    "name": ((properties.get("names") or {}).get("primary") or "").strip(),
+                    "reason": exclusion_reason,
+                })
             continue
         match_counts[match_reason] += 1
         geometry = feature.get("geometry") or {}
@@ -262,7 +373,7 @@ def import_records(place_features: list[dict[str, Any]], polygons: dict[str, dic
         if source_id in KNOWN_FALSE_POSITIVES:
             excluded_outliers.append({"sourceId": source_id, "reason": KNOWN_FALSE_POSITIVES[source_id]})
             continue
-        business = make_business(feature, city, match_reason)
+        business = make_business(feature, city, match_reason, industry, release)
         if business is None:
             invalid_features += 1
             continue
@@ -277,27 +388,45 @@ def import_records(place_features: list[dict[str, Any]], polygons: dict[str, dic
     incomplete_counts: Counter[str] = Counter()
     for business in businesses:
         incomplete_counts.update(business["incompleteFields"])
+    taxonomy_filter = (
+        "taxonomy.primary=hvac_service or taxonomy.alternates includes hvac_service; combined plumbing is included only when taxonomy.primary=plumbing, hierarchy includes home_service, basic_category=home_service, and the Overture primary name explicitly contains HVAC/heating/cooling/air conditioning"
+        if industry == "hvac" else
+        f"Include exact industry-specific Overture taxonomy labels: {', '.join(sorted(INDUSTRIES[industry]['taxonomyTerms']))}; vehicle sales/dealership terms excluded for Auto Repair"
+    )
+    suspicious = [
+        {"sourceId": business["sourceId"], "name": business["name"], "reason": "low Overture confidence (<0.7)"}
+        for business in businesses
+        if isinstance(business.get("overtureConfidence"), (int, float)) and business["overtureConfidence"] < 0.7
+    ]
     summary = {
-        "release": DEFAULT_RELEASE,
+        "industry": industry,
+        "category": INDUSTRIES[industry]["category"],
+        "release": release,
         "source": "Overture Maps Places",
         "sourceUrl": "https://overturemaps.org/",
-        "taxonomyFilter": "taxonomy.primary=hvac_service or taxonomy.alternates includes hvac_service; combined plumbing is included only when taxonomy.primary=plumbing, hierarchy includes home_service, basic_category=home_service, and the Overture primary name explicitly contains HVAC/heating/cooling/air conditioning",
+        "taxonomyFilter": taxonomy_filter,
         "targetCities": list(TARGET_CITIES),
         "downloadBbox": DEFAULT_BBOX,
         "downloadedPlaceFeatures": len(place_features),
-        "taxonomyPrimaryMatches": match_counts["taxonomy_primary_hvac_service"],
-        "taxonomyAlternateMatches": match_counts["taxonomy_alternate_hvac_service"],
+        "taxonomyPrimaryMatches": sum(count for reason, count in match_counts.items()
+                                       if reason.startswith("taxonomy_primary_")),
+        "taxonomyAlternateMatches": sum(count for reason, count in match_counts.items()
+                                         if reason.startswith("taxonomy_alternate_")),
         "combinedServiceMatches": match_counts["combined_plumbing_and_hvac_name"],
+        "taxonomyMatchCounts": dict(match_counts),
         "excludedOutsideTargetCities": outside_city,
         "insideTargetCityBoundaries": city_candidates,
         "excludedInvalidRecords": invalid_features,
         "excludedKnownFalsePositives": excluded_outliers,
+        "excludedIndustryFalsePositives": excluded_industry_false_positives,
         "excludedDuplicates": duplicate_count,
         "importedRecords": len(businesses),
         "importedByCity": {city: per_city.get(city, 0) for city in TARGET_CITIES},
         "incompleteRecords": sum(bool(business["incompleteFields"]) for business in businesses),
         "missingFields": {field: incomplete_counts[field] for field in ("address", "phone", "website")},
-        "ownership": "unknown for every imported record; no ownership relationships or evidence imported",
+        "suspiciousRecords": suspicious,
+        "lowConfidenceRecords": len(suspicious),
+        "ownership": "unknown for every imported record unless an existing approved public record specifically matches; no ownership relationships or evidence imported",
         "deduplication": "same normalized business name plus same address, or same name within 30 meters",
     }
     return businesses, summary
@@ -305,25 +434,30 @@ def import_records(place_features: list[dict[str, Any]], polygons: dict[str, dic
 
 def main() -> None:
     args = parse_args()
+    if bool(args.places) != bool(args.areas):
+        raise ValueError("--places and --areas must be supplied together")
+    if args.industry == "all" and args.output:
+        raise ValueError("Use --industry all without --output; each new industry writes its standard file")
     with tempfile.TemporaryDirectory(prefix="sortalocal-overture-") as temporary_directory:
         temporary_path = Path(temporary_directory)
-        place_path = temporary_path / "places.geojson"
-        area_path = temporary_path / "division_areas.geojson"
-        download_geojson("place", args.bbox, args.release, place_path)
-        download_geojson("division_area", args.bbox, args.release, area_path)
+        place_path = args.places or temporary_path / "places.geojson"
+        area_path = args.areas or temporary_path / "division_areas.geojson"
+        if not args.places:
+            download_geojson("place", args.bbox, args.release, place_path)
+            download_geojson("division_area", args.bbox, args.release, area_path)
         places = read_features(place_path)
         polygons = city_polygons(read_features(area_path))
-        businesses, summary = import_records(places, polygons)
 
-    summary["release"] = args.release
-    summary["downloadBbox"] = args.bbox
-    for business in businesses:
-        business["sourceRelease"] = args.release
-    output = {"release": args.release, "summary": summary, "businesses": businesses}
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps(summary, indent=2))
-    print(f"Wrote {len(businesses)} HVAC listings to {args.output}")
+    industries = [name for name in INDUSTRIES if name != "hvac"] if args.industry == "all" else [args.industry]
+    for industry in industries:
+        businesses, summary = import_records(places, polygons, industry, args.release)
+        summary["downloadBbox"] = args.bbox
+        output_path = args.output or SOURCE_ROOT / INDUSTRIES[industry]["output"]
+        output = {"release": args.release, "summary": summary, "businesses": businesses}
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps(summary, indent=2))
+        print(f"Wrote {len(businesses)} {INDUSTRIES[industry]['label']} listings to {output_path}")
 
 
 if __name__ == "__main__":
