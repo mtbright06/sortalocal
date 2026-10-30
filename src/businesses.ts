@@ -114,7 +114,7 @@ const unknownOwnership: UnknownOwnershipRecord = {
 interface PublicOwnershipRecord {
     businessId: string
     entityId: string
-    classification: string
+    classification: 'private_equity_backed' | 'subsidiary' | 'public_company' | string
     approvalStatus: string
     verifiedAt: string
     approvedAt: string
@@ -141,7 +141,7 @@ interface RegistryRelationship {
 const publicRecords = (publicOwnershipData as unknown as { records: PublicOwnershipRecord[] }).records
 const approvedPublicRecords = new Map(publicRecords
     .filter((record) => record.approvalStatus === 'approved'
-        && record.classification === 'private_equity_backed'
+        && ['private_equity_backed', 'subsidiary', 'public_company'].includes(record.classification)
         && Boolean(record.verifiedAt && record.approvedAt && record.approvedBy)
         && record.evidence.length > 0
         && record.evidence.every((evidence) => evidence.url.startsWith('https://') && !evidence.url.includes('.invalid')))
@@ -157,7 +157,7 @@ function ownershipChain(entityId: string): OwnershipChainStep[] {
         const nextFrontier: string[] = []
         for (const currentId of frontier) {
             for (const relationship of registryRelationships.filter((item) => item.fromEntityId === currentId
-                && ['acquired_by', 'majority_investment_by', 'portfolio_company_of', 'formed_through_partnership'].includes(item.type)
+                && ['acquired_by', 'majority_investment_by', 'portfolio_company_of', 'formed_through_partnership', 'subsidiary_of', 'owned_by'].includes(item.type)
                 && !visited.has(item.toEntityId))) {
                 const destination = registryEntities.get(relationship.toEntityId)
                 if (!destination) continue
@@ -188,7 +188,7 @@ function publicOwnership(businessId: string): VerifiedOwnershipRecord | null {
     const chain = ownershipChain(record.entityId)
     if (chain.length === 0) return null
     return {
-        classification: 'pe-backed',
+        classification: record.classification === 'private_equity_backed' ? 'pe-backed' : 'corporate',
         status: 'verified',
         verifiedAt: record.verifiedAt,
         relationships: [],

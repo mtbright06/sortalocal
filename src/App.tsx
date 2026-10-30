@@ -487,7 +487,7 @@ function BusinessDetail({ business, onClose }: { business: Business; onClose: ()
     const isVerified = ownership.status === 'verified'
     const isOverture = business.dataSource === 'overture'
     const events = [...(ownership.status === 'verified' ? ownership.ownershipChain ?? [] : [])]
-        .filter(step => !['portfolio_company_of', 'formed_through_partnership'].includes(step.relationship))
+        .filter(step => ['acquired_by', 'majority_investment_by'].includes(step.relationship))
         .sort((a, b) => ownershipEventDate(a).localeCompare(ownershipEventDate(b)))
     const evidenceCount = isVerified ? new Set([
         ...(ownership.ownershipChain ?? []).flatMap(step => step.evidence.map(evidence => evidence.url)),

@@ -105,7 +105,7 @@ try {
         for (const step of steps) {
             for (const evidence of step.evidence) assert(html.includes(escape(evidence.url)), 'All original evidence links remain available')
         }
-        const events = steps.filter(step => !['portfolio_company_of', 'formed_through_partnership'].includes(step.relationship)).sort((a, b) => ownershipEventDate(a).localeCompare(ownershipEventDate(b)))
+        const events = steps.filter(step => ['acquired_by', 'majority_investment_by'].includes(step.relationship)).sort((a, b) => ownershipEventDate(a).localeCompare(ownershipEventDate(b)))
         let previousPosition = -1
         const timeline = html.match(/<ol class="acquisition-timeline">([\s\S]*?)<\/ol>/)?.[1] ?? ''
         for (const event of events) {
@@ -151,6 +151,26 @@ try {
     assert(smithHtml.includes('seller&#x27;s new-construction business remained and operated as S &amp; K Electric.'))
     assert(smithHtml.includes('An announcement does not confirm a closing date.'))
     console.log('Passed Smith & Keene approval check: scoped carve-out, announcement date, and Cascade partner branches render.')
+
+    const marsHospital = businesses.find(business => business.id === 'overture-b3acb1ef-6e69-4c67-904d-b125f7a3f981')
+    const firestoneStore = businesses.find(business => business.id === 'overture-3c45f87b-3e0c-4fe0-ac09-22911a3766ac')
+    assert(marsHospital && firestoneStore)
+    for (const [business, chainNames, classification] of [
+        [marsHospital, ['Banfield Pet Hospital', 'Mars Veterinary Health', 'Mars, Incorporated'], 'corporate'],
+        [firestoneStore, ['Bridgestone Retail Operations, LLC', 'Bridgestone Americas, Inc.', 'Bridgestone Corporation'], 'corporate'],
+    ]) {
+        assert.equal(business.ownership.status, 'verified')
+        assert.equal(business.ownership.classification, classification)
+        const paths = ownershipPaths(business.ownership.ownershipChain ?? [])
+        assert(paths.some(path => chainNames.every((name, index) => path[index]?.toEntity === name)), `${business.name} ownership chain is complete and ordered`)
+        const profile = renderToStaticMarkup(createElement(BusinessDetail, { business, onClose() {} }))
+        for (const step of business.ownership.ownershipChain ?? []) {
+            for (const source of step.evidence) assert(profile.includes(escape(source.url)), 'Corporate ownership citation is rendered')
+        }
+    }
+    assert(marsHospital.ownership.evidence.some(evidence => evidence.url === 'https://marsveterinary.com/who-we-are/our-companies/'))
+    assert(firestoneStore.ownership.evidence.some(evidence => evidence.url.includes('bridgestoneamericas.com')))
+    console.log('Passed corporate ownership end-to-end checks: Mars hospital and Firestone store classifications, ordered parent chains, and citations.')
     // Exercise absent fields and lengthy content using copies of real records.
     // These fixtures are never added to the business dataset.
     const verified = businesses.find(business => business.dataSource === 'overture' && business.ownership.status === 'verified' && business.ownership.ownershipChain?.length)
@@ -172,7 +192,7 @@ try {
     assert(extensiveHtml.includes(escape(extensive.name)))
     const originalPaths = ownershipPaths(verified.ownership.ownershipChain)
     assert.deepEqual(ownershipPaths(extensiveSteps), originalPaths, 'Repeated evidence must not duplicate chain entities')
-    const expectedEvents = extensiveSteps.filter(step => !['portfolio_company_of', 'formed_through_partnership'].includes(step.relationship)).length
+    const expectedEvents = extensiveSteps.filter(step => ['acquired_by', 'majority_investment_by'].includes(step.relationship)).length
     assert.equal((extensiveHtml.match(/class="event-date"/g) ?? []).length, expectedEvents, 'Extensive acquisition history is fully retained')
     const visibleHeader = extensiveHtml.slice(extensiveHtml.indexOf('<header'), extensiveHtml.indexOf('</header>'))
     assert(!visibleHeader.includes('Business identity match'), 'Identity confidence stays secondary')

@@ -11,6 +11,27 @@ spec.loader.exec_module(research)
 
 
 class MatchingTests(unittest.TestCase):
+    def test_all_industry_listing_loader_preserves_original_records(self):
+        listings = research.load_all_overture_listings()
+        self.assertEqual(len(listings["businesses"]), 2368)
+        counts = {}
+        for business in listings["businesses"]:
+            counts[business["category"]] = counts.get(business["category"], 0) + 1
+        self.assertEqual(counts, {"hvac": 293, "dental": 754, "veterinary": 195, "automotive": 1126})
+
+    def test_cross_industry_candidates_remain_unpublished_and_unknown(self):
+        candidates = [case for case in research.load(research.RESEARCH_CASES)["candidates"]
+                      if case["caseId"].startswith("cross-industry-")]
+        self.assertEqual(len(candidates), 13)
+        self.assertTrue(all(case["proposedClassification"] == "unknown" for case in candidates))
+        public = research.load(research.PUBLIC)
+        registry = research.load_registry(research.DEFAULT_REGISTRY)
+        plan = research.dry_run_auto_publication(
+            research.load_all_overture_listings(), public, registry, candidates, as_of="2026-10-28")
+        self.assertEqual(plan["proposedPublications"], [])
+        self.assertEqual(sum(record["classification"] == "private_equity_backed" for record in public["records"]), 6)
+        self.assertEqual(len(public["records"]), 31)
+
     def test_normalizes_names_domains_and_location(self):
         business = {"name": "Harbor-Breeze Heating", "website": "https://www.harborbreeze-demo.invalid/",
                     "city": "Norfolk", "address": "100 Demo Way"}
@@ -53,13 +74,17 @@ class ApprovalSafeguardTests(unittest.TestCase):
         self.assertEqual(queue["entries"], [])
         self.assertTrue(all(b["ownership"]["classification"] == "unknown" for b in listings["businesses"]))
         public_records = json.loads(research.PUBLIC.read_text(encoding="utf-8"))["records"]
-        self.assertEqual(len(public_records), 6)
+        self.assertEqual(len(public_records), 31)
+        self.assertEqual(sum(record["classification"] == "private_equity_backed" for record in public_records), 6)
         self.assertTrue(all(record["approvalStatus"] == "approved" for record in public_records))
 
     def test_default_registry_is_real_and_empty_demo_queue_cannot_be_approved(self):
         registry = research.load_registry(research.DEFAULT_REGISTRY)
         self.assertEqual(registry["dataStatus"], "real_research")
-        self.assertEqual(len(registry["entities"]), 20)
+        # Existing reviewed entities remain, alongside the newly recorded
+        # network-level corporate and support-affiliation facts.
+        self.assertGreaterEqual(len(registry["entities"]), 35)
+        self.assertGreaterEqual(len(registry["relationships"]), 50)
         with self.assertRaisesRegex(ValueError, "fictional demo"):
             research.require_approvable_queue({"registryDataStatus": "fictional_demo_only"})
 
@@ -123,14 +148,16 @@ class ApprovalSafeguardTests(unittest.TestCase):
         self.assertEqual(relationships["rel-comfort-solutions-paramount-acquisition"]["effectiveAt"], "2025-05-01")
         self.assertEqual(relationships["rel-paramount-stonebridge-investment"]["effectiveAt"], "2021-03-11")
         records = json.loads(research.PUBLIC.read_text(encoding="utf-8"))["records"]
-        self.assertEqual({record["businessId"] for record in records}, {
+        existing_pe_records = {
             "overture-af436b19-7ee9-48e7-ab77-b60f9a1d5dc5",
             "overture-7b4285da-a044-49a3-931d-536e6a91fd7a",
             "overture-1d558b21-e9e5-46f4-8a32-b90fd4a12415",
             "overture-9e594c69-5dcc-46e7-bea7-e5c656d7198e",
             "overture-11f4ba78-3c4e-455c-a6ba-24e60e3d0a57",
             "overture-91a5fbbf-2236-4922-8efe-8da5897f1074",
-        })
+        }
+        self.assertTrue(existing_pe_records <= {record["businessId"] for record in records})
+        self.assertEqual(sum(record["classification"] == "private_equity_backed" for record in records), 6)
 
 
 class DiscoveryQueueTests(unittest.TestCase):
@@ -230,7 +257,7 @@ class DiscoveryQueueTests(unittest.TestCase):
 
 class AutomatedVerificationTests(unittest.TestCase):
     def setUp(self):
-        self.listings = json.loads(research.LISTINGS.read_text(encoding="utf-8"))
+        self.listings = research.load_all_overture_listings()
         self.registry = research.load_registry(research.DEFAULT_REGISTRY)
         self.public = json.loads(research.PUBLIC.read_text(encoding="utf-8"))
         self.queue = json.loads(research.QUEUE.read_text(encoding="utf-8"))
@@ -238,14 +265,16 @@ class AutomatedVerificationTests(unittest.TestCase):
 
     def test_dry_run_is_read_only_and_reports_current_and_blocked_cases(self):
         before = json.dumps(self.public, sort_keys=True)
-        plan = research.dry_run_auto_publication(self.listings, self.public, self.registry, self.cases, "2026-10-28")
+        plan = research.dry_run_auto_publication(self.listings, self.public, self.registry, self.cases, "2026-10-29")
         self.assertEqual(json.dumps(self.public, sort_keys=True), before)
         self.assertEqual(len(plan["proposedPublications"]), 0)
-        self.assertEqual([item["caseId"] for item in plan["alreadyPublished"]], [
+        current_case_ids = {item["caseId"] for item in plan["alreadyPublished"]}
+        self.assertTrue({
             "case-smith-keene-cascade-2024",
             "case-hobbs-air-blackstone-2024-2026",
             "case-brr-coolsys-ares-2019",
-        ])
+        } <= current_case_ids)
+        self.assertEqual(sum(item["caseId"].startswith("case-corp-") for item in plan["alreadyPublished"]), 25)
         blocked = {item["caseId"]: item for item in plan["blocked"]}
         self.assertIn("ultimate ownership", " ".join(blocked["case-philbrick-kellam-affiliation"]["blockers"]).lower())
         self.assertTrue(any("Franchise brand affiliation" in reason for reason in
@@ -262,6 +291,26 @@ class AutomatedVerificationTests(unittest.TestCase):
         eligible = next(item for item in plan["proposedPublications"] if item["caseId"] == "case-smith-keene-cascade-2024")
         self.assertEqual(eligible["classification"], "private_equity_backed")
         self.assertFalse(eligible["blockers"])
+
+    def test_corporate_subsidiary_and_public_company_cases_pass_only_with_parent_evidence(self):
+        for business_id, classification in [
+            ("overture-b3acb1ef-6e69-4c67-904d-b125f7a3f981", "subsidiary"),
+            ("overture-3c45f87b-3e0c-4fe0-ac09-22911a3766ac", "public_company"),
+        ]:
+            case = next(item for item in self.cases if item.get("caseId", "").startswith("case-corp-")
+                        and business_id in item.get("businessIds", []))
+            public = json.loads(json.dumps(self.public))
+            public["records"] = [record for record in public["records"] if record["businessId"] != business_id]
+            all_listings = research.load_all_overture_listings()
+            outcome = research.evaluate_auto_case(case, all_listings, public, self.registry, "2026-10-29")
+            self.assertEqual(outcome["status"], "eligible", outcome["blockers"])
+            self.assertEqual(outcome["classification"], classification)
+            if classification == "public_company":
+                registry = json.loads(json.dumps(self.registry))
+                next(entity for entity in registry["entities"] if entity["id"] == "corporation-bridgestone")["type"] = "corporate_parent"
+                blocked = research.evaluate_auto_case(case, all_listings, public, registry, "2026-10-29")
+                self.assertEqual(blocked["status"], "blocked")
+                self.assertTrue(any("public parent company" in reason for reason in blocked["blockers"]))
 
     def test_newport_identity_and_franchise_brand_alone_cannot_pass_gate(self):
         smith = json.loads(json.dumps(self.cases[0]))

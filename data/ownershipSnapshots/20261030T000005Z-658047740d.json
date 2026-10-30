@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "20261030T000005Z-658047740d",
+  "createdAt": "2026-10-30T00:00:05Z",
+  "status": "applied",
+  "caseIds": [
+    "case-corp-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981",
+    "case-corp-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9",
+    "case-corp-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2",
+    "case-corp-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8",
+    "case-corp-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e",
+    "case-corp-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a",
+    "case-corp-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6",
+    "case-corp-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd",
+    "case-corp-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9",
+    "case-corp-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0",
+    "case-corp-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad",
+    "case-corp-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd",
+    "case-corp-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76",
+    "case-corp-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16",
+    "case-corp-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297",
+    "case-corp-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184",
+    "case-corp-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac",
+    "case-corp-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6",
+    "case-corp-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159",
+    "case-corp-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16",
+    "case-corp-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95",
+    "case-corp-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5",
+    "case-corp-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9",
+    "case-corp-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f",
+    "case-corp-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749"
+  ],
+  "businessIds": [
+    "overture-b3acb1ef-6e69-4c67-904d-b125f7a3f981",
+    "overture-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9",
+    "overture-88ef4d97-38a7-4bef-a7b2-77279fe642b2",
+    "overture-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8",
+    "overture-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e",
+    "overture-88150534-5a15-4651-9efe-558f5b522b6a",
+    "overture-caf1cfbc-990a-497d-9a91-294dd51d7ec6",
+    "overture-18b9e920-bf90-4394-9e56-44b325cde7dd",
+    "overture-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9",
+    "overture-127f086e-e908-4647-93d8-506ea24072e0",
+    "overture-aa5bb4cf-75c3-4ced-8974-183ed87923ad",
+    "overture-3bf16665-076a-4054-9282-25958b6171bd",
+    "overture-93928b11-587f-4ab0-b5b8-eb740fe77f76",
+    "overture-2e6448ec-1e66-4eac-9920-02394664af16",
+    "overture-12c21f25-606b-4956-869c-6d9b4d578297",
+    "overture-71e5d223-e266-4af1-889e-b0cf29acf184",
+    "overture-3c45f87b-3e0c-4fe0-ac09-22911a3766ac",
+    "overture-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6",
+    "overture-d92d57a0-f07e-4cab-9628-66eb9a25f159",
+    "overture-1b20ab7e-b63a-4115-8d51-17a4a7325a16",
+    "overture-67baeece-8b75-4cfd-92f5-9035a3766e95",
+    "overture-02989035-d22a-4cfc-af48-1a5e60f7eaa5",
+    "overture-6741623d-7bb5-46ac-9f74-c15c23bc97b9",
+    "overture-35ee7568-501d-4dc9-b006-6104ac338c7f",
+    "overture-2c27caae-471a-421b-a146-cfd593eee749"
+  ],
+  "publicRecordsBefore": {
+    "overture-b3acb1ef-6e69-4c67-904d-b125f7a3f981": null,
+    "overture-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9": null,
+    "overture-88ef4d97-38a7-4bef-a7b2-77279fe642b2": null,
+    "overture-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8": null,
+    "overture-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e": null,
+    "overture-88150534-5a15-4651-9efe-558f5b522b6a": null,
+    "overture-caf1cfbc-990a-497d-9a91-294dd51d7ec6": null,
+    "overture-18b9e920-bf90-4394-9e56-44b325cde7dd": null,
+    "overture-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9": null,
+    "overture-127f086e-e908-4647-93d8-506ea24072e0": null,
+    "overture-aa5bb4cf-75c3-4ced-8974-183ed87923ad": null,
+    "overture-3bf16665-076a-4054-9282-25958b6171bd": null,
+    "overture-93928b11-587f-4ab0-b5b8-eb740fe77f76": null,
+    "overture-2e6448ec-1e66-4eac-9920-02394664af16": null,
+    "overture-12c21f25-606b-4956-869c-6d9b4d578297": null,
+    "overture-71e5d223-e266-4af1-889e-b0cf29acf184": null,
+    "overture-3c45f87b-3e0c-4fe0-ac09-22911a3766ac": null,
+    "overture-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6": null,
+    "overture-d92d57a0-f07e-4cab-9628-66eb9a25f159": null,
+    "overture-1b20ab7e-b63a-4115-8d51-17a4a7325a16": null,
+    "overture-67baeece-8b75-4cfd-92f5-9035a3766e95": null,
+    "overture-02989035-d22a-4cfc-af48-1a5e60f7eaa5": null,
+    "overture-6741623d-7bb5-46ac-9f74-c15c23bc97b9": null,
+    "overture-35ee7568-501d-4dc9-b006-6104ac338c7f": null,
+    "overture-2c27caae-471a-421b-a146-cfd593eee749": null
+  },
+  "registryEntitiesAdded": [
+    "local-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981",
+    "local-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9",
+    "local-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2",
+    "local-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8",
+    "local-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e",
+    "local-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a",
+    "local-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6",
+    "local-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd",
+    "local-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9",
+    "local-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0",
+    "local-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad",
+    "local-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd",
+    "local-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76",
+    "local-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16",
+    "local-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297",
+    "local-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184",
+    "local-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac",
+    "local-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6",
+    "local-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159",
+    "local-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16",
+    "local-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95",
+    "local-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5",
+    "local-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9",
+    "local-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f",
+    "local-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749"
+  ],
+  "registryRelationshipsAdded": [
+    "rel-local-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16-brand-banfield-pet-hospital",
+    "rel-local-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297-brand-banfield-pet-hospital",
+    "rel-local-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184-brand-bluepearl",
+    "rel-local-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac-organization-bsro",
+    "rel-local-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6-organization-bsro",
+    "rel-local-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159-organization-bsro",
+    "rel-local-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16-organization-bsro",
+    "rel-local-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95-organization-bsro",
+    "rel-local-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5-organization-bsro",
+    "rel-local-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9-organization-bsro",
+    "rel-local-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f-organization-bsro",
+    "rel-local-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749-organization-bsro"
+  ],
+  "entityBusinessIdsBefore": {
+    "local-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981": [
+      "overture-b3acb1ef-6e69-4c67-904d-b125f7a3f981"
+    ],
+    "local-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9": [
+      "overture-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9"
+    ],
+    "local-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2": [
+      "overture-88ef4d97-38a7-4bef-a7b2-77279fe642b2"
+    ],
+    "local-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8": [
+      "overture-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8"
+    ],
+    "local-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e": [
+      "overture-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e"
+    ],
+    "local-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a": [
+      "overture-88150534-5a15-4651-9efe-558f5b522b6a"
+    ],
+    "local-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6": [
+      "overture-caf1cfbc-990a-497d-9a91-294dd51d7ec6"
+    ],
+    "local-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd": [
+      "overture-18b9e920-bf90-4394-9e56-44b325cde7dd"
+    ],
+    "local-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9": [
+      "overture-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9"
+    ],
+    "local-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0": [
+      "overture-127f086e-e908-4647-93d8-506ea24072e0"
+    ],
+    "local-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad": [
+      "overture-aa5bb4cf-75c3-4ced-8974-183ed87923ad"
+    ],
+    "local-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd": [
+      "overture-3bf16665-076a-4054-9282-25958b6171bd"
+    ],
+    "local-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76": [
+      "overture-93928b11-587f-4ab0-b5b8-eb740fe77f76"
+    ],
+    "local-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16": [
+      "overture-2e6448ec-1e66-4eac-9920-02394664af16"
+    ],
+    "local-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297": [
+      "overture-12c21f25-606b-4956-869c-6d9b4d578297"
+    ],
+    "local-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184": [
+      "overture-71e5d223-e266-4af1-889e-b0cf29acf184"
+    ],
+    "local-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac": [
+      "overture-3c45f87b-3e0c-4fe0-ac09-22911a3766ac"
+    ],
+    "local-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6": [
+      "overture-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6"
+    ],
+    "local-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159": [
+      "overture-d92d57a0-f07e-4cab-9628-66eb9a25f159"
+    ],
+    "local-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16": [
+      "overture-1b20ab7e-b63a-4115-8d51-17a4a7325a16"
+    ],
+    "local-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95": [
+      "overture-67baeece-8b75-4cfd-92f5-9035a3766e95"
+    ],
+    "local-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5": [
+      "overture-02989035-d22a-4cfc-af48-1a5e60f7eaa5"
+    ],
+    "local-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9": [
+      "overture-6741623d-7bb5-46ac-9f74-c15c23bc97b9"
+    ],
+    "local-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f": [
+      "overture-35ee7568-501d-4dc9-b006-6104ac338c7f"
+    ],
+    "local-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749": [
+      "overture-2c27caae-471a-421b-a146-cfd593eee749"
+    ]
+  },
+  "caseFieldsBefore": {
+    "case-corp-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    },
+    "case-corp-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749": {
+      "reviewStatus": "ready_for_automatic_approval",
+      "autoApprovedAt": null,
+      "approvedBusinessIds": null,
+      "publicationId": null
+    }
+  }
+}

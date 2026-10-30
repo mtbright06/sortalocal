@@ -7,7 +7,7 @@
       },
       "lastDecision": "already_published",
       "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 1,
+      "unchangedRuns": 2,
       "evidenceUrls": [
         "https://www.cascadeservices.com/about/technician-epa-certification/",
         "https://www.cascadeservices.com/cascade-services-announces-the-acquisitions-of-sun-plumbing-in-florida-and-smith-keene-home-services-in-virginia/",
@@ -21,7 +21,7 @@
       },
       "lastDecision": "blocked",
       "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 1,
+      "unchangedRuns": 2,
       "evidenceUrls": [
         "https://kellammechanical.com/philbrick-heating-ac-is-now-part-of-the-kellam-family/"
       ]
@@ -33,7 +33,7 @@
       },
       "lastDecision": "blocked",
       "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 1,
+      "unchangedRuns": 2,
       "evidenceUrls": [
         "https://www.apax.com/news-views/bci-leads-significant-investment-in-authority-brands/",
         "https://www.apax.com/news-views/funds-advised-by-apax-partners-acquire-authority-brands/",
@@ -45,9 +45,9 @@
       "fingerprints": {
         "overture-11f4ba78-3c4e-455c-a6ba-24e60e3d0a57": "1c98f3cfee9bd81ed1e12320cf2b8c81e65fbd597568e2f3868bd49711141fa5"
       },
-      "lastDecision": "eligible",
+      "lastDecision": "already_published",
       "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 0,
+      "unchangedRuns": 1,
       "evidenceUrls": [
         "https://www.aircontrolconcepts.com/operating-companies/hobbs-associates",
         "https://www.blackstone.com/news/press/air-control-concepts-announces-investment-from-blackstone/",
@@ -59,9 +59,9 @@
       "fingerprints": {
         "overture-91a5fbbf-2236-4922-8efe-8da5897f1074": "d8240e1c8c12c2bf3307966f6f8c87167a1158b168e7805fb88b43612d8beadd"
       },
-      "lastDecision": "eligible",
+      "lastDecision": "already_published",
       "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 0,
+      "unchangedRuns": 1,
       "evidenceUrls": [
         "https://coolsys.com/about-coolsys/leadership/",
         "https://coolsys.com/our-brands/brr-refrigeration/",
@@ -69,143 +69,1352 @@
         "https://coolsys.com/resource/coolsys-acquires-brr-refrigeration-in-virginia/",
         "https://www.achrnews.com/articles/142364-coolsys-acquires-brr-refrigeration-in-virginia"
       ]
+    },
+    "case-corp-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981": {
+      "fingerprints": {
+        "overture-b3acb1ef-6e69-4c67-904d-b125f7a3f981": "e757f6013a52a5d80b0ea93917ff25b19ed29a0c2269abc4a60dbebabb181f06"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/chesapeake/cgb",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9": {
+      "fingerprints": {
+        "overture-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9": "8817c555d18db72d2b72c6ea78ec86535108c97c797721dcb4ff1046e8099e73"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/chesapeake/cgb",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2": {
+      "fingerprints": {
+        "overture-88ef4d97-38a7-4bef-a7b2-77279fe642b2": "179507f13abcb0ce852227daf2e2d4aa9bb57cc9844d6bbf75f6e844427360ac"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/chesapeake/chs",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8": {
+      "fingerprints": {
+        "overture-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8": "74ff7d2f6d4dccbc47d4eef500049751279f920b00851dbb1b141501f27091a0"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/norfolk/nok",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e": {
+      "fingerprints": {
+        "overture-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e": "1d70587f45326696d9cb09d873e1e3799faa0130c277735524796e9ce42f6c36"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/lsn",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a": {
+      "fingerprints": {
+        "overture-88150534-5a15-4651-9efe-558f5b522b6a": "bfc6d20e0658f04ed3ab6628a67384cf865db43cabd3c25599faf985f505d3a8"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/lsn",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6": {
+      "fingerprints": {
+        "overture-caf1cfbc-990a-497d-9a91-294dd51d7ec6": "0fe8fbbbac8e3f53abb11b55253bbbadabc9230dd13b9d6826e1462a59472357"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vbh",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd": {
+      "fingerprints": {
+        "overture-18b9e920-bf90-4394-9e56-44b325cde7dd": "c4626d966324449a339cbd0431538d1249611f8da58f237b28bf58cd299545e3"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vbh",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9": {
+      "fingerprints": {
+        "overture-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9": "e88cc4a1766c720390b81658cf03ccb4f9e5f993686eaa3e84da1b0e9c611848"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/pbe",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0": {
+      "fingerprints": {
+        "overture-127f086e-e908-4647-93d8-506ea24072e0": "bec7b107f102e0f4160ed45ef20006af69afa5b0ce5048635c1bfc42e1fb702f"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/pbe",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad": {
+      "fingerprints": {
+        "overture-aa5bb4cf-75c3-4ced-8974-183ed87923ad": "7f17268f3b16d8e510f88680c0c17e58085f740bfaceaf69b218c1f86a69457a"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vab",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd": {
+      "fingerprints": {
+        "overture-3bf16665-076a-4054-9282-25958b6171bd": "f7b1e6761db19c6a42fedb02f090a2a9a7e9022360e8a8569cb9100e7c81365c"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vab",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76": {
+      "fingerprints": {
+        "overture-93928b11-587f-4ab0-b5b8-eb740fe77f76": "99e64b6d13953b758349fc49df4e74ca5932b2f26d10758a1d2c68755eae6f86"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/htp",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16": {
+      "fingerprints": {
+        "overture-2e6448ec-1e66-4eac-9920-02394664af16": "53d4c1055ac434450c2b624e5bc01be44f0c657764eb999701217fdcc4b0e93d"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/newport-news/new",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297": {
+      "fingerprints": {
+        "overture-12c21f25-606b-4956-869c-6d9b4d578297": "25d172e8683d05bbdddf049f08884b44c203a863dcff7fab8ba71c4e1d86ebbd"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.banfield.com/locations/veterinarians/va/hampton/hmp",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184": {
+      "fingerprints": {
+        "overture-71e5d223-e266-4af1-889e-b0cf29acf184": "ac9b3beb5185ad866db7853191ffaffd5d89f990f9bbaf2193074f447b3c277b"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://bluepearlvet.com/hospital/virginia-beach-va/",
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "case-corp-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac": {
+      "fingerprints": {
+        "overture-3c45f87b-3e0c-4fe0-ac09-22911a3766ac": "9cf30aa825f01c747f56e94d355b4e7f5ef7334ad4b17833e3e8a70f35826850"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+        "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+        "https://www.firestonecompleteautocare.com/virginia/chesapeake/600-pavilion-dr/"
+      ]
+    },
+    "case-corp-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6": {
+      "fingerprints": {
+        "overture-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6": "4ef9fa23562fb4f370098d327e1451b11454fa5905a565de326814c8ae85736b"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+        "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+        "https://www.firestonecompleteautocare.com/virginia/chesapeake/453-n-battlefield-blvd/"
+      ]
+    },
+    "case-corp-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159": {
+      "fingerprints": {
+        "overture-d92d57a0-f07e-4cab-9628-66eb9a25f159": "6a25c952304eefc9b9826a57f7a3a662dedf9ea62f715787b1e0228d684dcc9f"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://local.firestonecompleteautocare.com/virginia/chesapeake/133-hillcrest-pkwy/",
+        "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+        "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign"
+      ]
+    },
+    "case-corp-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16": {
+      "fingerprints": {
+        "overture-1b20ab7e-b63a-4115-8d51-17a4a7325a16": "0fa463aabbfa702d57673c8ddd7b69f3cc9e12d8a4764a4c858a15d1993f3588"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+        "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+        "https://www.firestonecompleteautocare.com/virginia/chesapeake/1545-ring-rd/"
+      ]
+    },
+    "case-corp-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95": {
+      "fingerprints": {
+        "overture-67baeece-8b75-4cfd-92f5-9035a3766e95": "8bd4be6b40ade7ed708bff80f312dad1865511a85b4b0b8d7f2e0b3fc4aa183a"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+        "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+        "https://www.firestonecompleteautocare.com/virginia/hampton/112-marketplace-dr/"
+      ]
+    },
+    "case-corp-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5": {
+      "fingerprints": {
+        "overture-02989035-d22a-4cfc-af48-1a5e60f7eaa5": "6744668890ee4c43749c60e61d8333a71bbe7a6840a94923c31b220997b4ad73"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+        "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+        "https://www.firestonecompleteautocare.com/virginia/norfolk/1251-wonsan-st/"
+      ]
+    },
+    "case-corp-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9": {
+      "fingerprints": {
+        "overture-6741623d-7bb5-46ac-9f74-c15c23bc97b9": "cd6aefe3dd91f38680307eb0c451984cc160d3a0fc6808a5cbb225843ab241f9"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+        "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+        "https://www.firestonecompleteautocare.com/virginia/norfolk/856-granby-st/"
+      ]
+    },
+    "case-corp-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f": {
+      "fingerprints": {
+        "overture-35ee7568-501d-4dc9-b006-6104ac338c7f": "7b26d65dfc596cc96cd0b6a8b29f0ef164fcb7d79d54d36feeec36940bcaab70"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+        "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+        "https://www.firestonecompleteautocare.com/virginia/chesapeake/2408-chesapeake-square-ring-rd/"
+      ]
+    },
+    "case-corp-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749": {
+      "fingerprints": {
+        "overture-2c27caae-471a-421b-a146-cfd593eee749": "437cea88b3d20dc3ca1aa8b7d585a0ee96fe177bf2e2e962b5c119b9b6199bd9"
+      },
+      "lastDecision": "eligible",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+        "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+        "https://www.firestonecompleteautocare.com/virginia/virginia-beach/953-chimney-hill-pkwy/"
+      ]
+    },
+    "cross-industry-heartland-dental": {
+      "fingerprints": {
+        "overture-049f0034-77e6-4267-956e-fde9d8c33507": "6d01600cf2ffece84c25f444cc6fde84541db690ae24500267afcf6e9a2aee6d",
+        "overture-6b92b59c-26a4-4ceb-95cf-87cf9bb26d7b": "341d7d2302d867aed6d6dd95d471354a5786dc1315f2a2fda6fa0493542f0a96",
+        "overture-9f58a93d-8f12-4a4e-b7b4-a23e8cdd67e7": "49d3b17e99a401f2775eef11e6323e0889c587722d579fe4f84afcbac7dfe588"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://jobs.heartland.com/jobs/us-va/"
+      ]
+    },
+    "cross-industry-dental-care-alliance": {
+      "fingerprints": {
+        "overture-50f50540-fc9b-485f-9140-841cc46a0846": "6bbc9a19d3fb54bd8fa51b257f46b25f88919f83d979f9425c1ab4cf85c498cd",
+        "overture-c8ac50e8-8d75-4f13-a383-1d26f22ca069": "9256b043eb2d864f8686ff19349a94f0cd10998838a4e2b171b2fd9544ed9925",
+        "overture-931f72e8-10d9-41ad-9b8b-c5ad5c6b5497": "cd449c5e192025f91632a41e763123a65d3aae63c65874f6e375935fd53ff93d",
+        "overture-1f608cef-f94a-4b9f-b197-287f8606866b": "f705604c8244370951a4a4f0126ae470fc62c49b04e2bc4f83ea616ce82b5ad2",
+        "overture-665b26c5-47b4-41cc-b899-705879741d82": "2b67b6c962153c9a382bab2446c63d3cb4f1a77cdcc15ce1c742ed3ff73028e7",
+        "overture-aa720320-78e7-48ad-b06d-f18f2ce98d7f": "f600863f8e388fb45de49b416b5712fcb2233676a0805f0be48ff0900614728a",
+        "overture-35a10ade-3b29-40de-ac69-07d1bea556ee": "0d647d74876e2ef8066375aafc988d30bafb64fb62f9f27436babc0b2678fb1e",
+        "overture-ffe0615c-015c-41ed-8618-2f89be0fd212": "d1edd2a23b39552de4281883ccca0023c9367da396d41f5d5a21f108740c2334",
+        "overture-d7424df9-5a32-4c5f-a918-0ac966d71228": "6d220714de12ebeec746f424dfc6308495be605790f10bf0d20f02b24925bb15",
+        "overture-b5ae8dd2-4edc-47a7-94bb-f3864a85e0a1": "b199ba7415d3a16e7167ef4a2248d7436e8421ee5786222118a67ac954a1c25a",
+        "overture-ffa9ac4f-d6c7-4cf8-978d-cfe3372572a2": "c4bb0640004897fa716aff7b524269184ee8f3529a511f6550430952a5909cc5",
+        "overture-1275527c-2fb5-4a62-9142-cdde03c60216": "6a74c2dcc041e6f6d7ccc580684275ffab1bfba3fde8f36fff05e8f1c5c92e73",
+        "overture-4535d883-a83e-440a-b8c7-fbe1bdee6a5a": "8aaf713db04271788a2661beeda235dad678dbbe54cf4014acebafc7f92e11db",
+        "overture-d54e71c9-fa2b-495d-b18b-753c3ef1d071": "099d47c5950b00923801cd9e6019d5b9dca3550e8399980dd3921249fbda3ed7",
+        "overture-637105dc-e561-4d6d-a88c-b65a354e9022": "af6531e0a93da9f7d68e4d65811c07776bcd646f4a29437a21859056f4ce7e19",
+        "overture-b6b64cf8-7f98-4644-8414-ca1fe302582f": "8c5cbf149766e91a4815b953cee248b106e84a0ee1e7efca6896dced8d54e2ce",
+        "overture-a1abcff7-9c2c-41a8-ac55-3e6e807dd66e": "c85d5262bf5165ddeef1ececd3e52a86b8d4c2ba06188c9ba6927272664ce2bb",
+        "overture-a6b4530f-bf71-4909-bdd2-ebf31c9bebd3": "5e09962308e3bdc2b856573600edab576437a2e6cb00424ba764afdae6408098",
+        "overture-12f20786-5b69-4352-9721-605ced8fbcdb": "8cd2363448349fb29ad3bf0e3d80212901d8a75fecdd9972f40d0074ce2eb733",
+        "overture-1f4e9123-c211-4fa6-8e2e-e46b027a4719": "e4bb5fe50b5227da3b2d59cbd2892b02cde367a093992efe1c4a9c74ca44e0f5",
+        "overture-cce2f597-ab66-4882-9e1e-14ff59525c22": "eb6f923f7441024b879af3f2e427d150692e48fd7a2f493c5309e0571f1ebe47",
+        "overture-c7f9cd9a-d1f2-4ec6-bb5d-26e997225269": "93a020e963c986ca30d8dcd623ab119ed3f8b331c73357aef7c2cbc8324af3cc",
+        "overture-cbd0140d-569d-42d1-9a43-6558c31cab32": "0dde81ed5a2b77bc8c02810e70453998577055c3f593e96b0f6c72047814f18a",
+        "overture-9f661b97-182f-42c7-b879-4728beb520b0": "8223dd79d2efb9fbe4e3d6774924be433faff97c213cc11cc93d318120744700",
+        "overture-d56b17ed-3f66-4b40-9b4c-40499581123b": "1b82350379a7a0c2d7a447ed8cde095e5c16d725cbc43bff20920f788ad7152f",
+        "overture-e9905d8d-9f3d-4a0b-8fb7-738a84a84b41": "4bf37896a1996df51e1779f7f9cfd73b886531a95a7f4de836891332136e188b"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://konikoffdental.com/dentist-office/",
+        "https://www.dentalcarealliance.net/affiliated-practices/",
+        "https://www.dentalcarealliance.net/dental-practice-news/dental-care-alliance-announces-konikoff-dental-associates-affiliation-denovo-office-openings/",
+        "https://www.konikoffkids.com/dentist-office/"
+      ]
+    },
+    "cross-industry-aspen-dental": {
+      "fingerprints": {
+        "overture-91510370-5070-483f-ae13-b1026ca72118": "a72decf9d6adb5e54a17c7548db455c84a8b2113872cbb809b23a8f58207652f",
+        "overture-4abfdbe0-9413-456a-bcd7-79d43b95628c": "b4a069a1d02129baa3032b166980bf42df65ef707bcc38e2f4b5860364689451",
+        "overture-7e00697a-ce54-4a8c-91ab-65751bd0debf": "e69d7275e4b5a432739d83c559a20e7c350a40ac527012083c651016274287f8",
+        "overture-cf8c2090-ad1b-4cdf-996b-6e64f263f21e": "7b2015f3d542eaa0957399fce1cff5c147a1ef99c5b4f4cfb10742134f85ee0d",
+        "overture-e8ab0785-af5c-42fd-a93c-0bcd8322af8f": "8f8ec8d4077e8389b6731fb09c37baf9cb2c08999ca4af5390dd503099ca1b84",
+        "overture-d6e5d5de-70f3-4c58-bbfc-c54ae6c57494": "107b86dfda01608a65f1221ccfbda39681c8deef275cb2ee5bb22f01a1dde0b6",
+        "overture-35401111-8082-46eb-9b0d-9d690c8e4e60": "7058763692f28c009eec457238f96ab57337d6570767f3c1b5a97b45fe72372a"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.aspendental.com/about/"
+      ]
+    },
+    "cross-industry-mars-vca": {
+      "fingerprints": {
+        "overture-32064e27-7f23-4e04-a262-6031bfee5159": "31bb84fe0dc3d3bd28d1e0da7a66ec022d405e46ef50a6f4980305bc907d71d2",
+        "overture-42a9f121-dc0c-4c87-a74e-2c2c95eb511e": "9c2c89699558ee8d86c8f33644b6082d0be7508310f3d981b5f4586ed95c207b",
+        "overture-7452bd18-1b42-4e36-8459-3d54f43d93d9": "fe777ee04dc0d5cdbba8b2f3105cd62c27c6bedb66f4f78a98c6de5aa1b263c2",
+        "overture-7234067e-7ac7-43ec-9617-9c236604f17a": "09a4604f0fde5a2c18f97d401fab3f352703b8e02f234d26db4c0dc3c85c25e6",
+        "overture-8035f542-c27f-4cb2-9037-c47bf08be731": "8ab97f42f6c261e0d2c53f5eaa329e60f9750370bf16df4f5451dc3322f418a8",
+        "overture-1616a060-64d5-45d3-a64c-90888ea16403": "23019de403552e9c371abbcaba71ac397cd2d72df89b434908907430f0d470ee"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://bluepearlvet.com/hospital/chesapeake-va/",
+        "https://bluepearlvet.com/hospital/virginia-beach-va/",
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://vcahospitals.com/find-a-hospital/location-directory",
+        "https://www.banfield.com/locations",
+        "https://www.banfield.com/locations/veterinarians/va/chesapeake/cgb",
+        "https://www.banfield.com/locations/veterinarians/va/chesapeake/chs",
+        "https://www.banfield.com/locations/veterinarians/va/hampton/hmp",
+        "https://www.banfield.com/locations/veterinarians/va/newport-news/new",
+        "https://www.banfield.com/locations/veterinarians/va/norfolk/nok",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/htp",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/lsn",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/pbe",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vab",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vbh",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "cross-industry-mars-banfield": {
+      "fingerprints": {
+        "overture-b3acb1ef-6e69-4c67-904d-b125f7a3f981": "ed3cbab39a31b647460d77285ee25cd366bdc348339e867b5a9d13eeb479bc78",
+        "overture-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9": "568b36301c40e9952c5d85f5f0a3b99366b1515d978a92a6e81aa5492d64f8d8",
+        "overture-88ef4d97-38a7-4bef-a7b2-77279fe642b2": "350996f2b8f8ef9a6df7b0592b8f20900210824c7a50c90e1b1e26ef7a226fd5",
+        "overture-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8": "040402dfaed684d759365da8dc6680208d56e8f5eded8c88336a218beb4d6b08",
+        "overture-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e": "0c7f7b5d0c13c16edd8a5fa416205e90d509e486776f424dad34eee597875c45",
+        "overture-88150534-5a15-4651-9efe-558f5b522b6a": "b19a68a0f0178d77cfd1304b6f93b2c07f3593d6200d8499edde7b74f6b9d31a",
+        "overture-caf1cfbc-990a-497d-9a91-294dd51d7ec6": "e3ddb53f89e757de0316bb6dbfb24839733ef57a4aaa583848be95057be2df06",
+        "overture-18b9e920-bf90-4394-9e56-44b325cde7dd": "426d0da526ea7b2870ef88f0aa09d3d29e49e315b1e0b1debb8d1bcce24aad42",
+        "overture-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9": "a3b5c14686a4f2a3151edb3903dff1dafb0f0f977d2ad3d0886e6452cc909c15",
+        "overture-127f086e-e908-4647-93d8-506ea24072e0": "b6e9add9e68c4366f3fe6a20c7597241fe3a604996bb6e74b780ae0ef99a601a",
+        "overture-596fe815-45e7-4601-bcad-d4ca7e8bd6ed": "e3c8c89ec359ebbc007def9f0efa9cdf943f294771cdb96bd06e3ea7b513416a",
+        "overture-aa5bb4cf-75c3-4ced-8974-183ed87923ad": "05337e09396e9492e94b5e26c86594e16df6d4539577425dd4097fac578c132a",
+        "overture-3bf16665-076a-4054-9282-25958b6171bd": "daf39cfe10bd3b8ead6b86a0de7d3cfcd0ef72994bcc9e6d0ef223e924b74c17",
+        "overture-93928b11-587f-4ab0-b5b8-eb740fe77f76": "f693353032fe0eea14bfb57db125c94d4b9283d13524d1d1a8c26fd0373892a8",
+        "overture-2e6448ec-1e66-4eac-9920-02394664af16": "e52c031e97439bbf9bfb0411241021fc6b5383315cc49449d7bc48443afe5151",
+        "overture-12c21f25-606b-4956-869c-6d9b4d578297": "09d50f6094a84e815afbc29910fb0938b8d3f99c874c19db394ee4310c1f8646"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://bluepearlvet.com/hospital/chesapeake-va/",
+        "https://bluepearlvet.com/hospital/virginia-beach-va/",
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://vcahospitals.com/find-a-hospital/location-directory",
+        "https://www.banfield.com/locations",
+        "https://www.banfield.com/locations/veterinarians/va/chesapeake/cgb",
+        "https://www.banfield.com/locations/veterinarians/va/chesapeake/chs",
+        "https://www.banfield.com/locations/veterinarians/va/hampton/hmp",
+        "https://www.banfield.com/locations/veterinarians/va/newport-news/new",
+        "https://www.banfield.com/locations/veterinarians/va/norfolk/nok",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/htp",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/lsn",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/pbe",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vab",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vbh",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "cross-industry-mars-bluepearl": {
+      "fingerprints": {
+        "overture-dbcc9b77-777d-4639-bf89-8b434f1a97dc": "8f5da2277f80644d7eea9bfeb30ba97373c0743de3f1068f57099c6902715647",
+        "overture-71e5d223-e266-4af1-889e-b0cf29acf184": "bc05524dbd39293b69099279cb448c55cb73b68d85e9e44532062d4d589a5270"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://bluepearlvet.com/hospital/chesapeake-va/",
+        "https://bluepearlvet.com/hospital/virginia-beach-va/",
+        "https://marsveterinary.com/who-we-are/our-companies/",
+        "https://vcahospitals.com/find-a-hospital/location-directory",
+        "https://www.banfield.com/locations",
+        "https://www.banfield.com/locations/veterinarians/va/chesapeake/cgb",
+        "https://www.banfield.com/locations/veterinarians/va/chesapeake/chs",
+        "https://www.banfield.com/locations/veterinarians/va/hampton/hmp",
+        "https://www.banfield.com/locations/veterinarians/va/newport-news/new",
+        "https://www.banfield.com/locations/veterinarians/va/norfolk/nok",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/htp",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/lsn",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/pbe",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vab",
+        "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vbh",
+        "https://www.mars.com/our-brands/petcare"
+      ]
+    },
+    "cross-industry-nva": {
+      "fingerprints": {
+        "overture-d1b358f5-45e6-48f1-bc39-38f05e4eadd4": "2bd3db220ffbcb5b2cdccf609759068493a20b93b334dc941b844eab444a6625"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.jabholco.com/documents/6/Press%20release%20NVA%20Acquisition.pdf"
+      ]
+    },
+    "cross-industry-mavis": {
+      "fingerprints": {
+        "overture-9be9c9e8-391e-427d-909b-80f69e11b093": "bdc058e317a526faf6de72f2000035da3c9e9d96c923cd326aa478d525e76bfd",
+        "overture-3fe55b87-6f80-4b90-94fc-723297212efa": "15d476951e2f669a277a4e86557210e7fbf6cf7b534d0b846ddb2cf57f2767a9",
+        "overture-8a9e38bf-45e7-4640-98dc-4d04944230c0": "247b6801c43a21a527df59e640f9187c1b7cb77383fab9a06d2a7009d70da59a",
+        "overture-b4804eb5-b54f-448f-9627-9aba86209b2d": "492edbe0c32a723b425934240d2b0afac633bf273f5d6416c40b3d866b986ab6",
+        "overture-fb2b530d-7f3c-41b4-be71-231d38755ce3": "be4b58cf7f7456c97b4b101f3bd55140f10246c0ff050882a783ef532594ecb5",
+        "overture-0d02c9d9-1c8a-41b6-b688-4dc1d393d35b": "25fc7934a0564cd1c1ffac4c522eceda436349cbd00759acd72d8219c35b11b2",
+        "overture-a6c74e2f-b0dc-43a9-a450-59df8410d67d": "d0d08ba74a8a8ddcd1fc79676bb5401e55ed061598dbe3c1a5defd7d666e0fc5",
+        "overture-f79f8a17-0939-47a6-bb54-2ce19b568338": "8fe8530a3a1ffc18b7f0d68f1f466be02e79b29a3e0c8656d4ad0864904f9ee9",
+        "overture-f10a15c4-496a-402a-88c8-2cb7a3673cb6": "8c58206b457850647dce2cf32e2b962d7809973994ccd3ef4bba625e8e712030",
+        "overture-9432df67-0d96-42b2-967c-9c4634d9444a": "9b90e9a90ed1c6ea33a7e18fc7860df5b3bb0d8f38a76dfb7346c50e555d5e50",
+        "overture-e3deafb7-7acd-49bb-9164-dcaad02751a8": "9711600f6bed298624d01782e3acbf92fc65cecbdf2956a96da2d723c2324ace",
+        "overture-86e46400-4a91-4ff1-aa15-688a4598c177": "66ab4a6f651c4dcd0387154ff77b13ca8a64531a8d70c73966e60ca0133424fc",
+        "overture-cb2769a3-0238-4a4e-95fe-2e99c6fe206b": "e656f9045f8408d80440dab71ac919c38a6660583609c73ae817eb51eaeccd5e",
+        "overture-daff05de-833c-4fff-9bf8-afd46fae6483": "6c86ea3520c60d0b76cbf1474e3d0312ed7ba51e433468f724ceb88dbf9a67b3",
+        "overture-19651052-040b-41d6-ad6c-207f102dbcce": "b99d181fe7ecf4f13160398383017dd0d65ff590472466a1b362177ae3d9f917",
+        "overture-3936d438-81f4-4a74-ae65-6e5c86c35996": "0602b717d43271bf94014d903d6f1b23fa5f493849253fb4cfef75d3529c3898",
+        "overture-ec3a6451-aa82-4bda-b674-878ad65e5cb7": "d05f9633650da72d7faacb4b2f77436d4d0a40dd2a649d8a8e25e7dfa0fbc10f",
+        "overture-df4d5f3b-f19b-4efc-9be4-6b2d40ea759b": "325fdd85bf849c4ec8bd4398a127f9261cf7043f0b05f4d056acc27784d66fa7",
+        "overture-39ae0574-4c1f-4ace-bc25-2e2ea6c93d33": "5636767bf675b9a602e479cfc89ddbd8c2be73ab6edc8dfcaa1e8e93af9885ff"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://baypine.com/portfolio",
+        "https://www.mavis.com/about-us/",
+        "https://www.mavis.com/locations/all-stores/",
+        "https://www.mavis.com/locations/chesapeake-cedar-rd-va/",
+        "https://www.mavis.com/locations/chesapeake-debaun-loop-va/",
+        "https://www.mavis.com/locations/chesapeake-dock-landing-rd-va/",
+        "https://www.mavis.com/locations/chesapeake-hillcrest-pkwy-va/",
+        "https://www.mavis.com/locations/hampton-va/",
+        "https://www.mavis.com/locations/norfolk-military-hwy-va/",
+        "https://www.mavis.com/locations/norfolk-virginia-beach-blvd-va/",
+        "https://www.mavis.com/locations/virginia-beach-independence-blvd-va/",
+        "https://www.mavis.com/locations/virginia-beach-indian-river-rd-va/",
+        "https://www.mavis.com/locations/virginia-beach-laskin-rd-va/",
+        "https://www.mavis.com/locations/virginia-beach-virginia-beach-blvd-va/",
+        "https://www.mavis.com/ntb/",
+        "https://www.mavis.com/store/virginia/",
+        "https://www.tsgconsumer.com/investments/?subsector=automotive%2Chousehold"
+      ]
+    },
+    "cross-industry-driven-brands": {
+      "fingerprints": {
+        "overture-cae4f255-92a6-431e-a720-4834a6b4c2a2": "f059640d08ad26d72aca565deaf4de63cb628e9684e8cce84dd69e7695d90f8c",
+        "overture-2b21cb11-063a-427e-97f6-2600a4c14936": "f4780ce7a88328eb651db9eedce4b992b5260b4a33c987b2caa48a7d6850bee3",
+        "overture-d0b5fac9-ca3c-4c12-bef4-43deb6af967c": "2d0dc52f1aea5e12d45ec0df282594e00daf454028fe08707cf223c5461e2e8f",
+        "overture-29e6f55e-3a4e-4b94-bce3-ae9a6776bfc3": "0111a11fb6afb77b1fba1030980bb09651c1741cab89983898dba632409ab9df",
+        "overture-8f1922e1-b8b5-4e48-ab8a-8037b0c794dc": "d7990b6c3bbe6d11079a75b41923d862caace2a90eca3112ce112d048188a384",
+        "overture-2f7adf3c-1a1b-43a1-8cde-da5ad0d385a1": "d07fba3e48ac4e2d98a95e1dca68c76ef5e8e820f2d24399dc7dc9d8b00b0cd2",
+        "overture-b356fb0e-8773-4a90-b86f-a7fc53006e43": "1e0652d306ec79af0fb6574d8721fc1eb5907487590da96860492be7b51a8c36",
+        "overture-6c017e67-72be-469e-b77d-dad27924fbd4": "a2dc444689227804385ff872fbff0e2cbc92868682e36db43dfa74b4017a2bf4",
+        "overture-de0c9911-e737-4500-84dc-da9713e9e537": "012ef44a0c60c617d02b53942ad66a507cdd7ea13a5735466295aa760befc7e4",
+        "overture-8993e854-f2f2-4f04-96a3-2c8ed39b5ab3": "8baa0e3152e1387b8e3fcc7c089a9ed429a5e23d176d867a7856882bd74a6a23",
+        "overture-d4a5ff90-7675-4b29-b003-d1be24401bd1": "d40024dbb8f7fa90d9687c36c3e572aaa05fa105ec1167e3aaa309a9424d1d66",
+        "overture-040402b8-85fc-450e-b3d1-12afb265c641": "e325e687c708ffb18ab3d31b52059dffaeb88eb4bbccf59126e45c74287cc691",
+        "overture-53b8e56b-a4f3-4667-aa29-50977e0a7e74": "0ebe408072eb6bd06b607d97b7d47e5ec55921c54c29f735f716c33312605ef7",
+        "overture-e5de6fba-61d7-49ff-91eb-e0cdb05a9936": "b4380e17fa5a534e4e377442b64874c6d24c204112b20c1995f6fa24a349a882"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.drivenbrands.com/about/"
+      ]
+    },
+    "cross-industry-bridgestone-retail": {
+      "fingerprints": {
+        "overture-3c45f87b-3e0c-4fe0-ac09-22911a3766ac": "be659d9ba6f9dcb9eeeb05fa46e2e9043ad37defd5de836b27b9fcbf91b0f523",
+        "overture-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6": "a6a0164f11db8f8df2e7148c5f2b7ba371eca1d63af0c51a871a9e80dd388d79",
+        "overture-d92d57a0-f07e-4cab-9628-66eb9a25f159": "078e90b80a1d7000673c2de0fe5ff072fb6290069a83d8305f5e238e830086fd",
+        "overture-1b20ab7e-b63a-4115-8d51-17a4a7325a16": "7f3881ac6eac8c68df21e18d69b2ea60c102cbb8f55d012b2bf2e17a3ab9201a",
+        "overture-86da6793-0c56-47c7-b421-0021df5ba5dc": "ab5c52b42bed4278f34c57705ca55cdd205320f002d51f17ff95254100d548cd",
+        "overture-67baeece-8b75-4cfd-92f5-9035a3766e95": "d3d07956498f26a5d7e8348851c452927b7454dce5710289defb633a11fa6e8c",
+        "overture-02989035-d22a-4cfc-af48-1a5e60f7eaa5": "0d57573f11d86f549254e2510ba79083a19d99e27f95c04580a4dedf5a028a17",
+        "overture-35ee7568-501d-4dc9-b006-6104ac338c7f": "35654c64371dc3a7bccb9ad65ec8224bbad132753bc94e719c4d4d6ddc78c033",
+        "overture-6741623d-7bb5-46ac-9f74-c15c23bc97b9": "d59ae05c3837f4000782d30d2573688258ee37def4175abc58be199a63b58354",
+        "overture-95bb39d4-cd0c-49d5-ab98-b72d0d031ad8": "e9e4bcc03846a38fa67b76506504863de519797337f72acc61ba5f0d438fb335",
+        "overture-3b6f5ffb-4afb-46bb-8850-b8bdca3da944": "e784f6146efb7356654cdd896fa9eb535632ee8611a4c82581ba1b9109faf071",
+        "overture-ebae1c2f-1559-41c6-b4f0-8dfdbd06e522": "df1cf8150a8535f720c7c6971e95637a407496e65629eeaba61c93514843fac8",
+        "overture-2c27caae-471a-421b-a146-cfd593eee749": "f9a8ec496893d226d52c20d90697a4c132510055020133d056208ce6f4738643",
+        "overture-7b3f4354-e774-4b1a-b83b-3fe8f44485a6": "3d9b3df4e3d4ab8994d5fe08f26fcecac03b35d7de70ecc93ba0d36e4d79a328",
+        "overture-e56173db-5569-4973-87d0-8277814863ea": "17ec9dd9d6a92a82c391d3d9a9ca89d3c69511d990b5c24aea567d08e4feeebf",
+        "overture-343b9750-8379-4ed7-8a9e-1a2cc8107b63": "aa22a954f177b1d48f92672d7d16746b5097ac37319c593526d2beea86d2cc5e",
+        "overture-867e87cd-b504-4312-9382-26c0616861c7": "d87f3f717c3a16da2438968d142084303af55321216889fae50209cdd92f849a",
+        "overture-1c38ca3e-b0fe-447a-a710-1f92d8162bc1": "9c4316cef45ad450948e0718a9ba68bc42e76accf60b3c1af5715d57aaacb1a5",
+        "overture-b672066c-8fcb-402f-afdf-52e84d050889": "de4ce27d928fa5076b69c8e3fbf9caae2f905ef36dc74a957c144fc6e00168cd",
+        "overture-c057849f-4582-4f17-bb3b-a5bbd4562ab9": "49774671855ee6842eda1001938d684b8819a5d4a4d674485b48a95062822fd8",
+        "overture-13b40d9d-99fd-4722-95b1-4f8afed827f4": "e583b4c68a01344cf419c4ba313c196064ac25d037d6289c09c2415c1a4acf0a"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://local.firestonecompleteautocare.com/virginia/chesapeake/133-hillcrest-pkwy/",
+        "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+        "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+        "https://www.firestonecompleteautocare.com/virginia/chesapeake/1545-ring-rd/",
+        "https://www.firestonecompleteautocare.com/virginia/chesapeake/2408-chesapeake-square-ring-rd/",
+        "https://www.firestonecompleteautocare.com/virginia/chesapeake/453-n-battlefield-blvd/",
+        "https://www.firestonecompleteautocare.com/virginia/chesapeake/600-pavilion-dr/",
+        "https://www.firestonecompleteautocare.com/virginia/hampton/112-marketplace-dr/",
+        "https://www.firestonecompleteautocare.com/virginia/norfolk/1251-wonsan-st/",
+        "https://www.firestonecompleteautocare.com/virginia/norfolk/856-granby-st/",
+        "https://www.firestonecompleteautocare.com/virginia/virginia-beach/953-chimney-hill-pkwy/"
+      ]
+    },
+    "cross-industry-jiffy-lube": {
+      "fingerprints": {
+        "overture-cb8a0a82-1a66-4152-923a-2f7f78ac21af": "2471314659a7af86cecaf11ffdd27f3b4ecc5e3802cd908b51a70108da9b0797",
+        "overture-d267086f-f0e9-41f2-a7cb-a915a2a99893": "1dd1d5a8361cf0ab572eaa47502202fcaa9a37d87b4e1a74c1b5f2fedadf9424",
+        "overture-cd5965bb-9c05-4624-be67-bc83797a59e2": "4e3cea6e0074ef487b17c11d28f78a8d5dc0fb6614ad4af9f51257aafc8de49b",
+        "overture-6cb23c9b-19fe-45f9-837d-96dd5b0f016f": "cceda62695b0c0b292ea2c05708bd05d665278a418a92148782940ec45f765e4",
+        "overture-a6e33223-d83b-4d22-84ac-36833cd18eea": "92073443a624bf3ae9fb34f345c07f12f79b8e16ca36096b5c18f53e82a2c524",
+        "overture-b7c7fda0-74cd-4dc5-9862-d10527d88006": "802039b1e1819195a115904dc9440c864bca85b260e62d574fe7aea45fdfcb86",
+        "overture-0a945cd2-f667-4125-b069-feadd7b41bd2": "3ae796d9a594734c6f61f49e477cd3d1750f54c040e483b4317416357a376950",
+        "overture-32a5d90f-d374-495a-a650-5476cee8c9c0": "a235939ab0f2bb74c701c8470f4a0c899c7fadfebb2ce395489647de5a02f416",
+        "overture-611aa65f-8d35-41c3-8ce5-7c74bf65fb88": "4ea7f71fd0a525ef9d514431700429ad90b432d763d5e59d1c6ed341829f08fa",
+        "overture-2bab9118-b437-48d4-873f-5d575c59194c": "67e21cb4b74b27666581b4a95d9a4ba7b56f58204a5f11ed824d714fb3d4c5fc",
+        "overture-a484c69d-268b-4784-9ae7-ed2129fd85a0": "6a577a65743dd10b33678e9e29a76409077c00e474473f92634eb78c7d0019b7",
+        "overture-b7238a9f-7f11-4d01-9ad0-f4ad5216190a": "1656df8caf50b63ff9a8890f40b04471aa997497e9dba54124cd8ba52552c46f",
+        "overture-31a4ec78-c83e-4c11-a487-a55a5318c06b": "295e4c8b9b6a5774e4d82b363d7d8afcaf3b265ef82bd4f19b4cf7c73461000c",
+        "overture-80ecbab7-a677-4a5b-9e74-4ac92be0f57a": "a575f21875c78d0b98ca6e9b16a9dd4b7920c3e61c9769385f304388be38042f",
+        "overture-61f3ff42-a90a-47e6-9855-7d040a84d00d": "ac9f9ddfaa478710e6f5e5205cc14c413db2b2dce377a0d2648eee661d329689"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.jiffylube.com/about"
+      ]
+    },
+    "cross-industry-monro": {
+      "fingerprints": {
+        "overture-7faaa979-bc68-48cf-b49a-e8924d1e10ae": "f07d126ea001845057be5e8a8e82ee6c2a73b460a3aed076e38b990b946dfe5d",
+        "overture-c5dacb5b-ce2e-4395-a7a4-491ffb733414": "24fee25d608b9e2980e71f9a56d66d89ca4b4359695eae0da7d93fbe181933a5"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://corporate.monro.com/files/doc_presentation/2025/10/Investor-Presentation-November-2025.pdf"
+      ]
+    },
+    "cross-industry-pep-boys": {
+      "fingerprints": {
+        "overture-834ef94f-f524-4817-90b6-252b1c21d404": "1f4b0f66781273512887ed21542e74f2a14ae05b81d9062674c2b1b7a735f709"
+      },
+      "lastDecision": "blocked",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0,
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/813762/000110465926099264/tm2623713d1_ex99-1.htm"
+      ]
     }
   },
   "evidence": {
     "https://www.cascadeservices.com/cascade-services-announces-the-acquisitions-of-sun-plumbing-in-florida-and-smith-keene-home-services-in-virginia/": {
-      "fingerprint": "876d4ee3261ede4f4f4861be9f37b12bae55f998eac1d4f175217bb8a6e84e7b",
+      "fingerprint": "b75e6c9f1217a3f8dbcf126411723035031ad90ed4c4eedb79f0396641c77857",
       "caseIds": [
         "case-smith-keene-cascade-2024"
       ],
-      "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 1
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
     },
     "https://www.trivecapital.com/trive-capital-forms-cascade-services-to-partner-with-market-leading-brands-in-the-home-services-sector/": {
-      "fingerprint": "306f0d067069ffa372d9aa027837bab50f00eff17310d0d7157f2c7bd29a2ce3",
+      "fingerprint": "8efe855f9be941eeb62ce9cd60d3c08bba27778119a2cbe46c8f4967abc59f82",
       "caseIds": [
         "case-smith-keene-cascade-2024"
       ],
-      "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 1
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
     },
     "https://www.cascadeservices.com/about/technician-epa-certification/": {
-      "fingerprint": "aa4ca0d4d88b6eb146e33e6cead0387bb6da048f5a9b658ba679f5e58965fc30",
+      "fingerprint": "1e6b20494e4a835ec8514811142a35b547dd5f7e42bdf5b7ea12e7abd9bd7c4d",
       "caseIds": [
         "case-smith-keene-cascade-2024"
       ],
-      "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 1
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
     },
     "https://kellammechanical.com/philbrick-heating-ac-is-now-part-of-the-kellam-family/": {
-      "fingerprint": "42aa20edf2e23207b4dd549c8cddac37ec0210e4cd1b730534f026aa3ba2f635",
+      "fingerprint": "106727152a347fc5b0f793aece4002a331e01bde42a89c70ac4b9b34dbdc8290",
       "caseIds": [
         "case-philbrick-kellam-affiliation"
       ],
-      "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 1
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
     },
     "https://www.authoritybrands.com/our-brands/one-hour-heating-air-conditioning/": {
-      "fingerprint": "f02ced856e7bebd44086c1287f4577ef892e6aaf41dd9c51923f830033f8dea1",
+      "fingerprint": "502478c964ee1ef637f48e2089e31545f5aa39f3390f950194c80604b7904780",
       "caseIds": [
         "case-one-hour-authority-franchise-network"
       ],
-      "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 1
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
     },
     "https://www.apax.com/partnerships/authority-brands/": {
-      "fingerprint": "22c9c051cac1f34a95f75fa8ab667a30564948d76aa017bac90eacebdf18037b",
+      "fingerprint": "52a4061269ac31ac055210c72c147687f78f92563bf63cad5c810e241ec35637",
       "caseIds": [
         "case-one-hour-authority-franchise-network"
       ],
-      "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 1
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
     },
     "https://www.apax.com/news-views/funds-advised-by-apax-partners-acquire-authority-brands/": {
-      "fingerprint": "a324384bf3ba2c614cf4a54357f4a4871580d1108284e68c95babbb777552022",
+      "fingerprint": "926245188f7990b28d50db5e7c274da079d86cb0ffe95355ab7965c6c2d7bb7a",
       "caseIds": [
         "case-one-hour-authority-franchise-network"
       ],
-      "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 1
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
     },
     "https://www.apax.com/news-views/bci-leads-significant-investment-in-authority-brands/": {
-      "fingerprint": "2738f4506e315a3353a93447d83a30f7d845f601e105684e5cbe95e5f491ce81",
+      "fingerprint": "15fcffc0230597953b3b3ec3a02bba47a6808709d6d33e00cd9f47944637541d",
       "caseIds": [
         "case-one-hour-authority-franchise-network"
       ],
-      "lastEvaluatedAt": "2026-10-28",
-      "unchangedRuns": 1
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
     },
     "https://www.hobbsassociates.com/office-locations/norfolk%2C-va": {
-      "fingerprint": "c5ae0fd30bd59436a3f2753cc0bde4e12cab98bc555fb90e0aebdecd44ff32de",
+      "fingerprint": "1c5f7a6b9d80cf00d0eb5335442aa346974938e4220101645068f86559394294",
       "caseIds": [
         "case-hobbs-air-blackstone-2024-2026"
       ],
-      "lastEvaluatedAt": "2026-10-28",
+      "lastEvaluatedAt": "2026-10-29",
       "unchangedRuns": 0
     },
     "https://www.aircontrolconcepts.com/operating-companies/hobbs-associates": {
-      "fingerprint": "975ed8284a7abe92fc24a41b3b4b3cf858745fb180821754d81ebd96bfdc9f20",
+      "fingerprint": "009626fa1ebaa0112238969e694c6c932510954f6df63b8ed915c79558e5bf75",
       "caseIds": [
         "case-hobbs-air-blackstone-2024-2026"
       ],
-      "lastEvaluatedAt": "2026-10-28",
+      "lastEvaluatedAt": "2026-10-29",
       "unchangedRuns": 0
     },
     "https://www.blackstone.com/news/press/air-control-concepts-announces-investment-from-blackstone/": {
-      "fingerprint": "8ef80c1c8ed40b7b19a460f27c87a2a5cb5f86a1460057d8e78a56c14e70d654",
+      "fingerprint": "e06fc4e5f12ee3bdc8c3288e48297a25b2fcbb54ff106318a712f8663ab15d39",
       "caseIds": [
         "case-hobbs-air-blackstone-2024-2026"
       ],
-      "lastEvaluatedAt": "2026-10-28",
+      "lastEvaluatedAt": "2026-10-29",
       "unchangedRuns": 0
     },
     "https://www.blackstone.com/news/press/blackstone-announces-additional-investment-in-air-control-concepts/": {
-      "fingerprint": "944df2981666b1971dae9bc790f8c6fef8b35939427b1a19123c478066da0562",
+      "fingerprint": "7c181100b440f3bad4b4a07e06f453f5400b18ea86d6fe433a470475a71a5ff7",
       "caseIds": [
         "case-hobbs-air-blackstone-2024-2026"
       ],
-      "lastEvaluatedAt": "2026-10-28",
+      "lastEvaluatedAt": "2026-10-29",
       "unchangedRuns": 0
     },
     "https://coolsys.com/resource/coolsys-acquires-brr-refrigeration-in-virginia/": {
-      "fingerprint": "7febf72020206404e8a6cda4183f36a9307c76b2e303a9f7922dcbcb8962db00",
+      "fingerprint": "60768cecd578615aad3032bef5ee3ebbde4569785295dc9e29767dcae9113cd8",
       "caseIds": [
         "case-brr-coolsys-ares-2019"
       ],
-      "lastEvaluatedAt": "2026-10-28",
+      "lastEvaluatedAt": "2026-10-29",
       "unchangedRuns": 0
     },
     "https://coolsys.com/our-brands/brr-refrigeration/": {
-      "fingerprint": "d0a0bdde4eeff7fd5dfdc649cbafbd44370be71bbbfaa736b394a9d41ae75eb5",
+      "fingerprint": "ca0f0c5c48b1cb406e5aaf72bd670b59b20ad055fd38768eff348694c8955534",
       "caseIds": [
         "case-brr-coolsys-ares-2019"
       ],
-      "lastEvaluatedAt": "2026-10-28",
+      "lastEvaluatedAt": "2026-10-29",
       "unchangedRuns": 0
     },
     "https://coolsys.com/resource/coolsys-acquired-by-ares-management-corporation/": {
-      "fingerprint": "21f4b498c818926df31e5d0be266d6f25bec58c91dd2366ab69985961765d478",
+      "fingerprint": "68dbca77dba1faf090669136becf8f0021583f866574e191192b95dd22200ea7",
       "caseIds": [
         "case-brr-coolsys-ares-2019"
       ],
-      "lastEvaluatedAt": "2026-10-28",
+      "lastEvaluatedAt": "2026-10-29",
       "unchangedRuns": 0
     },
     "https://coolsys.com/about-coolsys/leadership/": {
-      "fingerprint": "1af010b36b748ce7724bf935735f1f0bdfca0b7443c071bf3432be6ecd2ac9fe",
+      "fingerprint": "296870272fe4e93dac1b4315ea6c8a402932ce7deabc5504eeb9e10cd907d050",
       "caseIds": [
         "case-brr-coolsys-ares-2019"
       ],
-      "lastEvaluatedAt": "2026-10-28",
+      "lastEvaluatedAt": "2026-10-29",
       "unchangedRuns": 0
     },
     "https://www.achrnews.com/articles/142364-coolsys-acquires-brr-refrigeration-in-virginia": {
-      "fingerprint": "f5834259eadf8477bc15afcc1a5113756dc493d0cdc21609bd84e5a3bcb83dc7",
+      "fingerprint": "ef9b3830a3aaab28058f0178ba0def0d28ddbdcb2158b1ccb87b663c6a3ffcab",
       "caseIds": [
         "case-brr-coolsys-ares-2019"
       ],
-      "lastEvaluatedAt": "2026-10-28",
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.banfield.com/locations/veterinarians/va/chesapeake/cgb": {
+      "fingerprint": "b9ed17beb6dbd755b79f90219357d393a7a9826e8590d27611ddee509e592acc",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9",
+        "case-corp-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://marsveterinary.com/who-we-are/our-companies/": {
+      "fingerprint": "0f62a3f64c4aa02d4554135e6e63ad6c843c8ab38d839151c1fc2049b9ce45bc",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0",
+        "case-corp-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297",
+        "case-corp-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd",
+        "case-corp-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16",
+        "case-corp-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e",
+        "case-corp-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd",
+        "case-corp-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9",
+        "case-corp-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a",
+        "case-corp-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2",
+        "case-corp-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76",
+        "case-corp-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad",
+        "case-corp-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981",
+        "case-corp-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6",
+        "case-corp-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8",
+        "case-corp-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9",
+        "case-corp-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mars.com/our-brands/petcare": {
+      "fingerprint": "7171574fc97a36fff52bf3932851a05d2c65e054cd6bd2b55c756561f8d1adb3",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0",
+        "case-corp-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297",
+        "case-corp-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd",
+        "case-corp-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16",
+        "case-corp-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e",
+        "case-corp-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd",
+        "case-corp-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9",
+        "case-corp-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a",
+        "case-corp-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2",
+        "case-corp-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76",
+        "case-corp-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad",
+        "case-corp-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981",
+        "case-corp-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6",
+        "case-corp-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8",
+        "case-corp-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9",
+        "case-corp-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.banfield.com/locations/veterinarians/va/chesapeake/chs": {
+      "fingerprint": "ff7219209edf502b31afecca4ca3517ed7224e89ec1dd5009f650a7f3d2d3c4e",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.banfield.com/locations/veterinarians/va/norfolk/nok": {
+      "fingerprint": "7a39b171b56deb1083e871e1b24a7590ae2671a942588e729da875e4752b48bb",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.banfield.com/locations/veterinarians/va/virginia-beach/lsn": {
+      "fingerprint": "d3b2070e4269bb5bb964db1e2ba07a5c103671ee6baa13b5ebd8eff4ec510c17",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e",
+        "case-corp-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vbh": {
+      "fingerprint": "2642dddd7b8875e29208ca00db1e200258ad1f3f5d2c8eb2cf0a1f53b5c28f2e",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd",
+        "case-corp-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.banfield.com/locations/veterinarians/va/virginia-beach/pbe": {
+      "fingerprint": "9088bb6b4a418dd92e26cbe1af9fb2367fc08ef8d60532e9258221a0129679f8",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0",
+        "case-corp-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vab": {
+      "fingerprint": "10b19f25eb6050dcc0b530c80c50a8d981861617e626ef0320de5507791c08e4",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd",
+        "case-corp-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.banfield.com/locations/veterinarians/va/virginia-beach/htp": {
+      "fingerprint": "a40adc4893712ae1a8d93b3d3050c071da1e37581d34f7df7aa88e516f731928",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.banfield.com/locations/veterinarians/va/newport-news/new": {
+      "fingerprint": "5d8d0adb57a5e7e6bf2a0bd90a9393ebce4deaa630f75c85959168c5a175fc16",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.banfield.com/locations/veterinarians/va/hampton/hmp": {
+      "fingerprint": "665e1db783ad6cf2c7738bc475ea532a7dd5eb7795659fd63a961b2219310cc4",
+      "caseIds": [
+        "case-corp-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://bluepearlvet.com/hospital/virginia-beach-va/": {
+      "fingerprint": "6df9fdc27e256c4ca6fb110c79a9acd52f2c20dbfca9d8ece35c79c791c51d57",
+      "caseIds": [
+        "case-corp-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184",
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.firestonecompleteautocare.com/virginia/chesapeake/600-pavilion-dr/": {
+      "fingerprint": "b8567890496edbcfe4a33bc864296c8f4b490322f1bab3d62ea3636189b0693f",
+      "caseIds": [
+        "case-corp-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac",
+        "cross-industry-bridgestone-retail"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html": {
+      "fingerprint": "ea8c269edba037894e5ee4d663cabe1c3a74486c4290be8607127d98f9d749de",
+      "caseIds": [
+        "case-corp-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5",
+        "case-corp-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16",
+        "case-corp-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749",
+        "case-corp-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f",
+        "case-corp-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac",
+        "case-corp-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9",
+        "case-corp-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95",
+        "case-corp-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159",
+        "case-corp-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6",
+        "cross-industry-bridgestone-retail"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign": {
+      "fingerprint": "960d5e26945c9815ed4125a6563c1641d63e5bc550c5202b1f1f5e92649abce5",
+      "caseIds": [
+        "case-corp-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5",
+        "case-corp-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16",
+        "case-corp-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749",
+        "case-corp-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f",
+        "case-corp-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac",
+        "case-corp-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9",
+        "case-corp-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95",
+        "case-corp-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159",
+        "case-corp-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6",
+        "cross-industry-bridgestone-retail"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.firestonecompleteautocare.com/virginia/chesapeake/453-n-battlefield-blvd/": {
+      "fingerprint": "5af2e28bba05077f76acad947d39a84f571276d9e2c910cdfc4eca733d009612",
+      "caseIds": [
+        "case-corp-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6",
+        "cross-industry-bridgestone-retail"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://local.firestonecompleteautocare.com/virginia/chesapeake/133-hillcrest-pkwy/": {
+      "fingerprint": "e12851a075319a86c9421512084ed7ce847084a7cec0376b49ac201fe670b7e3",
+      "caseIds": [
+        "case-corp-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159",
+        "cross-industry-bridgestone-retail"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.firestonecompleteautocare.com/virginia/chesapeake/1545-ring-rd/": {
+      "fingerprint": "fb26cf9902c446cbcb9cbc394c41a796195c3f81ce14d36e6f03bcddfc3be60f",
+      "caseIds": [
+        "case-corp-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16",
+        "cross-industry-bridgestone-retail"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.firestonecompleteautocare.com/virginia/hampton/112-marketplace-dr/": {
+      "fingerprint": "74e94c28935fd51bc68c7378ce6baab7a0758b17e7483bd2c851cad7cdde0a49",
+      "caseIds": [
+        "case-corp-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95",
+        "cross-industry-bridgestone-retail"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.firestonecompleteautocare.com/virginia/norfolk/1251-wonsan-st/": {
+      "fingerprint": "d5f4f4ce78f8db044af5c101c16bc19335dde3fa550cf0977c0ac41c06e548bb",
+      "caseIds": [
+        "case-corp-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5",
+        "cross-industry-bridgestone-retail"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.firestonecompleteautocare.com/virginia/norfolk/856-granby-st/": {
+      "fingerprint": "1976e186ddc5de5f63049a56fc193610ac2ce762c9eb51150650770de19e9874",
+      "caseIds": [
+        "case-corp-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9",
+        "cross-industry-bridgestone-retail"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.firestonecompleteautocare.com/virginia/chesapeake/2408-chesapeake-square-ring-rd/": {
+      "fingerprint": "10f829a01c5076b3d010d54410bc91eb4b317ea36e4a6c6a2c850a5a713e5b90",
+      "caseIds": [
+        "case-corp-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f",
+        "cross-industry-bridgestone-retail"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.firestonecompleteautocare.com/virginia/virginia-beach/953-chimney-hill-pkwy/": {
+      "fingerprint": "aa6649d6e22894cd2b81bc4be0315bc93ebd38375946bb3d658adddf860b83c4",
+      "caseIds": [
+        "case-corp-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749",
+        "cross-industry-bridgestone-retail"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://jobs.heartland.com/jobs/us-va/": {
+      "fingerprint": "0f32557e1200380820a71ee432aba4ee149549c47a5fb9912c6b5231a1e111bb",
+      "caseIds": [
+        "cross-industry-heartland-dental"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://konikoffdental.com/dentist-office/": {
+      "fingerprint": "b537f584ce24e9d0fbe6c67df3b2c387d84ad89185a877616a3157f3374640d6",
+      "caseIds": [
+        "cross-industry-dental-care-alliance"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.dentalcarealliance.net/affiliated-practices/": {
+      "fingerprint": "5d579bc0d68fd76ece7ab3e11957f9b753acdbab1cb118153fa35145a2cd9917",
+      "caseIds": [
+        "cross-industry-dental-care-alliance"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.dentalcarealliance.net/dental-practice-news/dental-care-alliance-announces-konikoff-dental-associates-affiliation-denovo-office-openings/": {
+      "fingerprint": "bfc7a7cbec805d740005fb309d39bb2c5addf632d0dd54d41941a9fd0b4d8cd2",
+      "caseIds": [
+        "cross-industry-dental-care-alliance"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.konikoffkids.com/dentist-office/": {
+      "fingerprint": "21c93df33b22013e3db0a772d2f098c9d26414750c1cf6c6705cb70f27e3f83c",
+      "caseIds": [
+        "cross-industry-dental-care-alliance"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.aspendental.com/about/": {
+      "fingerprint": "c9298c70b14bc9cb960cf30cf10092ebe064703e0197cc2de5ea14462b2c8420",
+      "caseIds": [
+        "cross-industry-aspen-dental"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://bluepearlvet.com/hospital/chesapeake-va/": {
+      "fingerprint": "d461fa50876cc4908c37f4fa12dfc482bd7fbab00f2a4123cdb2a114c68052b7",
+      "caseIds": [
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://vcahospitals.com/find-a-hospital/location-directory": {
+      "fingerprint": "126b2ed663b3802ed695b93f5661d9bdf25f5ccd6e1c0f59b01b02a3aea10171",
+      "caseIds": [
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.banfield.com/locations": {
+      "fingerprint": "6785bed0302460f310e98737c5df30de08e8f91e62f1a2c17adcc938dcfcd0e9",
+      "caseIds": [
+        "cross-industry-mars-banfield",
+        "cross-industry-mars-bluepearl",
+        "cross-industry-mars-vca"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.jabholco.com/documents/6/Press%20release%20NVA%20Acquisition.pdf": {
+      "fingerprint": "217bbf6fc1faaacc43f04c580046a20a07c53238ff238147916343b3dd8151da",
+      "caseIds": [
+        "cross-industry-nva"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://baypine.com/portfolio": {
+      "fingerprint": "34837d334b4173f689487acf0c291c8424bb202686a55f812cfb832a97edf5f1",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/about-us/": {
+      "fingerprint": "3e886bf755b52170935f28c7f2bbc1163336051b34fa5cf4d1aeb29c9d9f3d06",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/all-stores/": {
+      "fingerprint": "f76defbf13700f114b60ff5195f6ba595c195fed826cfba048a1ab7497521bab",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/chesapeake-cedar-rd-va/": {
+      "fingerprint": "c30e3c0269f9a64a6d2308da6d0aec54973d32f3aaae33fc630b2c3a55ea1a30",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/chesapeake-debaun-loop-va/": {
+      "fingerprint": "a3e37c907c2f67395fb5a6e03ea4eef27d9cd459fd39ca202cdcf9cce7b25c4b",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/chesapeake-dock-landing-rd-va/": {
+      "fingerprint": "9fe45d91aba84c5a0dbee0c321f81e4262ac0ab0a5a6b26a7616e9d8c1671473",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/chesapeake-hillcrest-pkwy-va/": {
+      "fingerprint": "551628d6d02b201c27db30d1bac6ca0cc62f803d912603662ea6b3de85233a00",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/hampton-va/": {
+      "fingerprint": "aa07c38fd1a277fb9657d3d1ff775325c1c0cf6cccb44f84a25d30bfb2f72569",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/norfolk-military-hwy-va/": {
+      "fingerprint": "934a9028c2ca515faa612707385bcbc0db3b00661dda5e2d2ac9ee9397c3e291",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/norfolk-virginia-beach-blvd-va/": {
+      "fingerprint": "eb9fb4665ada4d30a40f2792cbdc68deb9258fa22faae3aae72600fbd44dec13",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/virginia-beach-independence-blvd-va/": {
+      "fingerprint": "fefe0f8d48f5dc32c6354138b4ba708f5b3758f3f7e5b3db13d9e56bb8661cd9",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/virginia-beach-indian-river-rd-va/": {
+      "fingerprint": "b7103af487d9bb14aa9197b6bd8602e9654d9af302d118c0cea0dad4a4db62f6",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/virginia-beach-laskin-rd-va/": {
+      "fingerprint": "a64489c676aa409059f9b90e6d87df59fe19f526504418e5423f5a3a48c41c80",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/locations/virginia-beach-virginia-beach-blvd-va/": {
+      "fingerprint": "899a8d35f73e4fd623642b3d0e8ebb3594b8af6520995ce0087a59df147f022c",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/ntb/": {
+      "fingerprint": "1cf9ed5405fb8c518791b8a28012cb8a229be2185e72be62b33b0fe84cbb5f8b",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.mavis.com/store/virginia/": {
+      "fingerprint": "19bb25500874fda16d2f71bb2037ff2f73fbbb140dd760aefdb64a144c560eb3",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.tsgconsumer.com/investments/?subsector=automotive%2Chousehold": {
+      "fingerprint": "aa156e37a04741348332362d4bc8578b79cf626d3a86f3ac67ebb3ed7ef1ce0c",
+      "caseIds": [
+        "cross-industry-mavis"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.drivenbrands.com/about/": {
+      "fingerprint": "9d862ce475bfbc7b51981f3553e72a5abcd961f4550e60fa36f096e20b4f3b2d",
+      "caseIds": [
+        "cross-industry-driven-brands"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.jiffylube.com/about": {
+      "fingerprint": "57692e8df8efe09b4c31ef10e0949f19a102712e8855b23c4f7b40592db6faa2",
+      "caseIds": [
+        "cross-industry-jiffy-lube"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://corporate.monro.com/files/doc_presentation/2025/10/Investor-Presentation-November-2025.pdf": {
+      "fingerprint": "e238c3f8bb6750245417aaa61e5b4e986ab687a9144c19b00a6c25497d82ffb1",
+      "caseIds": [
+        "cross-industry-monro"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
+      "unchangedRuns": 0
+    },
+    "https://www.sec.gov/Archives/edgar/data/813762/000110465926099264/tm2623713d1_ex99-1.htm": {
+      "fingerprint": "68d6d1878258124ce30650c1abf546cdee2775933c593028ec4039845985dc06",
+      "caseIds": [
+        "cross-industry-pep-boys"
+      ],
+      "lastEvaluatedAt": "2026-10-29",
       "unchangedRuns": 0
     }
   }

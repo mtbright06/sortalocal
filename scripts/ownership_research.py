@@ -15,6 +15,12 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 LISTINGS = ROOT / "src" / "overtureHvacListings.json"
+INDUSTRY_LISTINGS = {
+    "hvac": LISTINGS,
+    "dental": ROOT / "src" / "overtureDentalListings.json",
+    "veterinary": ROOT / "src" / "overtureVeterinaryListings.json",
+    "automotive": ROOT / "src" / "overtureAutoRepairListings.json",
+}
 DEFAULT_REGISTRY = ROOT / "data" / "realOwnershipRegistry.json"
 QUEUE = ROOT / "data" / "ownershipResearchQueue.json"
 PUBLIC = ROOT / "data" / "publicOwnership.json"
@@ -31,6 +37,14 @@ CLASSES = {"independent", "private_equity_backed", "public_company", "subsidiary
 def load(path: Path):
     with path.open(encoding="utf-8") as f:
         return json.load(f)
+
+
+def load_all_overture_listings() -> dict:
+    """Load existing industry datasets for case identity checks; no import or merge occurs."""
+    businesses = []
+    for path in INDUSTRY_LISTINGS.values():
+        businesses.extend(load(path).get("businesses", []))
+    return {"businesses": businesses}
 
 
 def load_registry(path: Path) -> dict:
@@ -470,7 +484,9 @@ def update_automation_cache(cache: dict, plan: dict, evaluated_at: str) -> dict:
     updated.setdefault("schemaVersion", 1)
     entries = updated.setdefault("caseFingerprints", {})
     evidence_cache = updated.setdefault("evidence", {})
-    for outcome in [*plan["proposedPublications"], *plan["alreadyPublished"], *plan["blocked"]]:
+    outcomes = [*plan["proposedPublications"], *plan["alreadyPublished"], *plan["blocked"]]
+    evidence_by_url: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+    for outcome in outcomes:
         prior = entries.get(outcome["caseId"], {})
         unchanged = prior.get("fingerprints") == outcome["fingerprints"]
         entries[outcome["caseId"]] = {"fingerprints": outcome["fingerprints"],
@@ -478,13 +494,19 @@ def update_automation_cache(cache: dict, plan: dict, evaluated_at: str) -> dict:
             "unchangedRuns": prior.get("unchangedRuns", 0) + 1 if unchanged else 0,
             "evidenceUrls": outcome["evidenceUrls"]}
         for url, evidence_fingerprint in outcome.get("evidenceFingerprints", {}).items():
-            previous = evidence_cache.get(url, {})
-            same_evidence = previous.get("fingerprint") == evidence_fingerprint
-            case_ids = set(previous.get("caseIds", []))
-            case_ids.add(outcome["caseId"])
-            evidence_cache[url] = {"fingerprint": evidence_fingerprint, "caseIds": sorted(case_ids),
-                "lastEvaluatedAt": previous.get("lastEvaluatedAt", evaluated_at) if same_evidence else evaluated_at,
-                "unchangedRuns": previous.get("unchangedRuns", 0) + 1 if same_evidence else 0}
+            evidence_by_url[url][evidence_fingerprint].add(outcome["caseId"])
+    # A shared source can support several cases. Count one verification pass per URL,
+    # while fingerprinting every distinct claim recorded against that URL.
+    for url, claims in evidence_by_url.items():
+        aggregate_fingerprint = fingerprint(sorted(claims))
+        previous = evidence_cache.get(url, {})
+        same_evidence = previous.get("fingerprint") == aggregate_fingerprint
+        case_ids = set(previous.get("caseIds", []))
+        for case_ids_for_claim in claims.values():
+            case_ids.update(case_ids_for_claim)
+        evidence_cache[url] = {"fingerprint": aggregate_fingerprint, "caseIds": sorted(case_ids),
+            "lastEvaluatedAt": previous.get("lastEvaluatedAt", evaluated_at) if same_evidence else evaluated_at,
+            "unchangedRuns": previous.get("unchangedRuns", 0) + 1 if same_evidence else 0}
     return updated
 
 
@@ -545,7 +567,7 @@ def automation_inputs():
         raise ValueError("Evidence-gated auto-publication is disabled in the automation config")
     if config.get("optionalResearch", {}).get("enabled") or config.get("optionalResearch", {}).get("maxSpendUsdPerRun", 0) != 0:
         raise ValueError("This sprint's auto workflow does not permit external research spending")
-    listings = load(LISTINGS)
+    listings = load_all_overture_listings()
     public = load(PUBLIC)
     registry = load_registry(DEFAULT_REGISTRY)
     queue = load(QUEUE)
@@ -969,7 +991,7 @@ def cmd_discover(args):
 def cmd_stage_cases(_args):
     queue = load(QUEUE)
     cases = load(RESEARCH_CASES)
-    listing_ids = {business["id"] for business in load(LISTINGS).get("businesses", [])}
+    listing_ids = {business["id"] for business in load_all_overture_listings().get("businesses", [])}
     for case in cases.get("candidates", []):
         referenced = set(case.get("businessIds", []))
         referenced.update(link.get("businessId") for link in case.get("identityLinks", []))

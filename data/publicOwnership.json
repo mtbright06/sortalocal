@@ -165,6 +165,756 @@
           "description": "Independent HVAC trade publication dated December 20, 2019 reports CoolSys’s BRR acquisition announcement; confirms announcement date without asserting closing date."
         }
       ]
+    },
+    {
+      "businessId": "overture-b3acb1ef-6e69-4c67-904d-b125f7a3f981",
+      "entityId": "local-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/chesapeake/cgb",
+          "description": "Official current location page identifies Banfield Pet Hospital at 237 S Battlefield Blvd Ste 12, Chesapeake."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9",
+      "entityId": "local-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/chesapeake/cgb",
+          "description": "Official current location page identifies Chesapeake Great Bridge at 237 Battlefield Blvd S, Chesapeake."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-88ef4d97-38a7-4bef-a7b2-77279fe642b2",
+      "entityId": "local-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/chesapeake/chs",
+          "description": "Official current location page identifies Banfield Pet Hospital at 1236 Greenbrier Pkwy, Chesapeake."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8",
+      "entityId": "local-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/norfolk/nok",
+          "description": "Official current location page identifies Banfield Pet Hospital at 1275 N Military Hwy, Norfolk."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e",
+      "entityId": "local-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/lsn",
+          "description": "Official current location page identifies Landstown at 3364 Princess Anne Rd, Virginia Beach."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-88150534-5a15-4651-9efe-558f5b522b6a",
+      "entityId": "local-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/lsn",
+          "description": "Official current location page identifies Banfield Pet Hospital at 3364 Princess Anne Rd, Virginia Beach."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-caf1cfbc-990a-497d-9a91-294dd51d7ec6",
+      "entityId": "local-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vbh",
+          "description": "Official current location page identifies Virginia Beach Haygood at 1021 Independence Blvd, Virginia Beach."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-18b9e920-bf90-4394-9e56-44b325cde7dd",
+      "entityId": "local-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vbh",
+          "description": "Official current location page identifies Banfield Pet Hospital at 1021 Independence Blvd, Virginia Beach."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9",
+      "entityId": "local-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/pbe",
+          "description": "Official current location page identifies Pembroke at 4421 Virginia Beach Blvd, Virginia Beach."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-127f086e-e908-4647-93d8-506ea24072e0",
+      "entityId": "local-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/pbe",
+          "description": "Official current location page identifies Banfield Pet Hospital at 4421 Virginia Beach Blvd, Virginia Beach."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-aa5bb4cf-75c3-4ced-8974-183ed87923ad",
+      "entityId": "local-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vab",
+          "description": "Official current location page identifies Banfield Pet Hospital at 3217 Virginia Beach Blvd Ste 100, Virginia Beach."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-3bf16665-076a-4054-9282-25958b6171bd",
+      "entityId": "local-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vab",
+          "description": "Official current location page identifies Virginia Beach Kings Grant at 3217 Virginia Beach Blvd, Virginia Beach."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-93928b11-587f-4ab0-b5b8-eb740fe77f76",
+      "entityId": "local-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/htp",
+          "description": "Official current location page identifies Banfield Pet Hospital at 1833 Republic Rd #103, Virginia Beach."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-2e6448ec-1e66-4eac-9920-02394664af16",
+      "entityId": "local-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/newport-news/new",
+          "description": "Official current location page identifies Banfield Pet Hospital at 12142 Jefferson Ave, Newport News."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-12c21f25-606b-4956-869c-6d9b4d578297",
+      "entityId": "local-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/hampton/hmp",
+          "description": "Official current location page identifies Banfield Pet Hospital at 1123 W Mercury Blvd Ste E, Hampton."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Identifies Banfield Pet Hospital as a Mars Veterinary Health veterinary business."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-71e5d223-e266-4af1-889e-b0cf29acf184",
+      "entityId": "local-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184",
+      "classification": "subsidiary",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://bluepearlvet.com/hospital/virginia-beach-va/",
+          "description": "Official current location page identifies BluePearl Pet Hospital Town Center at 364 S Independence Blvd, Virginia Beach."
+        },
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Lists BluePearl among Mars Veterinary Health veterinary businesses."
+        },
+        {
+          "url": "https://www.mars.com/our-brands/petcare",
+          "description": "Identifies Mars Petcare within Mars, Incorporated."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-3c45f87b-3e0c-4fe0-ac09-22911a3766ac",
+      "entityId": "local-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac",
+      "classification": "public_company",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/chesapeake/600-pavilion-dr/",
+          "description": "Official current location page identifies Firestone Complete Auto Care at 600 Pavilion Dr, Chesapeake."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+          "description": "BSRO operates company-owned service centers, including Firestone Complete Auto Care locations."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Identifies BSRO as a subsidiary of Bridgestone Americas and describes company retail locations."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6",
+      "entityId": "local-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6",
+      "classification": "public_company",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/chesapeake/453-n-battlefield-blvd/",
+          "description": "Official current location page identifies Firestone Complete Auto Care at 453 N Battlefield Blvd, Chesapeake."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+          "description": "BSRO operates company-owned service centers, including Firestone Complete Auto Care locations."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Identifies BSRO as a subsidiary of Bridgestone Americas and describes company retail locations."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-d92d57a0-f07e-4cab-9628-66eb9a25f159",
+      "entityId": "local-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159",
+      "classification": "public_company",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://local.firestonecompleteautocare.com/virginia/chesapeake/133-hillcrest-pkwy/",
+          "description": "Official current location page identifies Firestone Complete Auto Care at 133 Hillcrest Pkwy, Chesapeake."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+          "description": "BSRO operates company-owned service centers, including Firestone Complete Auto Care locations."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Identifies BSRO as a subsidiary of Bridgestone Americas and describes company retail locations."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-1b20ab7e-b63a-4115-8d51-17a4a7325a16",
+      "entityId": "local-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16",
+      "classification": "public_company",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/chesapeake/1545-ring-rd/",
+          "description": "Official current location page identifies Firestone Complete Auto Care at 1545 Ring Rd, Chesapeake."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+          "description": "BSRO operates company-owned service centers, including Firestone Complete Auto Care locations."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Identifies BSRO as a subsidiary of Bridgestone Americas and describes company retail locations."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-67baeece-8b75-4cfd-92f5-9035a3766e95",
+      "entityId": "local-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95",
+      "classification": "public_company",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/hampton/112-marketplace-dr/",
+          "description": "Official current location page identifies Firestone Complete Auto Care at 112 Marketplace Dr, Hampton."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+          "description": "BSRO operates company-owned service centers, including Firestone Complete Auto Care locations."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Identifies BSRO as a subsidiary of Bridgestone Americas and describes company retail locations."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-02989035-d22a-4cfc-af48-1a5e60f7eaa5",
+      "entityId": "local-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5",
+      "classification": "public_company",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/norfolk/1251-wonsan-st/",
+          "description": "Official current location page identifies Firestone Complete Auto Care at 1251 Wonsan St, Norfolk."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+          "description": "BSRO operates company-owned service centers, including Firestone Complete Auto Care locations."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Identifies BSRO as a subsidiary of Bridgestone Americas and describes company retail locations."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-6741623d-7bb5-46ac-9f74-c15c23bc97b9",
+      "entityId": "local-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9",
+      "classification": "public_company",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/norfolk/856-granby-st/",
+          "description": "Official current location page identifies Firestone Complete Auto Care at 856 Granby St, Norfolk."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+          "description": "BSRO operates company-owned service centers, including Firestone Complete Auto Care locations."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Identifies BSRO as a subsidiary of Bridgestone Americas and describes company retail locations."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-35ee7568-501d-4dc9-b006-6104ac338c7f",
+      "entityId": "local-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f",
+      "classification": "public_company",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/chesapeake/2408-chesapeake-square-ring-rd/",
+          "description": "Official current location page identifies Firestone Complete Auto Care at 2408 Chesapeake Square Ring Rd, Chesapeake."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+          "description": "BSRO operates company-owned service centers, including Firestone Complete Auto Care locations."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Identifies BSRO as a subsidiary of Bridgestone Americas and describes company retail locations."
+        }
+      ]
+    },
+    {
+      "businessId": "overture-2c27caae-471a-421b-a146-cfd593eee749",
+      "entityId": "local-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749",
+      "classification": "public_company",
+      "approvalStatus": "approved",
+      "approvalMethod": "automated_evidence_gate",
+      "publicationId": "20261030T000005Z-658047740d",
+      "verifiedAt": "2026-10-29",
+      "approvedAt": "2026-10-29",
+      "approvedBy": "Evidence-gated automation",
+      "matchReasons": [
+        "case_identity_verified",
+        "source_evidence_complete",
+        "ownership_relationships_complete"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/virginia-beach/953-chimney-hill-pkwy/",
+          "description": "Official current location page identifies Firestone Complete Auto Care at 953 Chimney Hill Pkwy, Virginia Beach."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/corporation/subsidiaries-and-business-units/bridgestone-retail-operations.html",
+          "description": "BSRO operates company-owned service centers, including Firestone Complete Auto Care locations."
+        },
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Identifies BSRO as a subsidiary of Bridgestone Americas and describes company retail locations."
+        }
+      ]
     }
   ]
 }

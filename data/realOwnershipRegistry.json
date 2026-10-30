@@ -348,6 +348,729 @@
       "overtureBusinessIds": [],
       "notes": "A fund managed by Ares Management Corporation’s Private Equity Group acquired CoolSys; acquisition announced 2019-03-21. CoolSys leadership page currently lists Ares PE partners/advisors on its board.",
       "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "corporation-mars",
+      "type": "corporate_parent",
+      "name": "Mars, Incorporated",
+      "normalizedName": "mars, incorporated",
+      "brands": [
+        "Mars Petcare"
+      ],
+      "websiteDomains": "mars.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "organization-mars-veterinary-health",
+      "type": "parent_organization",
+      "name": "Mars Veterinary Health",
+      "normalizedName": "mars veterinary health",
+      "brands": [
+        "Mars Veterinary Health"
+      ],
+      "websiteDomains": "marsveterinary.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "brand-vca-animal-hospitals",
+      "type": "parent_organization",
+      "name": "VCA Animal Hospitals",
+      "normalizedName": "vca animal hospitals",
+      "brands": [
+        "VCA"
+      ],
+      "websiteDomains": "vcahospitals.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "brand-banfield-pet-hospital",
+      "type": "parent_organization",
+      "name": "Banfield Pet Hospital",
+      "normalizedName": "banfield pet hospital",
+      "brands": [
+        "Banfield"
+      ],
+      "websiteDomains": "banfield.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "brand-bluepearl",
+      "type": "parent_organization",
+      "name": "BluePearl",
+      "normalizedName": "bluepearl",
+      "brands": [
+        "BluePearl"
+      ],
+      "websiteDomains": "bluepearlvet.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "corporation-bridgestone",
+      "type": "public_company",
+      "name": "Bridgestone Corporation",
+      "normalizedName": "bridgestone corporation",
+      "brands": [
+        "Bridgestone"
+      ],
+      "websiteDomains": "bridgestone.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "organization-bridgestone-americas",
+      "type": "parent_organization",
+      "name": "Bridgestone Americas, Inc.",
+      "normalizedName": "bridgestone americas, inc.",
+      "brands": [
+        "Bridgestone Americas"
+      ],
+      "websiteDomains": "bridgestoneamericas.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "organization-bsro",
+      "type": "parent_organization",
+      "name": "Bridgestone Retail Operations, LLC",
+      "normalizedName": "bridgestone retail operations, llc",
+      "brands": [
+        "BSRO"
+      ],
+      "websiteDomains": "bsro.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "brand-firestone-complete-auto-care",
+      "type": "parent_organization",
+      "name": "Firestone Complete Auto Care",
+      "normalizedName": "firestone complete auto care",
+      "brands": [
+        "Firestone Complete Auto Care"
+      ],
+      "websiteDomains": "firestonecompleteautocare.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "organization-mavis",
+      "type": "parent_organization",
+      "name": "Mavis Tire Express Services",
+      "normalizedName": "mavis tire express services",
+      "brands": [
+        "Mavis",
+        "Mavis Tire"
+      ],
+      "websiteDomains": "mavis.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "brand-ntb",
+      "type": "parent_organization",
+      "name": "NTB Tire & Service Centers",
+      "normalizedName": "ntb tire and service centers",
+      "brands": [
+        "NTB",
+        "National Tire & Battery"
+      ],
+      "websiteDomains": "ntb.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "investor-baypine",
+      "type": "pe_investor",
+      "name": "BayPine",
+      "normalizedName": "baypine",
+      "brands": [
+        "BayPine"
+      ],
+      "websiteDomains": "baypine.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "investor-tsg-consumer",
+      "type": "pe_investor",
+      "name": "TSG Consumer",
+      "normalizedName": "tsg consumer",
+      "brands": [
+        "TSG"
+      ],
+      "websiteDomains": "tsgconsumer.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "organization-dental-care-alliance",
+      "type": "parent_organization",
+      "name": "Dental Care Alliance",
+      "normalizedName": "dental care alliance",
+      "brands": [
+        "DCA"
+      ],
+      "websiteDomains": "dentalcarealliance.net",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "organization-konikoff-dental",
+      "type": "parent_organization",
+      "name": "Konikoff Dental Associates",
+      "normalizedName": "konikoff dental associates",
+      "brands": [
+        "Konikoff",
+        "Konikoff Kids"
+      ],
+      "websiteDomains": "konikoffdental.com",
+      "locations": [],
+      "overtureBusinessIds": [],
+      "notes": ""
+    },
+    {
+      "id": "local-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981",
+      "type": "company",
+      "name": "Banfield Pet Hospital",
+      "normalizedName": "banfield pet hospital",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Chesapeake",
+          "address": "237 S Battlefield Blvd Ste 12"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-b3acb1ef-6e69-4c67-904d-b125f7a3f981"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9",
+      "type": "company",
+      "name": "Chesapeake Great Bridge",
+      "normalizedName": "chesapeake great bridge",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Chesapeake",
+          "address": "237 Battlefield Blvd S"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2",
+      "type": "company",
+      "name": "Banfield Pet Hospital",
+      "normalizedName": "banfield pet hospital",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Chesapeake",
+          "address": "1236 Greenbrier Pkwy"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-88ef4d97-38a7-4bef-a7b2-77279fe642b2"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8",
+      "type": "company",
+      "name": "Banfield Pet Hospital",
+      "normalizedName": "banfield pet hospital",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Norfolk",
+          "address": "1275 N Military Hwy"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e",
+      "type": "company",
+      "name": "Landstown",
+      "normalizedName": "landstown",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "3364 Princess Anne Rd"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a",
+      "type": "company",
+      "name": "Banfield Pet Hospital",
+      "normalizedName": "banfield pet hospital",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "3364 Princess Anne Rd"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-88150534-5a15-4651-9efe-558f5b522b6a"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6",
+      "type": "company",
+      "name": "Virginia Beach Haygood",
+      "normalizedName": "virginia beach haygood",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "1021 Independence Blvd"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-caf1cfbc-990a-497d-9a91-294dd51d7ec6"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd",
+      "type": "company",
+      "name": "Banfield Pet Hospital",
+      "normalizedName": "banfield pet hospital",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "1021 Independence Blvd"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-18b9e920-bf90-4394-9e56-44b325cde7dd"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9",
+      "type": "company",
+      "name": "Pembroke",
+      "normalizedName": "pembroke",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "4421 Virginia Beach Blvd"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0",
+      "type": "company",
+      "name": "Banfield Pet Hospital",
+      "normalizedName": "banfield pet hospital",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "4421 Virginia Beach Blvd"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-127f086e-e908-4647-93d8-506ea24072e0"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad",
+      "type": "company",
+      "name": "Banfield Pet Hospital",
+      "normalizedName": "banfield pet hospital",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "3217 Virginia Beach Blvd Ste 100"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-aa5bb4cf-75c3-4ced-8974-183ed87923ad"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd",
+      "type": "company",
+      "name": "Virginia Beach Kings Grant",
+      "normalizedName": "virginia beach kings grant",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "3217 Virginia Beach Blvd"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-3bf16665-076a-4054-9282-25958b6171bd"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76",
+      "type": "company",
+      "name": "Banfield Pet Hospital",
+      "normalizedName": "banfield pet hospital",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "1833 Republic Rd #103"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-93928b11-587f-4ab0-b5b8-eb740fe77f76"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16",
+      "type": "company",
+      "name": "Banfield Pet Hospital",
+      "normalizedName": "banfield pet hospital",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Newport News",
+          "address": "12142 Jefferson Ave"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-2e6448ec-1e66-4eac-9920-02394664af16"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297",
+      "type": "company",
+      "name": "Banfield Pet Hospital",
+      "normalizedName": "banfield pet hospital",
+      "brands": [
+        "Banfield Pet Hospital"
+      ],
+      "websiteDomains": "www.banfield.com",
+      "locations": [
+        {
+          "city": "Hampton",
+          "address": "1123 W Mercury Blvd Ste E"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-12c21f25-606b-4956-869c-6d9b4d578297"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184",
+      "type": "company",
+      "name": "BluePearl Pet Hospital Town Center",
+      "normalizedName": "bluepearl pet hospital town center",
+      "brands": [
+        "BluePearl"
+      ],
+      "websiteDomains": "",
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "364 S Independence Blvd"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-71e5d223-e266-4af1-889e-b0cf29acf184"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac",
+      "type": "company",
+      "name": "Firestone Complete Auto Care",
+      "normalizedName": "firestone complete auto care",
+      "brands": [
+        "Firestone Complete Auto Care"
+      ],
+      "websiteDomains": "www.firestonecompleteautocare.com",
+      "locations": [
+        {
+          "city": "Chesapeake",
+          "address": "600 Pavilion Dr"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-3c45f87b-3e0c-4fe0-ac09-22911a3766ac"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6",
+      "type": "company",
+      "name": "Firestone Complete Auto Care",
+      "normalizedName": "firestone complete auto care",
+      "brands": [
+        "Firestone Complete Auto Care"
+      ],
+      "websiteDomains": "www.firestonecompleteautocare.com",
+      "locations": [
+        {
+          "city": "Chesapeake",
+          "address": "453 N Battlefield Blvd"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159",
+      "type": "company",
+      "name": "Firestone Complete Auto Care",
+      "normalizedName": "firestone complete auto care",
+      "brands": [
+        "Firestone Complete Auto Care"
+      ],
+      "websiteDomains": "local.firestonecompleteautocare.com",
+      "locations": [
+        {
+          "city": "Chesapeake",
+          "address": "133 Hillcrest Pkwy"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-d92d57a0-f07e-4cab-9628-66eb9a25f159"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16",
+      "type": "company",
+      "name": "Firestone Complete Auto Care",
+      "normalizedName": "firestone complete auto care",
+      "brands": [
+        "Firestone Complete Auto Care"
+      ],
+      "websiteDomains": "www.firestonecompleteautocare.com",
+      "locations": [
+        {
+          "city": "Chesapeake",
+          "address": "1545 Ring Rd"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-1b20ab7e-b63a-4115-8d51-17a4a7325a16"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95",
+      "type": "company",
+      "name": "Firestone Complete Auto Care",
+      "normalizedName": "firestone complete auto care",
+      "brands": [
+        "Firestone Complete Auto Care"
+      ],
+      "websiteDomains": "www.firestonecompleteautocare.com",
+      "locations": [
+        {
+          "city": "Hampton",
+          "address": "112 Marketplace Dr"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-67baeece-8b75-4cfd-92f5-9035a3766e95"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5",
+      "type": "company",
+      "name": "Firestone Complete Auto Care",
+      "normalizedName": "firestone complete auto care",
+      "brands": [
+        "Firestone Complete Auto Care"
+      ],
+      "websiteDomains": "www.firestonecompleteautocare.com",
+      "locations": [
+        {
+          "city": "Norfolk",
+          "address": "1251 Wonsan St"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-02989035-d22a-4cfc-af48-1a5e60f7eaa5"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9",
+      "type": "company",
+      "name": "Firestone Complete Auto Care",
+      "normalizedName": "firestone complete auto care",
+      "brands": [
+        "Firestone Complete Auto Care"
+      ],
+      "websiteDomains": "www.firestonecompleteautocare.com",
+      "locations": [
+        {
+          "city": "Norfolk",
+          "address": "856 Granby St"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-6741623d-7bb5-46ac-9f74-c15c23bc97b9"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f",
+      "type": "company",
+      "name": "Firestone Complete Auto Care",
+      "normalizedName": "firestone complete auto care",
+      "brands": [
+        "Firestone Complete Auto Care"
+      ],
+      "websiteDomains": "www.firestonecompleteautocare.com",
+      "locations": [
+        {
+          "city": "Chesapeake",
+          "address": "2408 Chesapeake Square Ring Rd"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-35ee7568-501d-4dc9-b006-6104ac338c7f"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "local-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749",
+      "type": "company",
+      "name": "Firestone Complete Auto Care",
+      "normalizedName": "firestone complete auto care",
+      "brands": [
+        "Firestone Complete Auto Care"
+      ],
+      "websiteDomains": "www.firestonecompleteautocare.com",
+      "locations": [
+        {
+          "city": "Virginia Beach",
+          "address": "953 Chimney Hill Pkwy"
+        }
+      ],
+      "overtureBusinessIds": [
+        "overture-2c27caae-471a-421b-a146-cfd593eee749"
+      ],
+      "notes": "Location-specific operating listing; retained separately from other Overture records.",
+      "publicationId": "20261030T000005Z-658047740d"
     }
   ],
   "relationships": [
@@ -624,6 +1347,618 @@
       ],
       "verifiedAt": "2026-10-28",
       "publicationId": "20261028T134237Z-dafafbf78f"
+    },
+    {
+      "id": "rel-mars-vet-health-mars",
+      "fromEntityId": "organization-mars-veterinary-health",
+      "toEntityId": "corporation-mars",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Mars Veterinary Health identifies its veterinary businesses within the Mars organization; no PE classification applies.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "rel-vca-mars-vet-health",
+      "fromEntityId": "brand-vca-animal-hospitals",
+      "toEntityId": "organization-mars-veterinary-health",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://vcahospitals.com/find-a-hospital/location-directory",
+          "description": "Listed by Mars Veterinary Health as one of its veterinary businesses.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "rel-banfield-mars-vet-health",
+      "fromEntityId": "brand-banfield-pet-hospital",
+      "toEntityId": "organization-mars-veterinary-health",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Listed by Mars Veterinary Health as one of its veterinary businesses.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "rel-bluepearl-mars-vet-health",
+      "fromEntityId": "brand-bluepearl",
+      "toEntityId": "organization-mars-veterinary-health",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://marsveterinary.com/who-we-are/our-companies/",
+          "description": "Listed by Mars Veterinary Health as one of its veterinary businesses.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "rel-bsro-bridgestone-americas",
+      "fromEntityId": "organization-bsro",
+      "toEntityId": "organization-bridgestone-americas",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Bridgestone describes BSRO as a subsidiary of Bridgestone Americas.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "rel-bridgestone-americas-bridgestone",
+      "fromEntityId": "organization-bridgestone-americas",
+      "toEntityId": "corporation-bridgestone",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Bridgestone describes Bridgestone Americas as a subsidiary of Bridgestone Corporation.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "rel-firestone-bsro",
+      "fromEntityId": "brand-firestone-complete-auto-care",
+      "toEntityId": "organization-bsro",
+      "type": "brand_affiliated_with",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2026/bridgestone-retail-plant-a-tree-campaign",
+          "description": "Firestone Complete Auto Care is included in the company-owned stores operated by BSRO.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "rel-ntb-mavis",
+      "fromEntityId": "brand-ntb",
+      "toEntityId": "organization-mavis",
+      "type": "brand_affiliated_with",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.mavis.com/ntb/",
+          "description": "Mavis states NTB is fully owned and operated by Mavis; the record captures the brand/operator relationship without asserting a local legal subsidiary.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "rel-mavis-baypine",
+      "fromEntityId": "organization-mavis",
+      "toEntityId": "investor-baypine",
+      "type": "portfolio_company_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://baypine.com/portfolio",
+          "description": "BayPine currently lists Mavis as an unrealized portfolio company; equity percentage not stated.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "rel-mavis-tsg",
+      "fromEntityId": "organization-mavis",
+      "toEntityId": "investor-tsg-consumer",
+      "type": "portfolio_company_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.tsgconsumer.com/investments/?subsector=automotive%2Chousehold",
+          "description": "TSG lists Mavis as a current investment; equity percentage not stated.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "rel-konikoff-dca-affiliation",
+      "fromEntityId": "organization-konikoff-dental",
+      "toEntityId": "organization-dental-care-alliance",
+      "type": "brand_affiliated_with",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.dentalcarealliance.net/affiliated-practices/",
+          "description": "DCA lists Konikoff Dental Associates as an allied practice. This records support/affiliation only; it does not claim ownership of clinical practices.",
+          "publishedAt": null,
+          "verifiedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-b3acb1ef-6e69-4c67-904d-b125f7a3f981",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/chesapeake/cgb",
+          "description": "Official location listing for Banfield Pet Hospital is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-6a7d6ae5-cf11-4d95-b595-ba54f8f75ad9",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/chesapeake/cgb",
+          "description": "Official location listing for Chesapeake Great Bridge is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-88ef4d97-38a7-4bef-a7b2-77279fe642b2",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/chesapeake/chs",
+          "description": "Official location listing for Banfield Pet Hospital is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-e23173cf-5fb3-4ddb-a8f5-542c96ab81e8",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/norfolk/nok",
+          "description": "Official location listing for Banfield Pet Hospital is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-39b0ac9c-aa1d-43d2-bf71-4b7499d0cc5e",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/lsn",
+          "description": "Official location listing for Landstown is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-88150534-5a15-4651-9efe-558f5b522b6a",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/lsn",
+          "description": "Official location listing for Banfield Pet Hospital is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-caf1cfbc-990a-497d-9a91-294dd51d7ec6",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vbh",
+          "description": "Official location listing for Virginia Beach Haygood is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-18b9e920-bf90-4394-9e56-44b325cde7dd",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vbh",
+          "description": "Official location listing for Banfield Pet Hospital is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-f0ed4f07-13f0-4756-bf6e-64042ad7b3b9",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/pbe",
+          "description": "Official location listing for Pembroke is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-127f086e-e908-4647-93d8-506ea24072e0",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/pbe",
+          "description": "Official location listing for Banfield Pet Hospital is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-aa5bb4cf-75c3-4ced-8974-183ed87923ad",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vab",
+          "description": "Official location listing for Banfield Pet Hospital is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-3bf16665-076a-4054-9282-25958b6171bd",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/vab",
+          "description": "Official location listing for Virginia Beach Kings Grant is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-93928b11-587f-4ab0-b5b8-eb740fe77f76",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/virginia-beach/htp",
+          "description": "Official location listing for Banfield Pet Hospital is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-2e6448ec-1e66-4eac-9920-02394664af16",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/newport-news/new",
+          "description": "Official location listing for Banfield Pet Hospital is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297-brand-banfield-pet-hospital",
+      "fromEntityId": "local-banfield-pet-hospital-12c21f25-606b-4956-869c-6d9b4d578297",
+      "toEntityId": "brand-banfield-pet-hospital",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.banfield.com/locations/veterinarians/va/hampton/hmp",
+          "description": "Official location listing for Banfield Pet Hospital is operated within Banfield Pet Hospital; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184-brand-bluepearl",
+      "fromEntityId": "local-bluepearl-71e5d223-e266-4af1-889e-b0cf29acf184",
+      "toEntityId": "brand-bluepearl",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://bluepearlvet.com/hospital/virginia-beach-va/",
+          "description": "Official location listing for BluePearl Pet Hospital Town Center is operated within BluePearl; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac-organization-bsro",
+      "fromEntityId": "local-firestone-complete-auto-care-3c45f87b-3e0c-4fe0-ac09-22911a3766ac",
+      "toEntityId": "organization-bsro",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/chesapeake/600-pavilion-dr/",
+          "description": "Official location listing for Firestone Complete Auto Care is operated within Firestone Complete Auto Care; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6-organization-bsro",
+      "fromEntityId": "local-firestone-complete-auto-care-e353e74a-93f3-4ba6-bbf5-f0032bdef7c6",
+      "toEntityId": "organization-bsro",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/chesapeake/453-n-battlefield-blvd/",
+          "description": "Official location listing for Firestone Complete Auto Care is operated within Firestone Complete Auto Care; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159-organization-bsro",
+      "fromEntityId": "local-firestone-complete-auto-care-d92d57a0-f07e-4cab-9628-66eb9a25f159",
+      "toEntityId": "organization-bsro",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://local.firestonecompleteautocare.com/virginia/chesapeake/133-hillcrest-pkwy/",
+          "description": "Official location listing for Firestone Complete Auto Care is operated within Firestone Complete Auto Care; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16-organization-bsro",
+      "fromEntityId": "local-firestone-complete-auto-care-1b20ab7e-b63a-4115-8d51-17a4a7325a16",
+      "toEntityId": "organization-bsro",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/chesapeake/1545-ring-rd/",
+          "description": "Official location listing for Firestone Complete Auto Care is operated within Firestone Complete Auto Care; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95-organization-bsro",
+      "fromEntityId": "local-firestone-complete-auto-care-67baeece-8b75-4cfd-92f5-9035a3766e95",
+      "toEntityId": "organization-bsro",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/hampton/112-marketplace-dr/",
+          "description": "Official location listing for Firestone Complete Auto Care is operated within Firestone Complete Auto Care; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5-organization-bsro",
+      "fromEntityId": "local-firestone-complete-auto-care-02989035-d22a-4cfc-af48-1a5e60f7eaa5",
+      "toEntityId": "organization-bsro",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/norfolk/1251-wonsan-st/",
+          "description": "Official location listing for Firestone Complete Auto Care is operated within Firestone Complete Auto Care; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9-organization-bsro",
+      "fromEntityId": "local-firestone-complete-auto-care-6741623d-7bb5-46ac-9f74-c15c23bc97b9",
+      "toEntityId": "organization-bsro",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/norfolk/856-granby-st/",
+          "description": "Official location listing for Firestone Complete Auto Care is operated within Firestone Complete Auto Care; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f-organization-bsro",
+      "fromEntityId": "local-firestone-complete-auto-care-35ee7568-501d-4dc9-b006-6104ac338c7f",
+      "toEntityId": "organization-bsro",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/chesapeake/2408-chesapeake-square-ring-rd/",
+          "description": "Official location listing for Firestone Complete Auto Care is operated within Firestone Complete Auto Care; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
+    },
+    {
+      "id": "rel-local-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749-organization-bsro",
+      "fromEntityId": "local-firestone-complete-auto-care-2c27caae-471a-421b-a146-cfd593eee749",
+      "toEntityId": "organization-bsro",
+      "type": "subsidiary_of",
+      "announcedAt": null,
+      "effectiveAt": null,
+      "verifiedAt": "2026-10-29",
+      "evidence": [
+        {
+          "url": "https://www.firestonecompleteautocare.com/virginia/virginia-beach/953-chimney-hill-pkwy/",
+          "description": "Official location listing for Firestone Complete Auto Care is operated within Firestone Complete Auto Care; corporate source identifies company ownership.",
+          "verifiedAt": "2026-10-29"
+        }
+      ],
+      "publicationId": "20261030T000005Z-658047740d"
     }
   ]
 }
